@@ -22,17 +22,27 @@ const skillGroups = [
 const otherProjects = [
   {
     number: "02",
+    title: "Flashcard Quiz App",
+    description: "An interactive Android study app with question-and-answer flashcards, next and previous navigation, SQLite-backed CRUD operations, and a focused Dark Mode experience.",
+    tags: ["Java", "SQLite", "Android", "CRUD"],
+    symbol: "FQ",
+    href: "https://github.com/Ashutosh9-pan/FlashcardQuizApp",
+  },
+  {
+    number: "03",
     title: "Campus Complaint System",
     description: "A structured digital workflow for students to raise hostel and campus issues, follow their status, and help administrators respond with clearer accountability.",
     tags: ["Java", "Database", "Workflow"],
     symbol: "CC",
+    href: null,
   },
   {
-    number: "03",
+    number: "04",
     title: "Smart Waste Monitoring",
     description: "A CCTV-assisted waste management concept that identifies actionable events and triggers timely notifications for faster response and cleaner shared spaces.",
     tags: ["Computer Vision", "Notifications", "Smart City"],
     symbol: "WM",
+    href: null,
   },
 ];
 
@@ -123,7 +133,7 @@ export default function Home() {
       <section className="signal-strip" aria-label="Professional highlights">
         <div><strong>01</strong><span>AI &amp; ML<br />Focus</span></div>
         <div><strong>05+</strong><span>Programming<br />Languages</span></div>
-        <div><strong>03</strong><span>Applied<br />Projects</span></div>
+        <div><strong>04</strong><span>Applied<br />Projects</span></div>
         <div><strong>05</strong><span>Professional<br />Certifications</span></div>
       </section>
 
@@ -203,6 +213,11 @@ export default function Home() {
               <div className="project-tags dark-tags">
                 {project.tags.map((tag) => <span key={tag}>{tag}</span>)}
               </div>
+              {project.href && (
+                <a className="project-card-link" href={project.href} target="_blank" rel="noreferrer">
+                  View project on GitHub <span>↗</span>
+                </a>
+              )}
             </article>
           ))}
         </div>

@@ -142,6 +142,7 @@ img { display: block; max-width: 100%; }
 .project-card > p { max-width: 600px; margin: 0; color: var(--muted); line-height: 1.75; }
 .dark-tags { margin-top: auto; margin-bottom: 0; padding-top: 34px; }
 .dark-tags span { border-color: var(--line); color: #656b7e; background: var(--paper); }
+.project-card-link { display: inline-flex; align-items: center; gap: 10px; width: fit-content; margin-top: 22px; padding-bottom: 5px; border-bottom: 1px solid var(--ink); font-size: 13px; font-weight: 900; }
 
 .journey { display: grid; grid-template-columns: .78fr 1.22fr; gap: clamp(55px, 9vw, 140px); color: white; background: #12162d; }
 .journey-intro { position: sticky; top: 110px; align-self: start; }
