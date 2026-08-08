@@ -21,15 +21,7 @@ const skillGroups = [
 
 const otherProjects = [
   {
-    number: "02",
-    title: "Flashcard Quiz App",
-    description: "An interactive Android study app with question-and-answer flashcards, next and previous navigation, SQLite-backed CRUD operations, and a focused Dark Mode experience.",
-    tags: ["Java", "SQLite", "Android", "CRUD"],
-    symbol: "FQ",
-    href: "https://github.com/Ashutosh9-pan/FlashcardQuizApp",
-  },
-  {
-    number: "03",
+    number: "04",
     title: "Campus Complaint System",
     description: "A structured digital workflow for students to raise hostel and campus issues, follow their status, and help administrators respond with clearer accountability.",
     tags: ["Java", "Database", "Workflow"],
@@ -37,7 +29,7 @@ const otherProjects = [
     href: null,
   },
   {
-    number: "04",
+    number: "05",
     title: "Smart Waste Monitoring",
     description: "A CCTV-assisted waste management concept that identifies actionable events and triggers timely notifications for faster response and cleaner shared spaces.",
     tags: ["Computer Vision", "Notifications", "Smart City"],
@@ -185,11 +177,63 @@ export default function Home() {
             A complete Android experience combining secure authentication, activity tracking, analytics, exports, reminders, dark mode, and a five-tool AI fitness assistant.
           </p>
           <div className="project-tags"><span>Java</span><span>Firebase</span><span>Gemini AI</span><span>Android</span></div>
-          <a className="button button-light" href="https://github.com/Ashutosh9-pan/VitaFit-AI-Fitness-Tracker" target="_blank" rel="noreferrer">View project on GitHub <span>↗</span></a>
+          <div className="project-actions">
+            <a className="button button-light" href="https://github.com/Ashutosh9-pan/VitaFit-AI-Fitness-Tracker" target="_blank" rel="noreferrer">View on GitHub <span>↗</span></a>
+            <a className="button button-outline-light" href="https://github.com/Ashutosh9-pan/VitaFit-AI-Fitness-Tracker/releases/latest" target="_blank" rel="noreferrer">Get APK <span>↓</span></a>
+          </div>
         </div>
         <div className="project-phones" aria-label="VitaFit application screenshots">
           <div className="phone phone-back"><img src="/assets/vitafit-dashboard.jpg" alt="VitaFit dashboard in dark mode" /></div>
           <div className="phone phone-front"><img src="/assets/vitafit-ai-hub.jpg" alt="VitaFit AI Fitness Assistant hub" /></div>
+        </div>
+      </section>
+
+      <section className="flashcard-feature" aria-label="Featured Flashcard Quiz App project">
+        <div className="flashcard-visual">
+          <div className="flashcard-glow" />
+          <div className="flashcard-logo-card">
+            <img src="/assets/flashcard-logo.png" alt="Flashcard Quiz App logo" />
+          </div>
+          <div className="floating-card floating-card-one"><span>QUESTION</span><strong>Tap to reveal</strong></div>
+          <div className="floating-card floating-card-two"><span>ANSWER</span><strong>Learn · Quiz · Remember</strong></div>
+        </div>
+        <div className="flashcard-copy">
+          <div className="section-kicker">03 / Featured project</div>
+          <p className="project-number">02</p>
+          <h2>Flashcard<br />Quiz App</h2>
+          <h3>Interactive learning, built for Android</h3>
+          <p>
+            A focused study companion with question-and-answer flashcards, smooth next and previous navigation, SQLite-backed create, edit and delete operations, and a comfortable Dark Mode.
+          </p>
+          <div className="project-tags flashcard-tags"><span>Java</span><span>SQLite</span><span>Android</span><span>CRUD</span></div>
+          <a className="button button-primary" href="https://github.com/Ashutosh9-pan/CodeAlpha_FlashcardQuizApp" target="_blank" rel="noreferrer">View project on GitHub <span>↗</span></a>
+        </div>
+      </section>
+
+      <section className="language-feature" aria-label="Featured LanguageLearn project">
+        <div className="language-copy">
+          <div className="section-kicker light">03 / Featured project</div>
+          <p className="project-number">03</p>
+          <h2>Language<br />Learn</h2>
+          <h3>Multilingual learning that fits into every day</h3>
+          <p>
+            A polished Android learning experience combining vocabulary, daily phrases, grammar lessons, interactive quizzes, pronunciation, concise dictionary lookup, multilingual content, progress tracking, and dark mode.
+          </p>
+          <div className="project-tags">
+            <span>Java</span><span>Android</span><span>Text to Speech</span><span>REST API</span><span>Material UI</span>
+          </div>
+          <div className="project-actions">
+            <a className="button button-light" href="https://github.com/Ashutosh9-pan/CodeAlpha_LanguageLearningApp" target="_blank" rel="noreferrer">View on GitHub <span>↗</span></a>
+            <a className="button button-outline-light" href="https://github.com/Ashutosh9-pan/CodeAlpha_LanguageLearningApp/releases/latest" target="_blank" rel="noreferrer">Get APK <span>↓</span></a>
+          </div>
+        </div>
+        <div className="language-phones" aria-label="LanguageLearn application screenshots">
+          <div className="language-phone language-phone-back">
+            <img src="/assets/languagelearn-dashboard.jpg" alt="LanguageLearn dashboard and progress" />
+          </div>
+          <div className="language-phone language-phone-front">
+            <img src="/assets/languagelearn-dictionary.jpg" alt="LanguageLearn English to Hindi dictionary" />
+          </div>
         </div>
       </section>
 
