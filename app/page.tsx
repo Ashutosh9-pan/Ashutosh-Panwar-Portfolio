@@ -191,8 +191,11 @@ export default function Home() {
       <section className="flashcard-feature" aria-label="Featured Flashcard Quiz App project">
         <div className="flashcard-visual">
           <div className="flashcard-glow" />
-          <div className="flashcard-logo-card">
-            <img src="/assets/flashcard-logo.png" alt="Flashcard Quiz App logo" />
+          <div className="flashcard-phone flashcard-phone-back">
+            <img src="/assets/flashcard-splash-screen.jpg" alt="Flashcard Quiz App splash screen" />
+          </div>
+          <div className="flashcard-phone flashcard-phone-front">
+            <img src="/assets/flashcard-quiz-screen.jpg" alt="Flashcard Quiz question and card management screen" />
           </div>
           <div className="floating-card floating-card-one"><span>QUESTION</span><strong>Tap to reveal</strong></div>
           <div className="floating-card floating-card-two"><span>ANSWER</span><strong>Learn · Quiz · Remember</strong></div>
