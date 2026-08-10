@@ -161,6 +161,27 @@ img { display: block; max-width: 100%; }
 .language-phone-back { left: 12%; top: 14%; transform: rotate(-7deg); opacity: .84; }
 .language-phone-front { right: 12%; top: 7%; z-index: 2; transform: rotate(6deg); }
 
+.quotespark-feature { display: grid; grid-template-columns: 1.08fr .92fr; min-height: 780px; overflow: hidden; color: #12151c; background: #f5f7f2; }
+.quotespark-visual { position: relative; display: grid; place-items: center; min-height: 780px; overflow: hidden; background: radial-gradient(circle at 48% 42%, #dfff77 0, #a9ff36 24%, #50df9b 49%, #14261f 100%); }
+.quotespark-orb { position: absolute; border: 1px solid rgba(255,255,255,.4); border-radius: 50%; background: rgba(255,255,255,.08); }
+.quotespark-orb-one { width: 430px; height: 430px; left: -130px; top: -120px; }
+.quotespark-orb-two { width: 310px; height: 310px; right: -100px; bottom: -80px; }
+.quotespark-phone { position: relative; z-index: 2; width: min(330px, 48%); aspect-ratio: .47; overflow: hidden; border: 7px solid #11171a; border-radius: 38px; background: #f7f8fa; box-shadow: 0 42px 90px rgba(2,18,11,.5); transform: rotate(-3deg); }
+.quotespark-phone img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.quotespark-badge { position: absolute; z-index: 3; min-width: 150px; padding: 17px 19px; border: 1px solid rgba(255,255,255,.55); border-radius: 18px; background: rgba(15,25,21,.84); color: white; box-shadow: 0 20px 45px rgba(4,24,14,.28); backdrop-filter: blur(12px); }
+.quotespark-badge span { display: block; color: #adff3f; font-family: var(--font-space); font-size: 29px; font-weight: 800; }
+.quotespark-badge small { display: block; margin-top: 3px; font-size: 9px; font-weight: 900; letter-spacing: .12em; }
+.quotespark-badge-top { top: 16%; right: 7%; }
+.quotespark-badge-bottom { bottom: 15%; left: 7%; }
+.quotespark-copy { align-self: center; padding: 105px clamp(24px, 7vw, 110px) 100px clamp(35px, 6vw, 90px); }
+.quote-kicker { color: #278d5c; }
+.quotespark-copy h2 { margin: 0; font-family: var(--font-space); font-size: clamp(58px, 7vw, 98px); line-height: .88; letter-spacing: -.065em; }
+.quotespark-copy h3 { max-width: 540px; margin: 25px 0 20px; font-family: var(--font-space); font-size: clamp(23px, 3vw, 37px); line-height: 1.15; }
+.quotespark-copy > p:not(.project-number) { max-width: 590px; color: #59635e; font-size: 16px; line-height: 1.8; }
+.quotespark-tags span { border-color: #cad8cf; color: #41534a; background: #fff; }
+.quotespark-button { color: #101813; background: #a9ff36; }
+.quotespark-button-outline { color: #16251d; border: 1px solid #779c82; background: transparent; }
+
 .more-projects { background: #f7f8fc; }
 .compact-heading h2 { max-width: 780px; }
 .project-card-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 58px; }
@@ -234,11 +255,13 @@ img { display: block; max-width: 100%; }
   .project-preview { grid-template-columns: 1fr; }
   .flashcard-feature { grid-template-columns: 1fr; }
   .language-feature { grid-template-columns: 1fr; }
+  .quotespark-feature { grid-template-columns: 1fr; }
   .flashcard-copy { order: -1; }
   .project-copy { padding-right: 24px; }
   .project-phones { min-height: 650px; }
   .flashcard-visual { min-height: 650px; }
   .language-phones { min-height: 650px; }
+  .quotespark-visual { min-height: 650px; }
   .project-card-grid, .journey { grid-template-columns: 1fr; }
   .journey-intro { position: static; }
 }
@@ -261,8 +284,10 @@ img { display: block; max-width: 100%; }
   .project-phones { min-height: 530px; }
   .flashcard-copy { padding-top: 85px; padding-bottom: 70px; }
   .language-copy { padding: 85px 20px 70px; }
+  .quotespark-copy { order: -1; padding: 85px 20px 70px; }
   .flashcard-visual { min-height: 520px; }
   .language-phones { min-height: 540px; }
+  .quotespark-visual { min-height: 560px; }
   .flashcard-phone { width: 48%; border-width: 5px; border-radius: 25px; }
   .flashcard-phone-back { left: 5%; }
   .flashcard-phone-front { right: 5%; }
@@ -273,6 +298,10 @@ img { display: block; max-width: 100%; }
   .language-phone { width: 48%; border-width: 5px; border-radius: 25px; }
   .language-phone-back { left: 5%; }
   .language-phone-front { right: 5%; }
+  .quotespark-phone { width: 49%; border-width: 5px; border-radius: 27px; }
+  .quotespark-badge { min-width: 120px; padding: 13px 14px; }
+  .quotespark-badge-top { top: 12%; right: 4%; }
+  .quotespark-badge-bottom { bottom: 11%; left: 4%; }
   .project-card { min-height: 370px; }
   .timeline-item { grid-template-columns: 1fr; gap: 14px; }
   .timeline-item::before { display: none; }

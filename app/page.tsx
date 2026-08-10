@@ -21,7 +21,7 @@ const skillGroups = [
 
 const otherProjects = [
   {
-    number: "04",
+    number: "05",
     title: "Campus Complaint System",
     description: "A structured digital workflow for students to raise hostel and campus issues, follow their status, and help administrators respond with clearer accountability.",
     tags: ["Java", "Database", "Workflow"],
@@ -29,7 +29,7 @@ const otherProjects = [
     href: null,
   },
   {
-    number: "05",
+    number: "06",
     title: "Smart Waste Monitoring",
     description: "A CCTV-assisted waste management concept that identifies actionable events and triggers timely notifications for faster response and cleaner shared spaces.",
     tags: ["Computer Vision", "Notifications", "Smart City"],
@@ -236,6 +236,41 @@ export default function Home() {
           </div>
           <div className="language-phone language-phone-front">
             <img src="/assets/languagelearn-dictionary.jpg" alt="LanguageLearn English to Hindi dictionary" />
+          </div>
+        </div>
+      </section>
+
+      <section className="quotespark-feature" aria-label="Featured QuoteSpark project">
+        <div className="quotespark-visual" aria-label="QuoteSpark Android application screenshot">
+          <div className="quotespark-orb quotespark-orb-one" />
+          <div className="quotespark-orb quotespark-orb-two" />
+          <div className="quotespark-phone">
+            <img src="/assets/quotespark-home.jpg" alt="QuoteSpark random quote generator home screen" />
+          </div>
+          <div className="quotespark-badge quotespark-badge-top">
+            <span>80</span>
+            <small>CURATED QUOTES</small>
+          </div>
+          <div className="quotespark-badge quotespark-badge-bottom">
+            <span>8</span>
+            <small>CATEGORIES</small>
+          </div>
+        </div>
+
+        <div className="quotespark-copy">
+          <div className="section-kicker quote-kicker">03 / Featured project</div>
+          <p className="project-number">04</p>
+          <h2>Quote<br />Spark</h2>
+          <h3>Thoughtful words, beautifully delivered</h3>
+          <p>
+            A modern offline-first Android quote experience with 80 curated quotes across eight categories, instant generation, favorites, saved quotes, copy and native sharing, plus polished light and dark modes.
+          </p>
+          <div className="project-tags quotespark-tags">
+            <span>Java</span><span>Android</span><span>Material UI</span><span>SharedPreferences</span><span>Offline</span>
+          </div>
+          <div className="project-actions">
+            <a className="button quotespark-button" href="https://github.com/Ashutosh9-pan/CodeAlpha_RandomQuoteGenerator" target="_blank" rel="noreferrer">View on GitHub <span>↗</span></a>
+            <a className="button quotespark-button-outline" href="https://github.com/Ashutosh9-pan/CodeAlpha_RandomQuoteGenerator/releases/latest" target="_blank" rel="noreferrer">Get APK <span>↓</span></a>
           </div>
         </div>
       </section>
