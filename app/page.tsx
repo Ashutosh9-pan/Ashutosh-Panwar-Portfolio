@@ -22,6 +22,14 @@ const skillGroups = [
 const otherProjects = [
   {
     number: "05",
+    title: "TaskFlow",
+    description: "A responsive interactive task manager for creating, editing, prioritizing, filtering, sorting, and completing tasks, with due dates, progress insights, drag-and-drop ordering, localStorage persistence, backup and restore, and light and dark themes.",
+    tags: ["JavaScript", "DOM", "LocalStorage", "Responsive UI"],
+    symbol: "TF",
+    href: "https://github.com/Ashutosh9-pan/week2-task-manager",
+  },
+  {
+    number: "06",
     title: "Campus Complaint System",
     description: "A structured digital workflow for students to raise hostel and campus issues, follow their status, and help administrators respond with clearer accountability.",
     tags: ["Java", "Database", "Workflow"],
@@ -29,7 +37,7 @@ const otherProjects = [
     href: null,
   },
   {
-    number: "06",
+    number: "07",
     title: "Smart Waste Monitoring",
     description: "A CCTV-assisted waste management concept that identifies actionable events and triggers timely notifications for faster response and cleaner shared spaces.",
     tags: ["Computer Vision", "Notifications", "Smart City"],
@@ -125,7 +133,7 @@ export default function Home() {
       <section className="signal-strip" aria-label="Professional highlights">
         <div><strong>01</strong><span>AI &amp; ML<br />Focus</span></div>
         <div><strong>05+</strong><span>Programming<br />Languages</span></div>
-        <div><strong>04</strong><span>Applied<br />Projects</span></div>
+        <div><strong>05</strong><span>Applied<br />Projects</span></div>
         <div><strong>05</strong><span>Professional<br />Certifications</span></div>
       </section>
 
