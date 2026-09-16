@@ -98,7 +98,7 @@ if (!text.includes('aria-label="Featured major projects"')) {
                   <p className="project-number">{project.number}</p>
                   <h2 style={{ fontSize: "clamp(46px, 6vw, 88px)", lineHeight: 0.98, margin: "16px 0" }}>{project.title}</h2>
                   <h3 style={{ fontSize: "clamp(22px, 2.2vw, 34px)", fontWeight: 500, marginBottom: 24 }}>{project.description}</h3>
-                  <div className="project-tags">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
+                  <div className="project-tags">{project.tags.map((tag: string) => <span key={tag}>{tag}</span>)}</div>
                   <div className="project-actions" style={{ marginTop: 30 }}><a className="button button-light" href={project.github} target="_blank" rel="noreferrer">View on GitHub <span>↗</span></a></div>
                 </div>
                 <div style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "clamp(24px, 4vw, 64px)", background: "#201d4c" }}>
@@ -115,7 +115,7 @@ if (!text.includes('aria-label="Featured major projects"')) {
                   <p className="project-number">{project.number}</p>
                   <h2 style={{ fontSize: "clamp(46px, 6vw, 88px)", lineHeight: 0.98, margin: "16px 0" }}>{project.title}</h2>
                   <h3 style={{ fontSize: "clamp(22px, 2.2vw, 34px)", fontWeight: 500, marginBottom: 24 }}>{project.description}</h3>
-                  <div className="project-tags">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
+                  <div className="project-tags">{project.tags.map((tag: string) => <span key={tag}>{tag}</span>)}</div>
                   <div className="project-actions" style={{ marginTop: 30 }}><a className="button button-primary" href={project.github} target="_blank" rel="noreferrer">View on GitHub <span>↗</span></a></div>
                 </div>
               </>
