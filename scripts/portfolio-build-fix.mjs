@@ -10,10 +10,9 @@ let source = fs.readFileSync(sourcePath, "utf8");
 source = source.replaceAll("String.raw", "rawTemplate");
 source = source.replaceAll("${project", "\\${project");
 source = source.replaceAll("${tag", "\\${tag");
-source = source.replace(
-  'import path from "node:path";',
-  'import path from "node:path";\n\nconst rawTemplate = (strings, ...values) => String.raw(strings, ...values).replace(/\\\\"/g, \'"\');'
-);
+
+const helper = `import path from "node:path";\n\nconst rawTemplate = (strings, ...values) => String.raw(strings, ...values).replace(/\\\\"/g, '"');`;
+source = source.replace('import path from "node:path";', helper);
 
 fs.writeFileSync(tempPath, source, "utf8");
 await import(pathToFileURL(tempPath).href + `?v=${Date.now()}`);
