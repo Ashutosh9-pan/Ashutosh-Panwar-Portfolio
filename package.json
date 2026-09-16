@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node scripts/build-portfolio.mjs",
+    "prebuild": "node scripts/build-portfolio-final.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
