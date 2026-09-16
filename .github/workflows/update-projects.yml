@@ -10,15 +10,14 @@ permissions:
 
 jobs:
   update:
-    if: "${{ !contains(github.event.head_commit.message, 'feat: add latest portfolio projects') }}"
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
       - name: Add projects
-        shell: python
         run: |
+          python - <<'PY'
           from pathlib import Path
 
           path = Path('app/page.tsx')
@@ -108,11 +107,16 @@ jobs:
 
           path.write_text(text[:end] + '\n' + additions + text[end:], encoding='utf-8')
           print('Added 8 projects.')
+          PY
 
       - name: Commit changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add app/page.tsx
-          git commit -m "feat: add latest portfolio projects"
-          git push
+          if git diff --cached --quiet; then
+            echo "No changes needed."
+          else
+            git commit -m "feat: add latest portfolio projects"
+            git push
+          fi
