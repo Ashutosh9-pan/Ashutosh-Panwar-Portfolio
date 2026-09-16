@@ -43,7 +43,7 @@ if (!text.includes('title: "Clinevo Smart Inbox Assistant"')) {
     number: "12", title: "CalcPro",
     description: "Modern responsive web calculator with keyboard support, dark/light themes, and essential arithmetic operations.",
     tags: ["HTML5", "CSS3", "JavaScript", "Responsive UI"], symbol: "CP",
-    image: "https://raw.githubusercontent.com/Ashutosh9-pan/CalcPro/main/screenshots/calculator-dark.png",
+    image: "https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/calcpro.svg",
     github: "https://github.com/Ashutosh9-pan/CalcPro", live: null,
   },
   {
@@ -57,14 +57,14 @@ if (!text.includes('title: "Clinevo Smart Inbox Assistant"')) {
     number: "14", title: "Library Management System",
     description: "Console-based Java library system with OOP, file persistence, borrowing and returns, due dates, fine calculation, search, and statistics.",
     tags: ["Java", "OOP", "File Handling", "CLI"], symbol: "LM",
-    image: "https://raw.githubusercontent.com/Ashutosh9-pan/week3-library-system/main/screenshots/01-main-menu.png",
+    image: "https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/library-management.svg",
     github: "https://github.com/Ashutosh9-pan/week3-library-system", live: null,
   },
   {
     number: "15", title: "Random Quote Generator",
     description: "Modern Android quote generator featuring categorized quotes, favorites, sharing, dark mode, and offline support.",
     tags: ["Java", "Android", "Material Design", "Offline App"], symbol: "RQ",
-    image: "https://raw.githubusercontent.com/Ashutosh9-pan/CodeAlpha_RandomQuoteGenerator/main/screenshots/03-quotespark-home-dark-mode.jpg",
+    image: "https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/random-quote.svg",
     github: "https://github.com/Ashutosh9-pan/CodeAlpha_RandomQuoteGenerator", live: null,
   },
 `;
@@ -128,7 +128,6 @@ if (!text.includes('aria-label="Featured major projects"')) {
   text = text.slice(0, selectedStart) + featuredSection + text.slice(selectedStart);
 }
 
-// Keep the portfolio's Journey section aligned with the user's current experience and education.
 const journeyStart = text.indexOf('        <div className="timeline">');
 const journeyEnd = text.indexOf('        </div>\n      </section>', journeyStart);
 if (journeyStart !== -1 && journeyEnd !== -1 && !text.includes('The Developers Arena · Full Stack Java')) {
@@ -161,7 +160,6 @@ if (journeyStart !== -1 && journeyEnd !== -1 && !text.includes('The Developers A
   text = text.slice(0, journeyStart) + journeyTimeline + text.slice(journeyEnd + '        </div>'.length);
 }
 
-// Keep all existing certifications and add the certifications shown in the user's latest LinkedIn profile.
 const certStart = text.indexOf('const certifications = [');
 const certEnd = text.indexOf('\n];', certStart);
 if (certStart !== -1 && certEnd !== -1 && !text.includes('["AI Tools & Claude Workshop", "Be10x"]')) {
