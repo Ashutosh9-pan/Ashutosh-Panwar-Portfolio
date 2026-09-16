@@ -24,24 +24,17 @@ page = page.replaceAll("otherProjects.filter((project) => project.featured)", "(
 page = page.replaceAll("project.image", "(project as any).image");
 page = page.replaceAll("project.tags.map((tag) =>", "project.tags.map((tag: string) =>");
 
-// Featured-project imagery: use the strongest project-specific screen for the hero.
-page = page.replace(
-  "https://raw.githubusercontent.com/Ashutosh9-pan/Clinevo-smart-inbox-assistant/main/docs/screenshots/dashboard.png",
-  "https://raw.githubusercontent.com/Ashutosh9-pan/Clinevo-smart-inbox-assistant/main/docs/screenshots/literature-screening-overview.png"
-);
-
-// Add polished project thumbnails to Selected Work projects that previously had no image.
-if (!page.includes('title: "TaskFlow"') || !page.includes('image: "https://raw.githubusercontent.com/Ashutosh9-pan/week2-task-manager/main/screenshots/light-dashboard.png"')) {
-  page = page.replace(
-    /(title: "TaskFlow",[\s\S]*?symbol: "TF",)(\s*\n)/,
-    '$1\n    image: "https://raw.githubusercontent.com/Ashutosh9-pan/week2-task-manager/main/screenshots/light-dashboard.png",$2'
-  );
-}
-if (!page.includes('image: "/project-thumbnails/smart-waste-monitoring.svg"')) {
-  page = page.replace(
-    /(title: "Smart Waste Monitoring",[\s\S]*?symbol: "WM",)(\s*\n)/,
-    '$1\n    image: "/project-thumbnails/smart-waste-monitoring.svg",$2'
-  );
+// Use polished landscape thumbnails for Selected Work so screenshots fill the preview area.
+const thumbnailMap = {
+  "CalcPro": "https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/calcpro.svg",
+  "Library Management System": "https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/library-management.svg",
+  "Random Quote Generator": "https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/random-quote.svg",
+  "Smart Waste Monitoring": "https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/smart-waste-ai.svg",
+};
+for (const [title, image] of Object.entries(thumbnailMap)) {
+  const escapedTitle = title.replace(/[.*+?^${}()|[\\]\\]/g, "\\$&");
+  const objectPattern = new RegExp(`(title: "${escapedTitle}",[\\s\\S]*?\\n    image: )"[^"]*"`);
+  page = page.replace(objectPattern, `$1"${image}"`);
 }
 
 // Keep Smart Waste Monitoring as the final item in Selected Work.
@@ -49,9 +42,7 @@ const projectsStart = page.indexOf("const otherProjects = [");
 const projectsEnd = page.indexOf("\n];", projectsStart);
 if (projectsStart !== -1 && projectsEnd !== -1) {
   const projectsBlock = page.slice(projectsStart, projectsEnd);
-  const smartMatch = projectsBlock.match(
-    /\n\s*(\{[\s\S]*?title: "Smart Waste Monitoring",[\s\S]*?\n\s*\},)\s*/
-  );
+  const smartMatch = projectsBlock.match(/\n\s*(\{[\s\S]*?title: "Smart Waste Monitoring",[\s\S]*?\n\s*\},)\s*/);
   if (smartMatch) {
     const withoutSmart = projectsBlock.replace(smartMatch[0], "\n");
     const reordered = `${withoutSmart}\n  ${smartMatch[1].trim()}\n`;
@@ -74,8 +65,8 @@ page = page.replaceAll(
 );
 
 // Portfolio counters: 15 total projects and 9 professional certifications.
-page = page.replace(/(<strong>)\d+(<\/strong>\s*<span>\s*APPLIED\s*<br\s*\/>\s*PROJECTS)/i, "$115$2");
-page = page.replace(/(<strong>)\d+(<\/strong>\s*<span>\s*PROFESSIONAL\s*<br\s*\/>\s*CERTIFICATIONS)/i, "$19$2");
+page = page.replace(/(<strong>)\d+(<\/strong>\s*<span>\s*APPLIED\s*<br\s*\/?>\s*PROJECTS)/i, "$115$2");
+page = page.replace(/(<strong>)\d+(<\/strong>\s*<span>\s*PROFESSIONAL\s*<br\s*\/?>\s*CERTIFICATIONS)/i, "$19$2");
 
 fs.writeFileSync(pagePath, page, "utf8");
 fs.rmSync(tempPath, { force: true });
