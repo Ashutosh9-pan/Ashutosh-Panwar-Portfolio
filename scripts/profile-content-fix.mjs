@@ -1,15 +1,12 @@
 import fs from "node:fs";
 import path from "node:path";
-import { execFileSync } from "node:child_process";
 
 const file = path.join(process.cwd(), "app", "page.tsx");
-const portfolioUpdater = path.join(process.cwd(), "scripts", "build-portfolio-final.mjs");
 
-// Preserve ${project.*} expressions inside the generated TSX template before executing it.
-let updater = fs.readFileSync(portfolioUpdater, "utf8");
-updater = updater.replaceAll("${project.", "\\${project.");
-fs.writeFileSync(portfolioUpdater, updater, "utf8");
-execFileSync(process.execPath, [portfolioUpdater], { stdio: "inherit" });
+// The Vercel prebuild already runs build-portfolio-final.mjs through
+// scripts/vercel-prebuild.mjs, which safely protects its template literals.
+// Do not execute the updater a second time here: doing so evaluates generated
+// TSX placeholders such as ${project.*} / ${tag} during the build.
 
 let page = fs.readFileSync(file, "utf8");
 
