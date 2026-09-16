@@ -22,6 +22,9 @@ let page = fs.readFileSync(pagePath, "utf8");
 page = page.replaceAll("otherProjects.filter((project) => !project.featured)", "(otherProjects as any[]).filter((project: any) => !project.featured)");
 page = page.replaceAll("otherProjects.filter((project) => project.featured)", "(otherProjects as any[]).filter((project: any) => project.featured)");
 page = page.replaceAll("project.image", "(project as any).image");
+// The original Featured Projects block can already exist in page.tsx, so make
+// every featured-project tag callback explicitly typed after the updater runs.
+page = page.replaceAll("project.tags.map((tag) =>", "project.tags.map((tag: string) =>");
 fs.writeFileSync(pagePath, page, "utf8");
 
 fs.rmSync(tempPath, { force: true });
