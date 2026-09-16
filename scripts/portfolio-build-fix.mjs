@@ -19,22 +19,31 @@ await import(pathToFileURL(tempPath).href + `?v=${Date.now()}`);
 
 const pagePath = path.join(root, "app", "page.tsx");
 let page = fs.readFileSync(pagePath, "utf8");
+
 page = page.replaceAll("otherProjects.filter((project) => !project.featured)", "(otherProjects as any[]).filter((project: any) => !project.featured)");
 page = page.replaceAll("otherProjects.filter((project) => project.featured)", "(otherProjects as any[]).filter((project: any) => project.featured)");
 page = page.replaceAll("project.image", "(project as any).image");
 page = page.replaceAll("project.tags.map((tag) =>", "project.tags.map((tag: string) =>");
 
-// Use polished landscape thumbnails for Selected Work so screenshots fill the preview area.
-const thumbnailMap = {
+// Restore the correct Clinevo screenshot and give Selected Work projects polished landscape thumbnails.
+const projectImages = {
+  "Clinevo Smart Inbox Assistant": "https://raw.githubusercontent.com/Ashutosh9-pan/Clinevo-smart-inbox-assistant/main/docs/screenshots/dashboard.png",
+  "TaskFlow": "https://raw.githubusercontent.com/Ashutosh9-pan/week2-task-manager/main/screenshots/light-dashboard.png",
+  "Smart Waste Monitoring": "https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/smart-waste-ai.svg",
   "CalcPro": "https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/calcpro.svg",
   "Library Management System": "https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/library-management.svg",
   "Random Quote Generator": "https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/random-quote.svg",
-  "Smart Waste Monitoring": "https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/smart-waste-ai.svg",
 };
-for (const [title, image] of Object.entries(thumbnailMap)) {
-  const escapedTitle = title.replace(/[.*+?^${}()|[\\]\\]/g, "\\$&");
-  const objectPattern = new RegExp(`(title: "${escapedTitle}",[\\s\\S]*?\\n    image: )"[^"]*"`);
-  page = page.replace(objectPattern, `$1"${image}"`);
+
+const escapeRegExp = (value) => value.replace(/[.*+?^${}()|[\\]\\]/g, "\\$&");
+
+for (const [title, image] of Object.entries(projectImages)) {
+  const escapedTitle = escapeRegExp(title);
+  const objectPattern = new RegExp(`(\\{[\\s\\S]*?title: "${escapedTitle}",[\\s\\S]*?symbol: "[^"]+",)([\\s\\S]*?)(\\n\\s*\\},)`);
+  page = page.replace(objectPattern, (match, prefix, middle, suffix) => {
+    const withoutOldImage = middle.replace(/\\n\\s*image: "[^"]*",?/g, "");
+    return `${prefix}\n    image: "${image}",${withoutOldImage}${suffix}`;
+  });
 }
 
 // Keep Smart Waste Monitoring as the final item in Selected Work.
@@ -50,7 +59,7 @@ if (projectsStart !== -1 && projectsEnd !== -1) {
   }
 }
 
-// Keep Selected Work cards visually consistent while preserving the complete screenshot.
+// Keep Selected Work cards visually consistent and make every screenshot fill the preview area cleanly.
 page = page.replaceAll(
   'className="project-card" key={project.title}',
   'className="project-card" key={project.title} style={{ minHeight: 610 }}'
