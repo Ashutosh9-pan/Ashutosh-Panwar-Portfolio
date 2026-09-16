@@ -8,8 +8,10 @@ const tempPath = path.join(root, ".portfolio-build-fixed.mjs");
 
 let source = fs.readFileSync(sourcePath, "utf8");
 source = source.replaceAll("String.raw", "rawTemplate");
-source = source.replaceAll("${project", "\\${project");
-source = source.replaceAll("${tag", "\\${tag");
+// Escape template placeholders inside build-portfolio-final before importing it.
+// The extra slash is required so the generated template contains a literal \${...}.
+source = source.replaceAll("${project", "\\\\${project");
+source = source.replaceAll("${tag", "\\\\${tag");
 
 const helper = `import path from "node:path";\n\nconst rawTemplate = (strings, ...values) => String.raw(strings, ...values).replace(/\\\\"/g, '"');`;
 source = source.replace('import path from "node:path";', helper);
@@ -35,7 +37,7 @@ const projectImages = {
   "Random Quote Generator": "https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/random-quote.svg",
 };
 
-const escapeRegExp = (value) => value.replace(/[.*+?^${}()|[\\]\\]/g, "\\$&");
+const escapeRegExp = (value) => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
 for (const [title, image] of Object.entries(projectImages)) {
   const escapedTitle = escapeRegExp(title);
