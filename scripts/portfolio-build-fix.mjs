@@ -24,7 +24,7 @@ page = page.replaceAll("otherProjects.filter((project) => project.featured)", "(
 page = page.replaceAll("project.image", "(project as any).image");
 page = page.replaceAll("project.tags.map((tag) =>", "project.tags.map((tag: string) =>");
 
-// Keep the Selected Work cards visually consistent while preserving the full screenshot.
+// Keep Selected Work cards visually consistent while preserving the complete screenshot.
 page = page.replaceAll(
   'className="project-card" key={project.title}',
   'className="project-card" key={project.title} style={{ minHeight: 610 }}'
@@ -34,8 +34,8 @@ page = page.replaceAll(
   'style={{ margin: "-24px -24px 22px", height: 300, overflow: "hidden", borderRadius: "20px 20px 0 0", background: "#e8eaf0", display: "flex", alignItems: "center", justifyContent: "center" }}'
 );
 page = page.replaceAll(
-  'style={{ width: "100%", height: "auto", objectFit: "contain", display: "block" }}',
-  'style={{ width: "100%", height: "100%", objectFit: "contain", display: "block" }}'
+  'loading="lazy" style={{ width: "100%", height: "auto", objectFit: "contain", display: "block" }}',
+  'loading="lazy" style={{ width: "100%", height: "100%", objectFit: "contain", display: "block" }}'
 );
 
 // Portfolio counters: 15 total projects and 9 professional certifications.
