@@ -128,5 +128,56 @@ if (!text.includes('aria-label="Featured major projects"')) {
   text = text.slice(0, selectedStart) + featuredSection + text.slice(selectedStart);
 }
 
+// Keep the portfolio's Journey section aligned with the user's current experience and education.
+const journeyStart = text.indexOf('        <div className="timeline">');
+const journeyEnd = text.indexOf('        </div>\n      </section>', journeyStart);
+if (journeyStart !== -1 && journeyEnd !== -1 && !text.includes('The Developers Arena · Full Stack Java')) {
+  const journeyTimeline = String.raw`        <div className="timeline">
+          <article className="timeline-item current">
+            <span className="timeline-date">Aug 2026 — Present</span>
+            <div><p>Experience</p><h3>Full Stack Java Developer Intern</h3><span>The Developers Arena · Java, Spring Boot &amp; Full-Stack Development</span></div>
+          </article>
+          <article className="timeline-item current">
+            <span className="timeline-date">Aug 2026 — Present</span>
+            <div><p>Experience</p><h3>Web Development and Designing Intern</h3><span>Oasis Infobyte · Web Development &amp; Designing</span></div>
+          </article>
+          <article className="timeline-item">
+            <span className="timeline-date">Aug 2026</span>
+            <div><p>Experience</p><h3>Artificial Intelligence Intern</h3><span>CodeAlpha · Applied AI/ML &amp; Android Development</span></div>
+          </article>
+          <article className="timeline-item">
+            <span className="timeline-date">Jul 2024 — Aug 2024</span>
+            <div><p>Experience</p><h3>Programming Trainee</h3><span>SLOG Solutions Pvt. Ltd. · C++ &amp; Java Programming</span></div>
+          </article>
+          <article className="timeline-item">
+            <span className="timeline-date">2023 — 2026</span>
+            <div><p>Education</p><h3>B.Tech · Computer Science &amp; Engineering</h3><span>Institute of Technology, Gopeshwar · Graduate</span></div>
+          </article>
+          <article className="timeline-item">
+            <span className="timeline-date">Completed 2023</span>
+            <div><p>Foundation</p><h3>Diploma · Civil Engineering</h3><span>Government Polytechnic, Srinagar Garhwal</span></div>
+          </article>
+        </div>`;
+  text = text.slice(0, journeyStart) + journeyTimeline + text.slice(journeyEnd + '        </div>'.length);
+}
+
+// Keep all existing certifications and add the certifications shown in the user's latest LinkedIn profile.
+const certStart = text.indexOf('const certifications = [');
+const certEnd = text.indexOf('\n];', certStart);
+if (certStart !== -1 && certEnd !== -1 && !text.includes('["AI Tools & Claude Workshop", "Be10x"]')) {
+  const certifications = `const certifications = [
+  ["AI Tools & Claude Workshop", "Be10x"],
+  ["Artificial Intelligence Internship", "CodeAlpha"],
+  ["Data Analytics Professional Certificate", "Unified Mentor"],
+  ["Generative AI, LLM & RAG", "GeeksforGeeks Skill Up"],
+  ["Full Stack Web Development", "GeeksforGeeks Skill Up"],
+  ["C Programming for Beginners – Master the C Language", "Udemy"],
+  ["C++ Training Program", "SLOG Solutions Pvt. Ltd."],
+  ["Java Training Program", "SLOG Solutions Pvt. Ltd."],
+  ["C# Programming", "Udemy"],
+`;
+  text = text.slice(0, certStart) + certifications + text.slice(certEnd + 1);
+}
+
 fs.writeFileSync(file, text, "utf8");
 console.log("Portfolio build updater completed.");
