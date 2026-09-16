@@ -30,11 +30,11 @@ page = page.replace(
   "https://raw.githubusercontent.com/Ashutosh9-pan/Clinevo-smart-inbox-assistant/main/docs/screenshots/literature-screening-overview.png"
 );
 
-// Add polished local thumbnails to Selected Work projects that previously had no image.
-if (!page.includes('image: "/project-thumbnails/taskflow.svg"')) {
+// Add polished project thumbnails to Selected Work projects that previously had no image.
+if (!page.includes('title: "TaskFlow"') || !page.includes('image: "https://raw.githubusercontent.com/Ashutosh9-pan/week2-task-manager/main/screenshots/light-dashboard.png"')) {
   page = page.replace(
     /(title: "TaskFlow",[\s\S]*?symbol: "TF",)(\s*\n)/,
-    '$1\n    image: "/project-thumbnails/taskflow.svg",$2'
+    '$1\n    image: "https://raw.githubusercontent.com/Ashutosh9-pan/week2-task-manager/main/screenshots/light-dashboard.png",$2'
   );
 }
 if (!page.includes('image: "/project-thumbnails/smart-waste-monitoring.svg"')) {
