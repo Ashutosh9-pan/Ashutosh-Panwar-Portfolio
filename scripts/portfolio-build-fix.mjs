@@ -24,6 +24,41 @@ page = page.replaceAll("otherProjects.filter((project) => project.featured)", "(
 page = page.replaceAll("project.image", "(project as any).image");
 page = page.replaceAll("project.tags.map((tag) =>", "project.tags.map((tag: string) =>");
 
+// Featured-project imagery: use the strongest project-specific screen for the hero.
+page = page.replace(
+  "https://raw.githubusercontent.com/Ashutosh9-pan/Clinevo-smart-inbox-assistant/main/docs/screenshots/dashboard.png",
+  "https://raw.githubusercontent.com/Ashutosh9-pan/Clinevo-smart-inbox-assistant/main/docs/screenshots/literature-screening-overview.png"
+);
+
+// Add polished local thumbnails to Selected Work projects that previously had no image.
+if (!page.includes('image: "/project-thumbnails/taskflow.svg"')) {
+  page = page.replace(
+    /(title: "TaskFlow",[\s\S]*?symbol: "TF",)(\s*\n)/,
+    '$1\n    image: "/project-thumbnails/taskflow.svg",$2'
+  );
+}
+if (!page.includes('image: "/project-thumbnails/smart-waste-monitoring.svg"')) {
+  page = page.replace(
+    /(title: "Smart Waste Monitoring",[\s\S]*?symbol: "WM",)(\s*\n)/,
+    '$1\n    image: "/project-thumbnails/smart-waste-monitoring.svg",$2'
+  );
+}
+
+// Keep Smart Waste Monitoring as the final item in Selected Work.
+const projectsStart = page.indexOf("const otherProjects = [");
+const projectsEnd = page.indexOf("\n];", projectsStart);
+if (projectsStart !== -1 && projectsEnd !== -1) {
+  const projectsBlock = page.slice(projectsStart, projectsEnd);
+  const smartMatch = projectsBlock.match(
+    /\n\s*(\{[\s\S]*?title: "Smart Waste Monitoring",[\s\S]*?\n\s*\},)\s*/
+  );
+  if (smartMatch) {
+    const withoutSmart = projectsBlock.replace(smartMatch[0], "\n");
+    const reordered = `${withoutSmart}\n  ${smartMatch[1].trim()}\n`;
+    page = page.slice(0, projectsStart) + reordered + page.slice(projectsEnd);
+  }
+}
+
 // Keep Selected Work cards visually consistent while preserving the complete screenshot.
 page = page.replaceAll(
   'className="project-card" key={project.title}',
