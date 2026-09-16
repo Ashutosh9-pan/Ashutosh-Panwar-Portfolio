@@ -1,7 +1,13 @@
 import fs from "node:fs";
 import path from "node:path";
+import { execFileSync } from "node:child_process";
 
 const file = path.join(process.cwd(), "app", "page.tsx");
+
+// Apply the portfolio/project/journey/certification sync before the profile copy pass.
+const portfolioUpdater = path.join(process.cwd(), "scripts", "build-portfolio-final.mjs");
+execFileSync(process.execPath, [portfolioUpdater], { stdio: "inherit" });
+
 let page = fs.readFileSync(file, "utf8");
 
 const skillsStart = page.indexOf("const skillGroups = [");
@@ -19,11 +25,11 @@ if (skillsStart !== -1 && skillsEnd !== -1) {
   },
   {
     label: "Web & Backend",
-    skills: ["HTML5", "CSS3", "React", "Next.js", "Node.js", "Express.js", "Spring Boot", "REST APIs"],
+    skills: ["HTML5", "CSS3", "React", "Next.js", "TypeScript", "Node.js", "Express.js", "Spring Boot", "REST APIs", "JWT", "RBAC"],
   },
   {
     label: "Android & Cloud",
-    skills: ["Android Development", "XML", "Firebase", "Material Design", "Vite", "Redux Toolkit"],
+    skills: ["Android Development", "XML", "Firebase", "SQLite", "Material Design", "Vite", "Redux Toolkit"],
   },
   {
     label: "Databases & Tools",
@@ -31,7 +37,7 @@ if (skillsStart !== -1 && skillsEnd !== -1) {
   },
   {
     label: "Engineering",
-    skills: ["Data Structures", "OOP", "Problem Solving", "Debugging", "File Handling", "Responsive UI", "API Integration", "Testing"],
+    skills: ["Data Structures", "OOP", "CRUD", "Problem Solving", "Debugging", "Testing", "API Integration", "Responsive UI"],
   },
 ];`;
   page = page.slice(0, skillsStart) + skills + page.slice(skillsEnd + 3);
@@ -47,6 +53,11 @@ if (aboutMarker !== -1) {
     page = page.slice(0, openingEnd) + professionalAbout + page.slice(paragraphEnd);
   }
 }
+
+// Keep public profile links aligned with the latest resume.
+const linkedinUrl = "https://www.linkedin.com/in/ashutosh-panwar-5192951b8/";
+page = page.replace(/https?:\\/\\/(?:www\\.)?linkedin\\.com\\/in\\/[^"'\\s<)]+/gi, linkedinUrl);
+page = page.replace(/(?:www\\.)?linkedin\\.com\\/in\\/[^"'\\s<)]+/gi, linkedinUrl);
 
 fs.writeFileSync(file, page, "utf8");
 console.log("Profile content updated safely.");
