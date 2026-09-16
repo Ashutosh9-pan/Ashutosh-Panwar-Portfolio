@@ -3,42 +3,26 @@ import path from "node:path";
 import { execFileSync } from "node:child_process";
 
 const file = path.join(process.cwd(), "app", "page.tsx");
-
-// Apply the portfolio/project/journey/certification sync before the profile copy pass.
 const portfolioUpdater = path.join(process.cwd(), "scripts", "build-portfolio-final.mjs");
+
+// Preserve ${project.*} expressions inside the generated TSX template before executing it.
+let updater = fs.readFileSync(portfolioUpdater, "utf8");
+updater = updater.replaceAll("${project.", "\\${project.");
+fs.writeFileSync(portfolioUpdater, updater, "utf8");
 execFileSync(process.execPath, [portfolioUpdater], { stdio: "inherit" });
 
 let page = fs.readFileSync(file, "utf8");
 
 const skillsStart = page.indexOf("const skillGroups = [");
 const skillsEnd = skillsStart === -1 ? -1 : page.indexOf("\n];", skillsStart);
-
 if (skillsStart !== -1 && skillsEnd !== -1) {
   const skills = `const skillGroups = [
-  {
-    label: "AI, ML & Data",
-    skills: ["Python", "Generative AI", "LLM & RAG", "Machine Learning", "scikit-learn", "NLP", "Pandas", "NumPy", "Data Analytics", "Data Visualization"],
-  },
-  {
-    label: "Languages",
-    skills: ["Java", "Python", "JavaScript", "C", "C++", "C#", "SQL", "Kotlin"],
-  },
-  {
-    label: "Web & Backend",
-    skills: ["HTML5", "CSS3", "React", "Next.js", "TypeScript", "Node.js", "Express.js", "Spring Boot", "REST APIs", "JWT", "RBAC"],
-  },
-  {
-    label: "Android & Cloud",
-    skills: ["Android Development", "XML", "Firebase", "SQLite", "Material Design", "Vite", "Redux Toolkit"],
-  },
-  {
-    label: "Databases & Tools",
-    skills: ["MySQL", "MongoDB", "PostgreSQL", "Git", "GitHub", "VS Code", "Android Studio", "Postman", "Swagger"],
-  },
-  {
-    label: "Engineering",
-    skills: ["Data Structures", "OOP", "CRUD", "Problem Solving", "Debugging", "Testing", "API Integration", "Responsive UI"],
-  },
+  { label: "AI, ML & Data", skills: ["Python", "Generative AI", "LLM & RAG", "Machine Learning", "scikit-learn", "NLP", "Pandas", "NumPy", "Data Analytics", "Data Visualization"] },
+  { label: "Languages", skills: ["Java", "Python", "JavaScript", "C", "C++", "C#", "SQL", "Kotlin"] },
+  { label: "Web & Backend", skills: ["HTML5", "CSS3", "React", "Next.js", "TypeScript", "Node.js", "Express.js", "Spring Boot", "REST APIs", "JWT", "RBAC"] },
+  { label: "Android & Cloud", skills: ["Android Development", "XML", "Firebase", "SQLite", "Material Design", "Vite", "Redux Toolkit"] },
+  { label: "Databases & Tools", skills: ["MySQL", "MongoDB", "PostgreSQL", "Git", "GitHub", "VS Code", "Android Studio", "Postman", "Swagger"] },
+  { label: "Engineering", skills: ["Data Structures", "OOP", "CRUD", "Problem Solving", "Debugging", "Testing", "API Integration", "Responsive UI"] },
 ];`;
   page = page.slice(0, skillsStart) + skills + page.slice(skillsEnd + 3);
 }
@@ -54,9 +38,9 @@ if (aboutMarker !== -1) {
   }
 }
 
-// Keep public profile links aligned with the latest resume.
 const linkedinUrl = "https://www.linkedin.com/in/ashutosh-panwar-5192951b8/";
-page = page.replace("https://www.linkedin.com/in/ashutosh-panwar-5192951b8", linkedinUrl);
+page = page.replace(/https?:\/\/(?:www\.)?linkedin\.com\/in\/[^"'\s<)]+/gi, linkedinUrl);
+page = page.replace(/(?:www\.)?linkedin\.com\/in\/[^"'\s<)]+/gi, linkedinUrl);
 
 fs.writeFileSync(file, page, "utf8");
 console.log("Profile content updated safely.");
