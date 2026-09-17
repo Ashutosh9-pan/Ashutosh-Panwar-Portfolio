@@ -69,8 +69,7 @@ page = page.replaceAll(
   'loading="lazy" style={{ width: "100%", height: "auto", objectFit: "contain", display: "block" }}',
   'loading="lazy" style={{ width: "100%", height: "100%", objectFit: "contain", display: "block" }}'
 );
-page = page.replace(/(<strong>)\d+(<\/strong>\s*<span>\s*APPLIED\s*<br\s*\/?>\s*PROJECTS)/i, "$15$2");
-page = page.replace(/(<strong>)\d+(<\/strong>\s*<span>\s*PROFESSIONAL\s*<br\s*\/?>\s*CERTIFICATIONS)/i, "$19$2");
+
 
 fs.writeFileSync(pagePath, page, "utf8");
 fs.rmSync(tempPath, { force: true });
