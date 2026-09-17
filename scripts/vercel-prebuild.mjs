@@ -62,10 +62,6 @@ if (projectsStart !== -1 && projectsEnd !== -1) {
 }
 
 page = page.replaceAll(
-  'className="project-card" key={project.title}',
-  'className="project-card" key={project.title} style={{ minHeight: 610 }}'
-);
-page = page.replaceAll(
   'style={{ margin: "-24px -24px 22px", overflow: "hidden", borderRadius: "20px 20px 0 0", background: "#e8eaf0" }}',
   'style={{ margin: "-24px -24px 22px", height: 300, overflow: "hidden", borderRadius: "20px 20px 0 0", background: "#e8eaf0", display: "flex", alignItems: "center", justifyContent: "center" }}'
 );

@@ -11,100 +11,23 @@ const campusResolveImages = {
 };
 
 const skillGroups = [
-  {
-    label: "AI, ML & Data",
-    skills: [
-      "Python",
-      "Generative AI",
-      "LLM & RAG",
-      "Machine Learning",
-      "scikit-learn",
-      "NLP",
-      "Pandas",
-      "NumPy",
-      "Data Analytics",
-      "Data Visualization",
-    ],
-  },
-  {
-    label: "Languages",
-    skills: [
-      "Java",
-      "Python",
-      "JavaScript",
-      "C",
-      "C++",
-      "C#",
-      "SQL",
-      "Kotlin",
-    ],
-  },
-  {
-    label: "Web & Backend",
-    skills: [
-      "HTML5",
-      "CSS3",
-      "React",
-      "Next.js",
-      "TypeScript",
-      "Node.js",
-      "Express.js",
-      "Spring Boot",
-      "REST APIs",
-      "JWT",
-      "RBAC",
-    ],
-  },
-  {
-    label: "Android & Cloud",
-    skills: [
-      "Android Development",
-      "XML",
-      "Firebase",
-      "SQLite",
-      "Material Design",
-      "Vite",
-      "Redux Toolkit",
-    ],
-  },
-  {
-    label: "Databases & Tools",
-    skills: [
-      "MySQL",
-      "MongoDB",
-      "PostgreSQL",
-      "Git",
-      "GitHub",
-      "VS Code",
-      "Android Studio",
-      "Postman",
-      "Swagger",
-    ],
-  },
-  {
-    label: "Engineering",
-    skills: [
-      "Data Structures",
-      "OOP",
-      "Problem Solving",
-      "Debugging",
-      "File Handling",
-      "Responsive UI",
-      "API Integration",
-      "Testing",
-      "CRUD",
-    ],
-  },
+  { label: "AI, ML & Data", skills: ["Python", "Generative AI", "LLM & RAG", "Machine Learning", "scikit-learn", "NLP", "Pandas", "NumPy", "Data Analytics", "Data Visualization"] },
+  { label: "Languages", skills: ["Java", "Python", "JavaScript", "C", "C++", "C#", "SQL", "Kotlin"] },
+  { label: "Web & Backend", skills: ["HTML5", "CSS3", "React", "Next.js", "TypeScript", "Node.js", "Express.js", "Spring Boot", "REST APIs", "JWT", "RBAC"] },
+  { label: "Android & Cloud", skills: ["Android Development", "XML", "Firebase", "SQLite", "Material Design", "Vite", "Redux Toolkit"] },
+  { label: "Databases & Tools", skills: ["MySQL", "MongoDB", "PostgreSQL", "Git", "GitHub", "VS Code", "Android Studio", "Postman", "Swagger"] },
+  { label: "Engineering", skills: ["Data Structures", "OOP", "CRUD", "Problem Solving", "Debugging", "Testing", "API Integration", "Responsive UI"] },
 ];
 
 const otherProjects = [
+
   {
     number: "06",
     title: "TaskFlow",
     description: "A responsive task management application with add, edit, delete, complete, search, filter, sort, drag-and-drop reordering, due dates, priorities, progress tracking, light/dark theme, and localStorage persistence.",
     tags: ["JavaScript", "HTML5", "CSS3", "localStorage", "Responsive UI"],
     symbol: "TF",
-    image: "https://raw.githubusercontent.com/Ashutosh9-pan/week2-task-manager/main/screenshots/light-dashboard.png",
+    image: "https://raw.githubusercontent.com/Ashutosh9-pan/week2-task-manager/main/screenshots/light-dashboard.png",
     github: "https://github.com/Ashutosh9-pan/week2-task-manager",
     live: "https://ashutosh9-pan.github.io/week2-task-manager/",
   },
@@ -113,7 +36,7 @@ const otherProjects = [
     number: "07", title: "Clinevo Smart Inbox Assistant",
     description: "AI-powered healthcare shared inbox assistant for automated document processing, classification, extraction, review, and audit workflows.",
     tags: ["AI/ML", "Python", "Flask", "Angular"], symbol: "CI",
-    image: "https://raw.githubusercontent.com/Ashutosh9-pan/Clinevo-smart-inbox-assistant/main/docs/screenshots/dashboard.png",
+    image: "https://raw.githubusercontent.com/Ashutosh9-pan/Clinevo-smart-inbox-assistant/main/docs/screenshots/dashboard.png",
     github: "https://github.com/Ashutosh9-pan/Clinevo-smart-inbox-assistant", live: null, featured: true,
   },
   {
@@ -141,7 +64,7 @@ const otherProjects = [
     number: "11", title: "CalcPro",
     description: "Modern responsive web calculator with keyboard support, dark/light themes, and essential arithmetic operations.",
     tags: ["HTML5", "CSS3", "JavaScript", "Responsive UI"], symbol: "CP",
-    image: "https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/calcpro.svg",
+    image: "https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/calcpro.svg",
     github: "https://github.com/Ashutosh9-pan/CalcPro", live: null,
   },
   {
@@ -155,14 +78,14 @@ const otherProjects = [
     number: "13", title: "Library Management System",
     description: "Console-based Java library system with OOP, file persistence, borrowing and returns, due dates, fine calculation, search, and statistics.",
     tags: ["Java", "OOP", "File Handling", "CLI"], symbol: "LM",
-    image: "https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/library-management.svg",
+    image: "https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/library-management.svg",
     github: "https://github.com/Ashutosh9-pan/week3-library-system", live: null,
   },
   {
     number: "14", title: "Random Quote Generator",
     description: "Modern Android quote generator featuring categorized quotes, favorites, sharing, dark mode, and offline support.",
     tags: ["Java", "Android", "Material Design", "Offline App"], symbol: "RQ",
-    image: "https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/random-quote.svg",
+    image: "https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/random-quote.svg",
     github: "https://github.com/Ashutosh9-pan/CodeAlpha_RandomQuoteGenerator", live: null,
   },
   {
@@ -171,10 +94,11 @@ const otherProjects = [
     description: "A CCTV-assisted waste management concept that identifies actionable events and triggers timely notifications for faster response and cleaner shared spaces.",
     tags: ["Computer Vision", "Notifications", "Smart City"],
     symbol: "WM",
-    image: "/project-thumbnails/smart-waste-ai.svg",
+    image: "https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/smart-waste-ai.svg",
     github: null,
     live: null,
   },
+
 ];
 
 const certifications = [
@@ -250,7 +174,7 @@ export default function Home() {
           </div>
           <div className="hero-links" aria-label="Social links">
             <a href="https://github.com/Ashutosh9-pan" target="_blank" rel="noreferrer">GitHub ↗</a>
-            <a href="https://https://www.linkedin.com/in/ashutosh-panwar-5192951b8/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+            <a href="https://https://https://https://https://https://https://https://www.linkedin.com/in/ashutosh-panwar-5192951b8/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
             <span>Srinagar Garhwal, Uttarakhand</span>
           </div>
         </div>
@@ -268,8 +192,8 @@ export default function Home() {
       <section className="signal-strip" aria-label="Professional highlights">
         <div><strong>10+</strong><span>AI, ML &amp;<br />Data Skills</span></div>
         <div><strong>08</strong><span>Programming<br />Languages</span></div>
-        <div><strong>15</strong><span>Applied<br />Projects</span></div>
-        <div><strong>09</strong><span>Professional<br />Certifications</span></div>
+        <div><strong>5</strong><span>Applied<br />Projects</span></div>
+        <div><strong>9</strong><span>Professional<br />Certifications</span></div>
       </section>
 
       <section className="section about" id="about">
@@ -277,9 +201,7 @@ export default function Home() {
         <div className="about-layout">
           <h2>I turn structured thinking into <span>useful digital experiences.</span></h2>
           <div className="about-copy">
-            <p>
-              I&apos;m a B.Tech Computer Science &amp; Engineering graduate focused on building practical software across AI/ML, data analytics, full-stack web development, and Android. I enjoy turning real-world problems into reliable, user-focused products—from machine-learning workflows and REST APIs to responsive web applications and mobile experiences.
-            </p>
+            <p>I’m a B.Tech Computer Science & Engineering graduate focused on building practical software across AI/ML, data analytics, full-stack web development, and Android. I enjoy turning real-world problems into reliable, user-focused products—from machine-learning workflows and REST APIs to responsive web applications and mobile experiences. My toolkit includes Python, Java, SQL, JavaScript, Spring Boot, React, Node.js, Firebase, and modern AI technologies such as Generative AI, LLMs, and RAG. I’m continuously strengthening my engineering fundamentals while building and shipping projects that demonstrate clean problem solving, strong API integration, and production-minded development.</p>
             <p>
               My toolkit includes Python, Java, SQL, JavaScript, Spring Boot, React, Node.js, Firebase, and modern AI technologies such as Generative AI, LLMs, and RAG. I&apos;m continuously strengthening my engineering fundamentals while building and shipping projects that demonstrate clean problem solving, strong API integration, and production-minded development.
             </p>
@@ -532,7 +454,7 @@ export default function Home() {
       </section>
 
       <section className="section" aria-label="Featured major projects" style={{ padding: 0 }}>
-        {otherProjects.filter((project) => project.featured).map((project, index) => (
+        {(otherProjects as any[]).filter((project: any) => project.featured).map((project, index) => (
           <div key={project.title} style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", minHeight: "min(760px, 78vw)", background: index % 2 === 0 ? "#11152b" : "#f5f4fb", color: index % 2 === 0 ? "#fff" : "#11152b" }}>
             {index % 2 === 0 ? (
               <>
@@ -545,13 +467,13 @@ export default function Home() {
                   <div className="project-actions" style={{ marginTop: 30 }}><a className="button button-light" href={project.github ?? "#"} target="_blank" rel="noreferrer">View on GitHub <span>↗</span></a></div>
                 </div>
                 <div style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "clamp(24px, 4vw, 64px)", background: "#201d4c" }}>
-                  <img src={project.image} alt={project.title + " project screenshot"} style={{ width: "100%", height: "auto", objectFit: "contain", display: "block", borderRadius: 22, boxShadow: "0 24px 70px rgba(0,0,0,.28)" }} />
+                  <img src={(project as any).image} alt={project.title + " project screenshot"} style={{ width: "100%", height: "auto", objectFit: "contain", display: "block", borderRadius: 22, boxShadow: "0 24px 70px rgba(0,0,0,.28)" }} />
                 </div>
               </>
             ) : (
               <>
                 <div style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "clamp(24px, 4vw, 64px)", background: "#e9e7f5" }}>
-                  <img src={project.image} alt={project.title + " project screenshot"} style={{ width: "100%", height: "auto", objectFit: "contain", display: "block", borderRadius: 22, boxShadow: "0 24px 70px rgba(22,20,55,.16)" }} />
+                  <img src={(project as any).image} alt={project.title + " project screenshot"} style={{ width: "100%", height: "auto", objectFit: "contain", display: "block", borderRadius: 22, boxShadow: "0 24px 70px rgba(22,20,55,.16)" }} />
                 </div>
                 <div style={{ padding: "clamp(48px, 7vw, 110px)", display: "flex", flexDirection: "column", justifyContent: "center" }}>
                   <div className="section-kicker">03 / Featured project</div>
@@ -576,11 +498,11 @@ export default function Home() {
           <p>Academic and applied concepts designed around real users, clear workflows, and measurable outcomes.</p>
         </div>
         <div className="project-card-grid">
-          {otherProjects.filter((project) => !project.featured).map((project) => (
+          {(otherProjects as any[]).filter((project: any) => !project.featured).map((project) => (
             <article className="project-card" key={project.title}>
-              {project.image && (
-                <div style={{ margin: "-24px -24px 22px", overflow: "hidden", borderRadius: "20px 20px 0 0", background: "#e8eaf0" }}>
-                  <img src={project.image} alt={project.title + " preview"} loading="lazy" style={{ width: "100%", height: "auto", objectFit: "contain", display: "block" }} />
+              {(project as any).image && (
+                <div style={{ margin: "-24px -24px 22px", height: 300, overflow: "hidden", borderRadius: "20px 20px 0 0", background: "#e8eaf0", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <img src={(project as any).image} alt={project.title + " preview"} loading="lazy" style={{ width: "100%", height: "100%", objectFit: "contain", display: "block" }} />
                 </div>
               )}
               <div className="project-card-top">
@@ -590,7 +512,7 @@ export default function Home() {
               <h3>{project.title}</h3>
               <p>{project.description}</p>
               <div className="project-tags dark-tags">
-                {project.tags.map((tag) => <span key={tag}>{tag}</span>)}
+                {project.tags.map((tag: string) => <span key={tag}>{tag}</span>)}
               </div>
               {(project.github || project.live) && (
                 <div className="project-actions">
@@ -712,7 +634,7 @@ export default function Home() {
 
               <a
                 className="modern-contact-info-card"
-                href="https://www.linkedin.com/in/ashutosh-panwar-5192951b8/"
+                href="https://https://https://https://https://https://https://www.linkedin.com/in/ashutosh-panwar-5192951b8/"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -721,7 +643,7 @@ export default function Home() {
                 </div>
                 <div>
                   <strong>LinkedIn</strong>
-                  <span>linkedin.com/in/ashutosh-panwar</span>
+                  <span>https://https://https://https://https://https://www.linkedin.com/in/ashutosh-panwar-5192951b8/</span>
                 </div>
                 <b aria-hidden="true">↗</b>
               </a>
