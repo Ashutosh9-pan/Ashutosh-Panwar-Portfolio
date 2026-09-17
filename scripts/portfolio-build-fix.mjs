@@ -76,8 +76,6 @@ page = page.replaceAll(
 );
 
 // Portfolio counters: 15 total projects and 9 professional certifications.
-page = page.replace(/(<strong>)\d+(<\/strong>\s*<span>\s*APPLIED\s*<br\s*\/?>\s*PROJECTS)/i, "$115$2");
-page = page.replace(/(<strong>)\d+(<\/strong>\s*<span>\s*PROFESSIONAL\s*<br\s*\/?>\s*CERTIFICATIONS)/i, "$19$2");
 
 fs.writeFileSync(pagePath, page, "utf8");
 fs.rmSync(tempPath, { force: true });
