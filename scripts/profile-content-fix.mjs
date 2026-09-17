@@ -3,11 +3,6 @@ import path from "node:path";
 
 const file = path.join(process.cwd(), "app", "page.tsx");
 
-// The Vercel prebuild already runs build-portfolio-final.mjs through
-// scripts/vercel-prebuild.mjs, which safely protects its template literals.
-// Do not execute the updater a second time here: doing so evaluates generated
-// TSX placeholders such as ${project.*} / ${tag} during the build.
-
 let page = fs.readFileSync(file, "utf8");
 
 const skillsStart = page.indexOf("const skillGroups = [");
