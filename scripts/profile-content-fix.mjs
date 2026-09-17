@@ -32,7 +32,6 @@ if (aboutMarker !== -1) {
 
 const linkedinUrl = "https://www.linkedin.com/in/ashutosh-panwar-5192951b8/";
 page = page.replace(/https?:\/\/(?:www\.)?linkedin\.com\/in\/[^"'\s<)]+/gi, linkedinUrl);
-page = page.replace(/(?:www\.)?linkedin\.com\/in\/[^"'\s<)]+/gi, linkedinUrl);
 
 fs.writeFileSync(file, page, "utf8");
 console.log("Profile content updated safely.");

@@ -30,6 +30,7 @@ const otherProjects = [
     image: "https://raw.githubusercontent.com/Ashutosh9-pan/week2-task-manager/main/screenshots/light-dashboard.png",
 
 
+
     github: "https://github.com/Ashutosh9-pan/week2-task-manager",
     live: "https://ashutosh9-pan.github.io/week2-task-manager/",
   },
@@ -39,6 +40,7 @@ const otherProjects = [
     description: "AI-powered healthcare shared inbox assistant for automated document processing, classification, extraction, review, and audit workflows.",
     tags: ["AI/ML", "Python", "Flask", "Angular"], symbol: "CI",
     image: "https://raw.githubusercontent.com/Ashutosh9-pan/Clinevo-smart-inbox-assistant/main/docs/screenshots/dashboard.png",
+
 
 
     github: "https://github.com/Ashutosh9-pan/Clinevo-smart-inbox-assistant", live: null, featured: true,
@@ -71,6 +73,7 @@ const otherProjects = [
     image: "https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/calcpro.svg",
 
 
+
     github: "https://github.com/Ashutosh9-pan/CalcPro", live: null,
   },
   {
@@ -87,6 +90,7 @@ const otherProjects = [
     image: "https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/library-management.svg",
 
 
+
     github: "https://github.com/Ashutosh9-pan/week3-library-system", live: null,
   },
   {
@@ -94,6 +98,7 @@ const otherProjects = [
     description: "Modern Android quote generator featuring categorized quotes, favorites, sharing, dark mode, and offline support.",
     tags: ["Java", "Android", "Material Design", "Offline App"], symbol: "RQ",
     image: "https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/random-quote.svg",
+
 
 
     github: "https://github.com/Ashutosh9-pan/CodeAlpha_RandomQuoteGenerator", live: null,
@@ -105,6 +110,7 @@ const otherProjects = [
     tags: ["Computer Vision", "Notifications", "Smart City"],
     symbol: "WM",
     image: "https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/smart-waste-ai.svg",
+
 
 
     github: null,
@@ -186,7 +192,7 @@ export default function Home() {
           </div>
           <div className="hero-links" aria-label="Social links">
             <a href="https://github.com/Ashutosh9-pan" target="_blank" rel="noreferrer">GitHub ↗</a>
-            <a href="https://https://https://www.linkedin.com/in/ashutosh-panwar-5192951b8/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+            <a href="https://https://www.linkedin.com/in/ashutosh-panwar-5192951b8/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
             <span>Srinagar Garhwal, Uttarakhand</span>
           </div>
         </div>
@@ -646,7 +652,7 @@ export default function Home() {
 
               <a
                 className="modern-contact-info-card"
-                href="https://https://https://www.linkedin.com/in/ashutosh-panwar-5192951b8/"
+                href="https://https://www.linkedin.com/in/ashutosh-panwar-5192951b8/"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -655,7 +661,7 @@ export default function Home() {
                 </div>
                 <div>
                   <strong>LinkedIn</strong>
-                  <span>https://https://https://www.linkedin.com/in/ashutosh-panwar-5192951b8/</span>
+                  <span>https://https://www.linkedin.com/in/ashutosh-panwar-5192951b8/</span>
                 </div>
                 <b aria-hidden="true">↗</b>
               </a>
