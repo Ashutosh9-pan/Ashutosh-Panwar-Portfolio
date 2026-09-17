@@ -179,8 +179,8 @@ if (certStart !== -1 && certEnd !== -1 && !text.includes('["AI Tools & Claude Wo
 
 // Sync the portfolio's public contact/profile links with the current resume.
 const linkedinUrl = "https://www.linkedin.com/in/ashutosh-panwar-5192951b8/";
-text = text.replace(/https?:\\/\\/(?:www\\.)?linkedin\\.com\\/in\\/[^"'\\s<)]+/gi, linkedinUrl);
-text = text.replace(/(?:www\\.)?linkedin\\.com\\/in\\/[^"'\\s<)]+/gi, linkedinUrl);
+text = text.replace(/https?:\/\/(?:www\.)?linkedin\.com\/in\/[^"'\s<)]+/gi, linkedinUrl);
+text = text.replace(/(?:www\.)?linkedin\.com\/in\/[^"'\s<)]+/gi, linkedinUrl);
 
 fs.writeFileSync(file, text, "utf8");
 console.log("Portfolio build updater completed.");

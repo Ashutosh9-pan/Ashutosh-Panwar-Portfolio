@@ -12,16 +12,88 @@ const campusResolveImages = {
 
 const skillGroups = [
   {
-    label: "AI & Data",
-    skills: ["Applied AI/ML", "Generative AI", "LLM & RAG", "MySQL", "MongoDB"],
+    label: "AI, ML & Data",
+    skills: [
+      "Python",
+      "Generative AI",
+      "LLM & RAG",
+      "Machine Learning",
+      "scikit-learn",
+      "NLP",
+      "Pandas",
+      "NumPy",
+      "Data Analytics",
+      "Data Visualization",
+    ],
   },
   {
     label: "Languages",
-    skills: ["Python", "Java", "C", "C++", "JavaScript", "C#"],
+    skills: [
+      "Java",
+      "Python",
+      "JavaScript",
+      "C",
+      "C++",
+      "C#",
+      "SQL",
+      "Kotlin",
+    ],
+  },
+  {
+    label: "Web & Backend",
+    skills: [
+      "HTML5",
+      "CSS3",
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "Express.js",
+      "Spring Boot",
+      "REST APIs",
+      "JWT",
+      "RBAC",
+    ],
+  },
+  {
+    label: "Android & Cloud",
+    skills: [
+      "Android Development",
+      "XML",
+      "Firebase",
+      "SQLite",
+      "Material Design",
+      "Vite",
+      "Redux Toolkit",
+    ],
+  },
+  {
+    label: "Databases & Tools",
+    skills: [
+      "MySQL",
+      "MongoDB",
+      "PostgreSQL",
+      "Git",
+      "GitHub",
+      "VS Code",
+      "Android Studio",
+      "Postman",
+      "Swagger",
+    ],
   },
   {
     label: "Engineering",
-    skills: ["Data Structures", "OOP", "Firebase", "Git", "Android", "Debugging"],
+    skills: [
+      "Data Structures",
+      "OOP",
+      "Problem Solving",
+      "Debugging",
+      "File Handling",
+      "Responsive UI",
+      "API Integration",
+      "Testing",
+      "CRUD",
+    ],
   },
 ];
 
@@ -32,25 +104,88 @@ const otherProjects = [
     description: "A responsive task management application with add, edit, delete, complete, search, filter, sort, drag-and-drop reordering, due dates, priorities, progress tracking, light/dark theme, and localStorage persistence.",
     tags: ["JavaScript", "HTML5", "CSS3", "localStorage", "Responsive UI"],
     symbol: "TF",
+    image: "https://raw.githubusercontent.com/Ashutosh9-pan/week2-task-manager/main/screenshots/light-dashboard.png",
     github: "https://github.com/Ashutosh9-pan/week2-task-manager",
     live: "https://ashutosh9-pan.github.io/week2-task-manager/",
   },
+  
   {
-    number: "07",
+    number: "07", title: "Clinevo Smart Inbox Assistant",
+    description: "AI-powered healthcare shared inbox assistant for automated document processing, classification, extraction, review, and audit workflows.",
+    tags: ["AI/ML", "Python", "Flask", "Angular"], symbol: "CI",
+    image: "https://raw.githubusercontent.com/Ashutosh9-pan/Clinevo-smart-inbox-assistant/main/docs/screenshots/dashboard.png",
+    github: "https://github.com/Ashutosh9-pan/Clinevo-smart-inbox-assistant", live: null, featured: true,
+  },
+  {
+    number: "08", title: "RazorGuard-AI",
+    description: "Payment risk management system using machine learning to identify transaction risk and surface explainable signals.",
+    tags: ["Machine Learning", "Python", "Random Forest", "Flask"], symbol: "RG",
+    image: "https://raw.githubusercontent.com/Ashutosh9-pan/RazorGuard-AI/main/assets/screenshots/dashboard.png",
+    github: "https://github.com/Ashutosh9-pan/RazorGuard-AI", live: null, featured: true,
+  },
+  {
+    number: "09", title: "Spring Blog API",
+    description: "Production-style REST API with Spring Boot, validation, pagination, Swagger documentation, persistence, and automated tests.",
+    tags: ["Java 21", "Spring Boot", "REST API", "PostgreSQL"], symbol: "SB",
+    image: "https://raw.githubusercontent.com/Ashutosh9-pan/week6-spring-blog-api/main/docs/screenshots/swagger-ui.png",
+    github: "https://github.com/Ashutosh9-pan/week6-spring-blog-api", live: null, featured: true,
+  },
+  {
+    number: "10", title: "NovaCart E-commerce Frontend",
+    description: "Modern e-commerce frontend with responsive UI, product browsing, filters, cart, wishlist, checkout, Redux Toolkit, and localStorage.",
+    tags: ["React", "Redux Toolkit", "Vite", "JavaScript"], symbol: "NC",
+    image: "https://raw.githubusercontent.com/Ashutosh9-pan/novacart-ecommerce-frontend/main/screenshots/01-home.png",
+    github: "https://github.com/Ashutosh9-pan/novacart-ecommerce-frontend", live: null, featured: true,
+  },
+  {
+    number: "11", title: "CalcPro",
+    description: "Modern responsive web calculator with keyboard support, dark/light themes, and essential arithmetic operations.",
+    tags: ["HTML5", "CSS3", "JavaScript", "Responsive UI"], symbol: "CP",
+    image: "https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/calcpro.svg",
+    github: "https://github.com/Ashutosh9-pan/CalcPro", live: null,
+  },
+  {
+    number: "12", title: "Weather App",
+    description: "Responsive weather application with real-time weather, forecasts, city search, favourites, geolocation, temperature conversion, and caching.",
+    tags: ["JavaScript", "OpenWeather API", "Geolocation", "localStorage"], symbol: "WA",
+    image: "https://raw.githubusercontent.com/Ashutosh9-pan/week4-weather-app/main/screenshots/01-home-page.png",
+    github: "https://github.com/Ashutosh9-pan/week4-weather-app", live: null,
+  },
+  {
+    number: "13", title: "Library Management System",
+    description: "Console-based Java library system with OOP, file persistence, borrowing and returns, due dates, fine calculation, search, and statistics.",
+    tags: ["Java", "OOP", "File Handling", "CLI"], symbol: "LM",
+    image: "https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/library-management.svg",
+    github: "https://github.com/Ashutosh9-pan/week3-library-system", live: null,
+  },
+  {
+    number: "14", title: "Random Quote Generator",
+    description: "Modern Android quote generator featuring categorized quotes, favorites, sharing, dark mode, and offline support.",
+    tags: ["Java", "Android", "Material Design", "Offline App"], symbol: "RQ",
+    image: "https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/random-quote.svg",
+    github: "https://github.com/Ashutosh9-pan/CodeAlpha_RandomQuoteGenerator", live: null,
+  },
+  {
+    number: "15",
     title: "Smart Waste Monitoring",
     description: "A CCTV-assisted waste management concept that identifies actionable events and triggers timely notifications for faster response and cleaner shared spaces.",
     tags: ["Computer Vision", "Notifications", "Smart City"],
     symbol: "WM",
+    image: "/project-thumbnails/smart-waste-ai.svg",
     github: null,
     live: null,
   },
 ];
 
 const certifications = [
+  ["AI Tools & Claude Workshop", "Be10x"],
+  ["Artificial Intelligence Internship", "CodeAlpha"],
+  ["Data Analytics Professional Certificate", "Unified Mentor"],
   ["Generative AI, LLM & RAG", "GeeksforGeeks Skill Up"],
   ["Full Stack Web Development", "GeeksforGeeks Skill Up"],
-  ["Java Programming", "SLOG Solutions"],
-  ["C++ Programming", "SLOG Solutions"],
+  ["C Programming for Beginners – Master the C Language", "Udemy"],
+  ["C++ Training Program", "SLOG Solutions Pvt. Ltd."],
+  ["Java Training Program", "SLOG Solutions Pvt. Ltd."],
   ["C# Programming", "Udemy"],
 ];
 
@@ -115,7 +250,7 @@ export default function Home() {
           </div>
           <div className="hero-links" aria-label="Social links">
             <a href="https://github.com/Ashutosh9-pan" target="_blank" rel="noreferrer">GitHub ↗</a>
-            <a href="https://www.linkedin.com/in/ashutosh-panwar-5192951b8" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+            <a href="https://https://www.linkedin.com/in/ashutosh-panwar-5192951b8/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
             <span>Srinagar Garhwal, Uttarakhand</span>
           </div>
         </div>
@@ -131,10 +266,10 @@ export default function Home() {
       </section>
 
       <section className="signal-strip" aria-label="Professional highlights">
-        <div><strong>01</strong><span>AI &amp; ML<br />Focus</span></div>
-        <div><strong>05+</strong><span>Programming<br />Languages</span></div>
-        <div><strong>07</strong><span>Applied<br />Projects</span></div>
-        <div><strong>05</strong><span>Professional<br />Certifications</span></div>
+        <div><strong>10+</strong><span>AI, ML &amp;<br />Data Skills</span></div>
+        <div><strong>08</strong><span>Programming<br />Languages</span></div>
+        <div><strong>15</strong><span>Applied<br />Projects</span></div>
+        <div><strong>09</strong><span>Professional<br />Certifications</span></div>
       </section>
 
       <section className="section about" id="about">
@@ -143,10 +278,10 @@ export default function Home() {
           <h2>I turn structured thinking into <span>useful digital experiences.</span></h2>
           <div className="about-copy">
             <p>
-              I&apos;m a Computer Science Engineering graduate with a foundation in Python, data structures, databases, and full-stack development. My current focus is applied AI—understanding how intelligent systems can solve real, everyday problems.
+              I&apos;m a B.Tech Computer Science &amp; Engineering graduate focused on building practical software across AI/ML, data analytics, full-stack web development, and Android. I enjoy turning real-world problems into reliable, user-focused products—from machine-learning workflows and REST APIs to responsive web applications and mobile experiences.
             </p>
             <p>
-              From transitioning from Civil Engineering into Computer Science to independently building end-to-end projects, I bring adaptability, ownership, and a practical approach to every challenge.
+              My toolkit includes Python, Java, SQL, JavaScript, Spring Boot, React, Node.js, Firebase, and modern AI technologies such as Generative AI, LLMs, and RAG. I&apos;m continuously strengthening my engineering fundamentals while building and shipping projects that demonstrate clean problem solving, strong API integration, and production-minded development.
             </p>
             <a className="text-link" href="#journey">More about my journey <span>→</span></a>
           </div>
@@ -396,6 +531,42 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section" aria-label="Featured major projects" style={{ padding: 0 }}>
+        {otherProjects.filter((project) => project.featured).map((project, index) => (
+          <div key={project.title} style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", minHeight: "min(760px, 78vw)", background: index % 2 === 0 ? "#11152b" : "#f5f4fb", color: index % 2 === 0 ? "#fff" : "#11152b" }}>
+            {index % 2 === 0 ? (
+              <>
+                <div style={{ padding: "clamp(48px, 7vw, 110px)", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+                  <div className="section-kicker light">03 / Featured project</div>
+                  <p className="project-number">{project.number}</p>
+                  <h2 style={{ fontSize: "clamp(46px, 6vw, 88px)", lineHeight: 0.98, margin: "16px 0" }}>{project.title}</h2>
+                  <h3 style={{ fontSize: "clamp(22px, 2.2vw, 34px)", fontWeight: 500, marginBottom: 24 }}>{project.description}</h3>
+                  <div className="project-tags">{project.tags.map((tag: string) => <span key={tag}>{tag}</span>)}</div>
+                  <div className="project-actions" style={{ marginTop: 30 }}><a className="button button-light" href={project.github ?? "#"} target="_blank" rel="noreferrer">View on GitHub <span>↗</span></a></div>
+                </div>
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "clamp(24px, 4vw, 64px)", background: "#201d4c" }}>
+                  <img src={project.image} alt={project.title + " project screenshot"} style={{ width: "100%", height: "auto", objectFit: "contain", display: "block", borderRadius: 22, boxShadow: "0 24px 70px rgba(0,0,0,.28)" }} />
+                </div>
+              </>
+            ) : (
+              <>
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "clamp(24px, 4vw, 64px)", background: "#e9e7f5" }}>
+                  <img src={project.image} alt={project.title + " project screenshot"} style={{ width: "100%", height: "auto", objectFit: "contain", display: "block", borderRadius: 22, boxShadow: "0 24px 70px rgba(22,20,55,.16)" }} />
+                </div>
+                <div style={{ padding: "clamp(48px, 7vw, 110px)", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+                  <div className="section-kicker">03 / Featured project</div>
+                  <p className="project-number">{project.number}</p>
+                  <h2 style={{ fontSize: "clamp(46px, 6vw, 88px)", lineHeight: 0.98, margin: "16px 0" }}>{project.title}</h2>
+                  <h3 style={{ fontSize: "clamp(22px, 2.2vw, 34px)", fontWeight: 500, marginBottom: 24 }}>{project.description}</h3>
+                  <div className="project-tags">{project.tags.map((tag: string) => <span key={tag}>{tag}</span>)}</div>
+                  <div className="project-actions" style={{ marginTop: 30 }}><a className="button button-primary" href={project.github ?? "#"} target="_blank" rel="noreferrer">View on GitHub <span>↗</span></a></div>
+                </div>
+              </>
+            )}
+          </div>
+        ))}
+      </section>
+
       <section className="section more-projects">
         <div className="section-heading compact-heading">
           <div>
@@ -405,8 +576,13 @@ export default function Home() {
           <p>Academic and applied concepts designed around real users, clear workflows, and measurable outcomes.</p>
         </div>
         <div className="project-card-grid">
-          {otherProjects.map((project) => (
+          {otherProjects.filter((project) => !project.featured).map((project) => (
             <article className="project-card" key={project.title}>
+              {project.image && (
+                <div style={{ margin: "-24px -24px 22px", overflow: "hidden", borderRadius: "20px 20px 0 0", background: "#e8eaf0" }}>
+                  <img src={project.image} alt={project.title + " preview"} loading="lazy" style={{ width: "100%", height: "auto", objectFit: "contain", display: "block" }} />
+                </div>
+              )}
               <div className="project-card-top">
                 <span className="project-symbol">{project.symbol}</span>
                 <span className="project-card-number">{project.number}</span>
@@ -419,7 +595,7 @@ export default function Home() {
               {(project.github || project.live) && (
                 <div className="project-actions">
                   {project.github && (
-                    <a className="project-card-link" href={project.github} target="_blank" rel="noreferrer">
+                    <a className="project-card-link" href={project.github ?? "#"} target="_blank" rel="noreferrer">
                       View on GitHub <span>↗</span>
                     </a>
                   )}
@@ -443,12 +619,24 @@ export default function Home() {
         </div>
         <div className="timeline">
           <article className="timeline-item current">
-            <span className="timeline-date">Current</span>
-            <div><p>Experience</p><h3>Artificial Intelligence Intern</h3><span>CodeAlpha · Applied AI/ML</span></div>
+            <span className="timeline-date">Aug 2026 — Present</span>
+            <div><p>Experience</p><h3>Full Stack Java Developer Intern</h3><span>The Developers Arena · Java, Spring Boot &amp; Full-Stack Development</span></div>
+          </article>
+          <article className="timeline-item current">
+            <span className="timeline-date">Aug 2026 — Present</span>
+            <div><p>Experience</p><h3>Web Development and Designing Intern</h3><span>Oasis Infobyte · Web Development &amp; Designing</span></div>
           </article>
           <article className="timeline-item">
-            <span className="timeline-date">2023—2026</span>
-            <div><p>Education</p><h3>B.Tech · Computer Science &amp; Engineering</h3><span>Institute of Technology, Gopeshwar · Final result awaited</span></div>
+            <span className="timeline-date">Aug 2026</span>
+            <div><p>Experience</p><h3>Artificial Intelligence Intern</h3><span>CodeAlpha · Applied AI/ML &amp; Android Development</span></div>
+          </article>
+          <article className="timeline-item">
+            <span className="timeline-date">Jul 2024 — Aug 2024</span>
+            <div><p>Experience</p><h3>Programming Trainee</h3><span>SLOG Solutions Pvt. Ltd. · C++ &amp; Java Programming</span></div>
+          </article>
+          <article className="timeline-item">
+            <span className="timeline-date">2023 — 2026</span>
+            <div><p>Education</p><h3>B.Tech · Computer Science &amp; Engineering</h3><span>Institute of Technology, Gopeshwar · Graduate</span></div>
           </article>
           <article className="timeline-item">
             <span className="timeline-date">Completed 2023</span>
@@ -474,16 +662,742 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="contact" id="contact">
-        <div className="contact-kicker">Have a project, internship, or opportunity in mind?</div>
-        <h2>Let&apos;s build something<br /><span>meaningful.</span></h2>
-        <p>I&apos;m open to AI/ML internships, entry-level software roles, and thoughtful collaborations.</p>
-        <div className="contact-actions">
-          <a className="button button-light" href="mailto:ashutoshpanwar07@gmail.com">Email me <span>↗</span></a>
-          <a className="button contact-outline" href="https://www.linkedin.com/in/ashutosh-panwar-5192951b8" target="_blank" rel="noreferrer">LinkedIn <span>↗</span></a>
+      <section className="modern-contact" id="contact">
+        <div className="modern-contact-orb modern-contact-orb-left" />
+        <div className="modern-contact-orb modern-contact-orb-right" />
+
+        <div className="modern-contact-shell">
+          <div className="modern-contact-intro">
+            <div className="modern-contact-kicker">07 / Contact</div>
+
+            <h2>
+              Let&apos;s build something
+              <br />
+              <span>meaningful.</span>
+            </h2>
+
+            <p className="modern-contact-description">
+              I&apos;m open to AI/ML opportunities, full-stack roles, freelance
+              projects, and collaborative ideas. Let&apos;s connect and turn ideas
+              into impact.
+            </p>
+
+            <div className="modern-contact-info-grid">
+              <a
+                className="modern-contact-info-card"
+                href="mailto:ashutoshpanwar07@gmail.com"
+              >
+                <div className="modern-contact-icon modern-contact-icon-email">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M4 5h16c1.1 0 2 .9 2 2v10c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V7c0-1.1.9-2 2-2Z"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                    />
+                    <path
+                      d="m4 7 8 6 8-6"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <strong>Email</strong>
+                  <span>ashutoshpanwar07@gmail.com</span>
+                </div>
+                <b aria-hidden="true">↗</b>
+              </a>
+
+              <a
+                className="modern-contact-info-card"
+                href="https://www.linkedin.com/in/ashutosh-panwar-5192951b8/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <div className="modern-contact-icon modern-contact-icon-linkedin">
+                  <span>in</span>
+                </div>
+                <div>
+                  <strong>LinkedIn</strong>
+                  <span>linkedin.com/in/ashutosh-panwar</span>
+                </div>
+                <b aria-hidden="true">↗</b>
+              </a>
+
+              <a
+                className="modern-contact-info-card"
+                href="https://github.com/Ashutosh9-pan"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <div className="modern-contact-icon modern-contact-icon-github">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M12 2C6.48 2 2 6.58 2 12.23c0 4.52 2.87 8.35 6.84 9.7.5.1.68-.22.68-.48v-1.7c-2.78.62-3.37-1.21-3.37-1.21-.46-1.2-1.11-1.52-1.11-1.52-.91-.64.07-.63.07-.63 1 .08 1.53 1.06 1.53 1.06.9 1.58 2.35 1.13 2.93.86.09-.67.35-1.13.64-1.4-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.02-2.75-.1-.26-.44-1.3.1-2.7 0 0 .84-.28 2.75 1.05A9.1 9.1 0 0 1 12 6.83c.86 0 1.72.12 2.52.36 1.9-1.33 2.74-1.05 2.74-1.05.55 1.4.21 2.44.11 2.7.64.72 1.02 1.63 1.02 2.75 0 3.94-2.35 4.8-4.58 5.06.36.33.68.96.68 1.94v2.87c0 .28.18.6.69.48A10.25 10.25 0 0 0 22 12.23C22 6.58 17.52 2 12 2Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <strong>GitHub</strong>
+                  <span>github.com/Ashutosh9-pan</span>
+                </div>
+                <b aria-hidden="true">↗</b>
+              </a>
+
+              <div className="modern-contact-info-card">
+                <div className="modern-contact-icon modern-contact-icon-location">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M12 21s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                    />
+                    <circle
+                      cx="12"
+                      cy="9"
+                      r="2.2"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <strong>Location</strong>
+                  <span>Uttarakhand, India</span>
+                </div>
+                <b aria-hidden="true">↗</b>
+              </div>
+            </div>
+
+            <div className="modern-contact-availability">
+              <div className="modern-contact-availability-dot" />
+              <div className="modern-contact-availability-copy">
+                <strong>Available for opportunities</strong>
+                <span>Open to full-time, internships, and interesting projects</span>
+              </div>
+              <div className="modern-contact-availability-note">
+                <span>✦</span>
+                <em>Let&apos;s create something impactful!</em>
+              </div>
+            </div>
+          </div>
+
+          <div className="modern-contact-form-card">
+            <div className="modern-contact-form-kicker">Say something</div>
+            <h3>Send me a message</h3>
+            <p>
+              Have a question, opportunity, or just want to say hi?
+              <br />
+              I&apos;ll get back to you as soon as possible.
+            </p>
+
+            <form
+              onSubmit={(event) => {
+                event.preventDefault();
+
+                const form = event.currentTarget;
+                const formData = new FormData(form);
+
+                const name = String(formData.get("name") || "");
+                const email = String(formData.get("email") || "");
+                const subject = String(
+                  formData.get("subject") || "Portfolio Contact"
+                );
+                const message = String(formData.get("message") || "");
+
+                const body = [
+                  `Name: ${name}`,
+                  `Email: ${email}`,
+                  "",
+                  message,
+                ].join("\n");
+
+                window.location.href =
+                  `mailto:ashutoshpanwar07@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+              }}
+            >
+              <div className="modern-contact-form-row">
+                <label>
+                  <span>Your Name</span>
+                  <div className="modern-contact-input-wrap">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <circle
+                        cx="12"
+                        cy="8"
+                        r="3.2"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.7"
+                      />
+                      <path
+                        d="M5.5 19c.7-3.1 2.8-4.8 6.5-4.8s5.8 1.7 6.5 4.8"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.7"
+                      />
+                    </svg>
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="Your name"
+                      required
+                    />
+                  </div>
+                </label>
+
+                <label>
+                  <span>Your Email</span>
+                  <div className="modern-contact-input-wrap">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <rect
+                        x="3"
+                        y="5"
+                        width="18"
+                        height="14"
+                        rx="2"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.7"
+                      />
+                      <path
+                        d="m4 7 8 6 8-6"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.7"
+                      />
+                    </svg>
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="you@example.com"
+                      required
+                    />
+                  </div>
+                </label>
+              </div>
+
+              <label>
+                <span>Subject</span>
+                <div className="modern-contact-input-wrap">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M5 4h10l4 4v12H5z"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.7"
+                    />
+                    <path
+                      d="M14 4v5h5M8 13h8M8 16h6"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.7"
+                    />
+                  </svg>
+                  <input
+                    type="text"
+                    name="subject"
+                    placeholder="Let’s discuss an opportunity"
+                    required
+                  />
+                </div>
+              </label>
+
+              <label>
+                <span>Message</span>
+                <div className="modern-contact-textarea-wrap">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M4 5.5h16v10H8l-4 3v-13Z"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.7"
+                    />
+                    <path
+                      d="M8 9h8M8 12h5"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.7"
+                    />
+                  </svg>
+                  <textarea
+                    name="message"
+                    placeholder="Write your message here..."
+                    rows={6}
+                    required
+                  />
+                </div>
+              </label>
+
+              <button className="modern-contact-submit" type="submit">
+                <span>➤</span>
+                Send message
+                <strong>↗</strong>
+              </button>
+
+              <div className="modern-contact-privacy">
+                <span>🔒</span>
+                Your information stays in your email client.
+              </div>
+            </form>
+          </div>
         </div>
-        <a className="contact-email" href="mailto:ashutoshpanwar07@gmail.com">ashutoshpanwar07@gmail.com</a>
       </section>
+
+      <style jsx global>{`
+        .modern-contact {
+          position: relative;
+          overflow: hidden;
+          padding: 110px clamp(24px, 6vw, 100px) 85px;
+          background:
+            radial-gradient(circle at 85% 20%, rgba(101, 88, 245, 0.08), transparent 25%),
+            radial-gradient(circle at 8% 55%, rgba(91, 187, 200, 0.09), transparent 20%),
+            #f8f9fd;
+          color: #14182e;
+        }
+
+        .modern-contact-shell {
+          position: relative;
+          z-index: 2;
+          display: grid;
+          grid-template-columns: minmax(0, 1.1fr) minmax(420px, 0.78fr);
+          gap: clamp(45px, 6vw, 95px);
+          max-width: 1500px;
+          margin: 0 auto;
+          align-items: start;
+        }
+
+        .modern-contact-intro {
+          padding-top: 12px;
+        }
+
+        .modern-contact-kicker {
+          margin-bottom: 25px;
+          color: #5b4af0;
+          font-size: 12px;
+          font-weight: 900;
+          text-transform: uppercase;
+          letter-spacing: 0.18em;
+        }
+
+        .modern-contact-intro h2 {
+          margin: 0;
+          max-width: 780px;
+          font-size: clamp(56px, 6vw, 92px);
+          line-height: 0.98;
+          letter-spacing: -0.065em;
+        }
+
+        .modern-contact-intro h2 span {
+          color: #6350ed;
+        }
+
+        .modern-contact-description {
+          max-width: 760px;
+          margin: 30px 0 38px;
+          color: #69718a;
+          font-size: 18px;
+          line-height: 1.7;
+        }
+
+        .modern-contact-info-grid {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 15px;
+          max-width: 820px;
+        }
+
+        .modern-contact-info-card {
+          display: grid;
+          grid-template-columns: 58px minmax(0, 1fr) 20px;
+          gap: 15px;
+          align-items: center;
+          min-height: 96px;
+          padding: 15px 18px;
+          border: 1px solid rgba(83, 88, 128, 0.14);
+          border-radius: 18px;
+          background: rgba(255, 255, 255, 0.72);
+          box-shadow: 0 10px 28px rgba(34, 45, 90, 0.04);
+          backdrop-filter: blur(15px);
+          color: inherit;
+          text-decoration: none;
+          transition:
+            transform 0.25s ease,
+            box-shadow 0.25s ease,
+            border-color 0.25s ease;
+        }
+
+        .modern-contact-info-card:hover {
+          transform: translateY(-4px);
+          border-color: rgba(99, 80, 237, 0.22);
+          box-shadow: 0 18px 35px rgba(45, 43, 100, 0.08);
+        }
+
+        .modern-contact-info-card > div:nth-child(2) {
+          min-width: 0;
+        }
+
+        .modern-contact-info-card strong,
+        .modern-contact-info-card span {
+          display: block;
+        }
+
+        .modern-contact-info-card strong {
+          margin-bottom: 5px;
+          color: #14182e;
+          font-size: 17px;
+        }
+
+        .modern-contact-info-card div:nth-child(2) span {
+          overflow: hidden;
+          color: #7b839a;
+          font-size: 13px;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+
+        .modern-contact-info-card > b {
+          color: #7180aa;
+          font-size: 17px;
+          font-weight: 700;
+        }
+
+        .modern-contact-icon {
+          width: 54px;
+          height: 54px;
+          display: grid;
+          place-items: center;
+          border-radius: 50%;
+        }
+
+        .modern-contact-icon svg {
+          width: 25px;
+          height: 25px;
+        }
+
+        .modern-contact-icon-email {
+          color: #6b4df2;
+          background: rgba(107, 77, 242, 0.1);
+        }
+
+        .modern-contact-icon-linkedin {
+          color: #2575d7;
+          background: rgba(37, 117, 215, 0.1);
+        }
+
+        .modern-contact-icon-linkedin span {
+          font-size: 22px;
+          font-weight: 900;
+        }
+
+        .modern-contact-icon-github {
+          color: #111827;
+          background: rgba(17, 24, 39, 0.07);
+        }
+
+        .modern-contact-icon-location {
+          color: #e95d98;
+          background: rgba(233, 93, 152, 0.1);
+        }
+
+        .modern-contact-availability {
+          display: flex;
+          align-items: center;
+          gap: 15px;
+          max-width: 820px;
+          margin-top: 18px;
+          padding: 20px 24px;
+          border: 1px solid rgba(83, 88, 128, 0.14);
+          border-radius: 18px;
+          background: rgba(255, 255, 255, 0.76);
+          box-shadow: 0 10px 28px rgba(34, 45, 90, 0.04);
+        }
+
+        .modern-contact-availability-dot {
+          width: 15px;
+          height: 15px;
+          flex: 0 0 auto;
+          border-radius: 50%;
+          background: #16c47f;
+          box-shadow: 0 0 0 7px rgba(22, 196, 127, 0.12);
+        }
+
+        .modern-contact-availability-copy {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+        }
+
+        .modern-contact-availability-copy strong {
+          color: #14182e;
+          font-size: 15px;
+        }
+
+        .modern-contact-availability-copy span {
+          color: #7a8298;
+          font-size: 13px;
+        }
+
+        .modern-contact-availability-note {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          margin-left: auto;
+          padding-left: 26px;
+          border-left: 1px solid rgba(83, 88, 128, 0.12);
+        }
+
+        .modern-contact-availability-note > span {
+          color: #6b4df2;
+          font-size: 24px;
+        }
+
+        .modern-contact-availability-note em {
+          color: #725cf3;
+          font-size: 14px;
+          font-style: italic;
+        }
+
+        .modern-contact-form-card {
+          position: relative;
+          padding: 34px;
+          border: 1px solid rgba(83, 88, 128, 0.13);
+          border-radius: 24px;
+          background: rgba(255, 255, 255, 0.78);
+          box-shadow:
+            0 30px 70px rgba(44, 51, 95, 0.08),
+            inset 0 1px 0 rgba(255, 255, 255, 0.7);
+          backdrop-filter: blur(18px);
+        }
+
+        .modern-contact-form-kicker {
+          margin-bottom: 12px;
+          color: #6a55ef;
+          font-size: 12px;
+          font-weight: 900;
+          text-transform: uppercase;
+          letter-spacing: 0.18em;
+        }
+
+        .modern-contact-form-card h3 {
+          margin: 0;
+          font-size: clamp(34px, 3vw, 46px);
+          line-height: 1.05;
+          letter-spacing: -0.045em;
+        }
+
+        .modern-contact-form-card > p {
+          margin: 14px 0 30px;
+          color: #7b8399;
+          font-size: 14px;
+          line-height: 1.65;
+        }
+
+        .modern-contact-form-card form {
+          display: flex;
+          flex-direction: column;
+          gap: 18px;
+        }
+
+        .modern-contact-form-row {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 14px;
+        }
+
+        .modern-contact-form-card label {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+        }
+
+        .modern-contact-form-card label > span {
+          padding-left: 4px;
+          color: #20263a;
+          font-size: 12px;
+          font-weight: 800;
+        }
+
+        .modern-contact-input-wrap,
+        .modern-contact-textarea-wrap {
+          position: relative;
+        }
+
+        .modern-contact-input-wrap svg,
+        .modern-contact-textarea-wrap svg {
+          position: absolute;
+          left: 15px;
+          top: 50%;
+          width: 20px;
+          height: 20px;
+          color: #98a1b9;
+          transform: translateY(-50%);
+          pointer-events: none;
+        }
+
+        .modern-contact-textarea-wrap svg {
+          top: 24px;
+          transform: none;
+        }
+
+        .modern-contact-form-card input,
+        .modern-contact-form-card textarea {
+          width: 100%;
+          border: 1px solid #e0e4ee;
+          border-radius: 14px;
+          outline: none;
+          background: rgba(255, 255, 255, 0.84);
+          color: #14182e;
+          font: inherit;
+          transition:
+            border-color 0.2s ease,
+            box-shadow 0.2s ease,
+            background 0.2s ease;
+        }
+
+        .modern-contact-form-card input {
+          height: 58px;
+          padding: 0 16px 0 48px;
+        }
+
+        .modern-contact-form-card textarea {
+          min-height: 132px;
+          resize: vertical;
+          padding: 16px 16px 16px 48px;
+        }
+
+        .modern-contact-form-card input::placeholder,
+        .modern-contact-form-card textarea::placeholder {
+          color: #a9b0c3;
+        }
+
+        .modern-contact-form-card input:focus,
+        .modern-contact-form-card textarea:focus {
+          border-color: rgba(99, 80, 237, 0.48);
+          background: white;
+          box-shadow: 0 0 0 4px rgba(99, 80, 237, 0.08);
+        }
+
+        .modern-contact-submit {
+          min-height: 58px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 11px;
+          margin-top: 3px;
+          border: 0;
+          border-radius: 14px;
+          cursor: pointer;
+          color: white;
+          background: linear-gradient(90deg, #6d4df5, #7459ec 58%, #24bfd5);
+          box-shadow: 0 15px 28px rgba(98, 75, 230, 0.2);
+          font: inherit;
+          font-size: 15px;
+          font-weight: 800;
+          transition:
+            transform 0.2s ease,
+            box-shadow 0.2s ease;
+        }
+
+        .modern-contact-submit:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 20px 34px rgba(98, 75, 230, 0.25);
+        }
+
+        .modern-contact-submit span {
+          font-size: 17px;
+        }
+
+        .modern-contact-submit strong {
+          font-size: 16px;
+        }
+
+        .modern-contact-privacy {
+          display: flex;
+          justify-content: center;
+          gap: 7px;
+          color: #9198aa;
+          font-size: 11px;
+        }
+
+        .modern-contact-orb {
+          position: absolute;
+          z-index: 1;
+          border: 1px solid rgba(99, 80, 237, 0.1);
+          border-radius: 50%;
+          pointer-events: none;
+        }
+
+        .modern-contact-orb-left {
+          width: 320px;
+          height: 320px;
+          left: -210px;
+          top: 120px;
+          background: rgba(91, 187, 200, 0.04);
+        }
+
+        .modern-contact-orb-right {
+          width: 260px;
+          height: 260px;
+          right: -110px;
+          top: 35px;
+          background: rgba(99, 80, 237, 0.045);
+        }
+
+        @media (max-width: 1050px) {
+          .modern-contact-shell {
+            grid-template-columns: 1fr;
+          }
+
+          .modern-contact-form-card {
+            max-width: 760px;
+          }
+        }
+
+        @media (max-width: 720px) {
+          .modern-contact {
+            padding: 85px 20px 65px;
+          }
+
+          .modern-contact-intro h2 {
+            font-size: clamp(48px, 14vw, 72px);
+          }
+
+          .modern-contact-description {
+            font-size: 15px;
+          }
+
+          .modern-contact-info-grid,
+          .modern-contact-form-row {
+            grid-template-columns: 1fr;
+          }
+
+          .modern-contact-availability {
+            align-items: flex-start;
+            flex-wrap: wrap;
+          }
+
+          .modern-contact-availability-note {
+            width: 100%;
+            margin-left: 0;
+            padding-left: 0;
+            padding-top: 15px;
+            border-left: 0;
+            border-top: 1px solid rgba(83, 88, 128, 0.12);
+          }
+
+          .modern-contact-form-card {
+            padding: 24px;
+            border-radius: 20px;
+          }
+        }
+      `}
+
+      </style>
 
       <footer className="site-footer">
         <div className="footer-brand"><span className="brand-mark">AP</span><strong>Ashutosh Panwar</strong></div>
