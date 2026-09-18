@@ -27,7 +27,9 @@ const otherProjects = [
     description: "A responsive task management application with add, edit, delete, complete, search, filter, sort, drag-and-drop reordering, due dates, priorities, progress tracking, light/dark theme, and localStorage persistence.",
     tags: ["JavaScript", "HTML5", "CSS3", "localStorage", "Responsive UI"],
     symbol: "TF",
-    image: "https://raw.githubusercontent.com/Ashutosh9-pan/week2-task-manager/main/screenshots/light-dashboard.png",
+    image: "https://raw.githubusercontent.com/Ashutosh9-pan/week2-task-manager/main/screenshots/light-dashboard.png",
+
+
 
 
 
@@ -44,7 +46,9 @@ const otherProjects = [
     number: "07", title: "Clinevo Smart Inbox Assistant",
     description: "AI-powered healthcare shared inbox assistant for automated document processing, classification, extraction, review, and audit workflows.",
     tags: ["AI/ML", "Python", "Flask", "Angular"], symbol: "CI",
-    image: "https://raw.githubusercontent.com/Ashutosh9-pan/Clinevo-smart-inbox-assistant/main/docs/screenshots/dashboard.png",
+    image: "https://raw.githubusercontent.com/Ashutosh9-pan/Clinevo-smart-inbox-assistant/main/docs/screenshots/dashboard.png",
+
+
 
 
 
@@ -80,7 +84,9 @@ const otherProjects = [
     number: "11", title: "CalcPro",
     description: "Modern responsive web calculator with keyboard support, dark/light themes, and essential arithmetic operations.",
     tags: ["HTML5", "CSS3", "JavaScript", "Responsive UI"], symbol: "CP",
-    image: "https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/calcpro.svg",
+    image: "https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/calcpro.svg",
+
+
 
 
 
@@ -102,7 +108,9 @@ const otherProjects = [
     number: "13", title: "Library Management System",
     description: "Console-based Java library system with OOP, file persistence, borrowing and returns, due dates, fine calculation, search, and statistics.",
     tags: ["Java", "OOP", "File Handling", "CLI"], symbol: "LM",
-    image: "https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/library-management.svg",
+    image: "https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/library-management.svg",
+
+
 
 
 
@@ -117,7 +125,9 @@ const otherProjects = [
     number: "14", title: "Random Quote Generator",
     description: "Modern Android quote generator featuring categorized quotes, favorites, sharing, dark mode, and offline support.",
     tags: ["Java", "Android", "Material Design", "Offline App"], symbol: "RQ",
-    image: "https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/random-quote.svg",
+    image: "https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/random-quote.svg",
+
+
 
 
 
@@ -134,7 +144,9 @@ const otherProjects = [
     description: "A CCTV-assisted waste management concept that identifies actionable events and triggers timely notifications for faster response and cleaner shared spaces.",
     tags: ["Computer Vision", "Notifications", "Smart City"],
     symbol: "WM",
-    image: "https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/smart-waste-ai.svg",
+    image: "https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/smart-waste-ai.svg",
+
+
 
 
 
@@ -503,31 +515,43 @@ export default function Home() {
 
       <section className="section" aria-label="Featured major projects" style={{ padding: 0 }}>
         {(otherProjects as any[]).filter((project: any) => project.featured).map((project, index) => (
-          <div key={project.title} style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", minHeight: "min(760px, 78vw)", background: index % 2 === 0 ? "#11152b" : "#f5f4fb", color: index % 2 === 0 ? "#fff" : "#11152b" }}>
+          <div
+            key={project.title}
+            className="major-featured-project"
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
+              minHeight: "min(760px, 78vw)",
+              background: index % 2 === 0 ? "#11152b" : "#f5f4fb",
+              color: index % 2 === 0 ? "#fff" : "#11152b",
+            }}
+          >
             {index % 2 === 0 ? (
               <>
-                <div style={{ padding: "clamp(48px, 7vw, 110px)", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+                <div className="major-featured-copy" style={{ padding: "clamp(48px, 7vw, 110px)", display: "flex", flexDirection: "column", justifyContent: "center" }}>
                   <div className="section-kicker light">03 / Featured project</div>
                   <p className="project-number">{project.number}</p>
-                  <h2 style={{ fontSize: "clamp(46px, 6vw, 88px)", lineHeight: 0.98, margin: "16px 0" }}>{project.title}</h2>
-                  <h3 style={{ fontSize: "clamp(22px, 2.2vw, 34px)", fontWeight: 500, marginBottom: 24 }}>{project.description}</h3>
+                  <h2 className="major-featured-title" style={{ fontSize: "clamp(46px, 6vw, 88px)", lineHeight: 0.98, margin: "16px 0" }}>{project.title}</h2>
+                  <h3 className="major-featured-description" style={{ fontSize: "clamp(22px, 2.2vw, 34px)", fontWeight: 500, marginBottom: 24 }}>{project.description}</h3>
                   <div className="project-tags">{project.tags.map((tag: string) => <span key={tag}>{tag}</span>)}</div>
                   <div className="project-actions" style={{ marginTop: 30 }}><a className="button button-light" href={project.github ?? "#"} target="_blank" rel="noreferrer">View on GitHub <span>↗</span></a></div>
                 </div>
-                <div style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "clamp(24px, 4vw, 64px)", background: "#201d4c" }}>
-                  <img src={(project as any).image} alt={project.title + " project screenshot"} style={{ width: "100%", height: "auto", objectFit: "contain", display: "block", borderRadius: 22, boxShadow: "0 24px 70px rgba(0,0,0,.28)" }} />
+                <div className="major-featured-media" style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "clamp(24px, 4vw, 64px)", background: "#201d4c" }}>
+                  <img src={(project as any).image} alt={project.title + " project screenshot"} className="major-featured-image"
+                    style={{ width: "100%", height: "auto", objectFit: "contain", display: "block", borderRadius: 22, boxShadow: "0 24px 70px rgba(0,0,0,.28)" }} />
                 </div>
               </>
             ) : (
               <>
-                <div style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "clamp(24px, 4vw, 64px)", background: "#e9e7f5" }}>
-                  <img src={(project as any).image} alt={project.title + " project screenshot"} style={{ width: "100%", height: "auto", objectFit: "contain", display: "block", borderRadius: 22, boxShadow: "0 24px 70px rgba(22,20,55,.16)" }} />
+                <div className="major-featured-media" style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "clamp(24px, 4vw, 64px)", background: "#e9e7f5" }}>
+                  <img src={(project as any).image} alt={project.title + " project screenshot"} className="major-featured-image"
+                    style={{ width: "100%", height: "auto", objectFit: "contain", display: "block", borderRadius: 22, boxShadow: "0 24px 70px rgba(22,20,55,.16)" }} />
                 </div>
-                <div style={{ padding: "clamp(48px, 7vw, 110px)", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+                <div className="major-featured-copy" style={{ padding: "clamp(48px, 7vw, 110px)", display: "flex", flexDirection: "column", justifyContent: "center" }}>
                   <div className="section-kicker">03 / Featured project</div>
                   <p className="project-number">{project.number}</p>
-                  <h2 style={{ fontSize: "clamp(46px, 6vw, 88px)", lineHeight: 0.98, margin: "16px 0" }}>{project.title}</h2>
-                  <h3 style={{ fontSize: "clamp(22px, 2.2vw, 34px)", fontWeight: 500, marginBottom: 24 }}>{project.description}</h3>
+                  <h2 className="major-featured-title" style={{ fontSize: "clamp(46px, 6vw, 88px)", lineHeight: 0.98, margin: "16px 0" }}>{project.title}</h2>
+                  <h3 className="major-featured-description" style={{ fontSize: "clamp(22px, 2.2vw, 34px)", fontWeight: 500, marginBottom: 24 }}>{project.description}</h3>
                   <div className="project-tags">{project.tags.map((tag: string) => <span key={tag}>{tag}</span>)}</div>
                   <div className="project-actions" style={{ marginTop: 30 }}><a className="button button-primary" href={project.github ?? "#"} target="_blank" rel="noreferrer">View on GitHub <span>↗</span></a></div>
                 </div>
@@ -1378,6 +1402,221 @@ export default function Home() {
             border-radius: 20px;
           }
         }
+
+        /* =====================================================
+           FINAL MOBILE FIX — MAJOR FEATURED PROJECTS + CONTACT
+           Targets the actual JSX classes used by this page.
+        ===================================================== */
+
+        @media (max-width: 720px) {
+          /* Featured project sections are inline-styled in JSX,
+             so these rules must use !important. */
+          .major-featured-project {
+            grid-template-columns: minmax(0, 1fr) !important;
+            min-height: auto !important;
+            width: 100% !important;
+            overflow: hidden !important;
+          }
+
+          .major-featured-copy {
+            order: 1 !important;
+            width: 100% !important;
+            min-width: 0 !important;
+            padding: 58px 20px 46px !important;
+            box-sizing: border-box !important;
+            overflow: visible !important;
+          }
+
+          .major-featured-media {
+            order: 2 !important;
+            width: 100% !important;
+            min-width: 0 !important;
+            min-height: 0 !important;
+            padding: 22px 14px 30px !important;
+            box-sizing: border-box !important;
+          }
+
+          .major-featured-title {
+            display: block !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            min-width: 0 !important;
+            margin: 14px 0 !important;
+            font-size: clamp(42px, 12vw, 68px) !important;
+            line-height: 0.98 !important;
+            letter-spacing: -0.055em !important;
+            white-space: normal !important;
+            overflow: visible !important;
+            overflow-wrap: anywhere !important;
+            word-break: normal !important;
+          }
+
+          .major-featured-description {
+            width: 100% !important;
+            max-width: 100% !important;
+            min-width: 0 !important;
+            font-size: 21px !important;
+            line-height: 1.28 !important;
+            overflow-wrap: anywhere !important;
+          }
+
+          .major-featured-media .major-featured-image {
+            width: 100% !important;
+            max-width: 100% !important;
+            height: auto !important;
+            max-height: none !important;
+            object-fit: contain !important;
+            object-position: center !important;
+          }
+
+          /* Keep alternating desktop order, but make every mobile
+             project read naturally: text first, screenshot second. */
+          .major-featured-project > .major-featured-media {
+            grid-column: 1 !important;
+          }
+
+          .major-featured-project > .major-featured-copy {
+            grid-column: 1 !important;
+          }
+
+          /* Actual contact classes from this page.tsx */
+          .modern-contact-shell {
+            display: grid !important;
+            grid-template-columns: minmax(0, 1fr) !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            min-width: 0 !important;
+            gap: 30px !important;
+          }
+
+          .modern-contact-intro,
+          .modern-contact-info-grid,
+          .modern-contact-info-card,
+          .modern-contact-form-card {
+            width: 100% !important;
+            max-width: 100% !important;
+            min-width: 0 !important;
+            box-sizing: border-box !important;
+          }
+
+          .modern-contact-info-grid {
+            display: grid !important;
+            grid-template-columns: minmax(0, 1fr) !important;
+          }
+
+          .modern-contact-info-card {
+            grid-template-columns: 52px minmax(0, 1fr) 18px !important;
+            gap: 12px !important;
+          }
+
+          .modern-contact-info-card > div:nth-child(2) {
+            min-width: 0 !important;
+            width: 100% !important;
+          }
+
+          .modern-contact-info-card > div:nth-child(2) span {
+            min-width: 0 !important;
+            max-width: 100% !important;
+            overflow: hidden !important;
+            text-overflow: ellipsis !important;
+            white-space: nowrap !important;
+          }
+
+          .modern-contact-form-card {
+            padding: 22px 16px !important;
+            margin: 0 !important;
+            overflow: hidden !important;
+          }
+
+          .modern-contact-form-row {
+            grid-template-columns: minmax(0, 1fr) !important;
+            width: 100% !important;
+          }
+
+          .modern-contact-form-card label,
+          .modern-contact-input-wrap,
+          .modern-contact-textarea-wrap,
+          .modern-contact-form-card input,
+          .modern-contact-form-card textarea {
+            width: 100% !important;
+            max-width: 100% !important;
+            min-width: 0 !important;
+            box-sizing: border-box !important;
+          }
+
+          .modern-contact-submit {
+            width: 100% !important;
+            box-sizing: border-box !important;
+          }
+        }
+
+        @media (max-width: 380px) {
+          .major-featured-copy {
+            padding-left: 17px !important;
+            padding-right: 17px !important;
+          }
+
+          .major-featured-media {
+            padding-left: 10px !important;
+            padding-right: 10px !important;
+          }
+
+          .major-featured-title {
+            font-size: 39px !important;
+          }
+
+          .major-featured-description {
+            font-size: 19px !important;
+          }
+        }
+        /* MOBILE NAV OVERLAP FIX */
+@media (max-width: 720px) {
+  :global(.site-header) {
+    position: relative !important;
+    z-index: 1000 !important;
+  }
+
+  :global(.menu-button) {
+    position: relative !important;
+    z-index: 1002 !important;
+  }
+
+  :global(.nav-links) {
+    display: none !important;
+    position: absolute !important;
+    top: calc(100% + 10px) !important;
+    left: 16px !important;
+    right: 16px !important;
+    width: auto !important;
+    height: auto !important;
+    padding: 18px !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 8px !important;
+    border-radius: 18px !important;
+    background: rgba(255, 255, 255, 0.98) !important;
+    box-shadow: 0 18px 50px rgba(25, 30, 60, 0.16) !important;
+    border: 1px solid rgba(80, 85, 120, 0.12) !important;
+    box-sizing: border-box !important;
+  }
+
+  :global(.nav-links.is-open) {
+    display: flex !important;
+  }
+
+  :global(.nav-links a) {
+    display: block !important;
+    width: 100% !important;
+    padding: 12px 14px !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+  }
+
+  :global(.nav-links .nav-cta) {
+    margin-top: 6px !important;
+    text-align: center !important;
+  }
+}
       `}
 
       </style>
