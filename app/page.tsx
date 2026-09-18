@@ -27,7 +27,7 @@ const otherProjects = [
     description: "A responsive task management application with add, edit, delete, complete, search, filter, sort, drag-and-drop reordering, due dates, priorities, progress tracking, light/dark theme, and localStorage persistence.",
     tags: ["JavaScript", "HTML5", "CSS3", "localStorage", "Responsive UI"],
     symbol: "TF",
-    image: "https://raw.githubusercontent.com/Ashutosh9-pan/week2-task-manager/main/screenshots/light-dashboard.png",
+    image: "https://raw.githubusercontent.com/Ashutosh9-pan/week2-task-manager/main/screenshots/light-dashboard.png",
 
 
 
@@ -44,7 +44,7 @@ const otherProjects = [
     number: "07", title: "Clinevo Smart Inbox Assistant",
     description: "AI-powered healthcare shared inbox assistant for automated document processing, classification, extraction, review, and audit workflows.",
     tags: ["AI/ML", "Python", "Flask", "Angular"], symbol: "CI",
-    image: "https://raw.githubusercontent.com/Ashutosh9-pan/Clinevo-smart-inbox-assistant/main/docs/screenshots/dashboard.png",
+    image: "https://raw.githubusercontent.com/Ashutosh9-pan/Clinevo-smart-inbox-assistant/main/docs/screenshots/dashboard.png",
 
 
 
@@ -80,7 +80,7 @@ const otherProjects = [
     number: "11", title: "CalcPro",
     description: "Modern responsive web calculator with keyboard support, dark/light themes, and essential arithmetic operations.",
     tags: ["HTML5", "CSS3", "JavaScript", "Responsive UI"], symbol: "CP",
-    image: "https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/calcpro.svg",
+    image: "https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/calcpro.svg",
 
 
 
@@ -102,7 +102,7 @@ const otherProjects = [
     number: "13", title: "Library Management System",
     description: "Console-based Java library system with OOP, file persistence, borrowing and returns, due dates, fine calculation, search, and statistics.",
     tags: ["Java", "OOP", "File Handling", "CLI"], symbol: "LM",
-    image: "https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/library-management.svg",
+    image: "https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/library-management.svg",
 
 
 
@@ -117,7 +117,7 @@ const otherProjects = [
     number: "14", title: "Random Quote Generator",
     description: "Modern Android quote generator featuring categorized quotes, favorites, sharing, dark mode, and offline support.",
     tags: ["Java", "Android", "Material Design", "Offline App"], symbol: "RQ",
-    image: "https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/random-quote.svg",
+    image: "https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/random-quote.svg",
 
 
 
@@ -134,7 +134,7 @@ const otherProjects = [
     description: "A CCTV-assisted waste management concept that identifies actionable events and triggers timely notifications for faster response and cleaner shared spaces.",
     tags: ["Computer Vision", "Notifications", "Smart City"],
     symbol: "WM",
-    image: "https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/smart-waste-ai.svg",
+    image: "https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/smart-waste-ai.svg",
 
 
 
@@ -781,10 +781,18 @@ export default function Home() {
                 const message = String(formData.get("message") || "");
 
                 const body = [
+                  "Hi Ashutosh,",
+                  "",
+                  "I’m reaching out through your portfolio.",
+                  "",
                   `Name: ${name}`,
                   `Email: ${email}`,
                   "",
+                  "Message:",
                   message,
+                  "",
+                  "Regards,",
+                  name,
                 ].join("\n");
 
                 const gmailUrl =
