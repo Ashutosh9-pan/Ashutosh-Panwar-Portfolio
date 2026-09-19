@@ -1568,9 +1568,6 @@ export default function Home() {
             font-size: 19px !important;
           }
         }
-        `}
-
-
         /* ==========================================================
            PORTFOLIO V2 — PREMIUM DARK AI / ENGINEERING SYSTEM
         ========================================================== */
@@ -1852,6 +1849,7 @@ export default function Home() {
             transition-duration: .01ms !important;
           }
         }
+        `}
       </style>
 
       <footer className="site-footer">
