@@ -1846,6 +1846,101 @@ export default function Home() {
           color: #b0b9cc !important;
         }
 
+        /* ==========================================================
+           FINAL V2 LAYOUT POLISH
+        ========================================================== */
+        .about {
+          padding-top: clamp(72px, 8vw, 108px) !important;
+          padding-bottom: clamp(78px, 8vw, 112px) !important;
+        }
+
+        .about-layout {
+          grid-template-columns: minmax(0, 1.02fr) minmax(0, .98fr) !important;
+          gap: clamp(42px, 6vw, 88px) !important;
+          align-items: center !important;
+        }
+
+        .about-layout h2 {
+          max-width: 760px !important;
+          font-size: clamp(52px, 5.2vw, 82px) !important;
+          line-height: .99 !important;
+        }
+
+        .about-copy {
+          max-width: 680px !important;
+          padding-top: 6px !important;
+        }
+
+        .about-copy p {
+          font-size: 17px !important;
+          line-height: 1.78 !important;
+        }
+
+        .section-heading {
+          align-items: end !important;
+        }
+
+        .section-heading > p {
+          max-width: 520px !important;
+          line-height: 1.7 !important;
+        }
+
+        @media (max-width: 720px) {
+          .hero {
+            padding-bottom: 58px !important;
+          }
+
+          .about {
+            padding-top: 62px !important;
+            padding-bottom: 72px !important;
+          }
+
+          .about-layout {
+            grid-template-columns: 1fr !important;
+            gap: 28px !important;
+          }
+
+          .about-layout h2 {
+            max-width: 100% !important;
+            font-size: clamp(43px, 11.5vw, 62px) !important;
+            line-height: 1.02 !important;
+          }
+
+          .about-copy {
+            max-width: 100% !important;
+            padding-top: 0 !important;
+          }
+
+          .about-copy p {
+            font-size: 15px !important;
+            line-height: 1.72 !important;
+          }
+
+          .section-heading {
+            align-items: start !important;
+            gap: 20px !important;
+          }
+
+          .section-heading h2 {
+            font-size: clamp(42px, 11vw, 58px) !important;
+            line-height: 1.02 !important;
+          }
+
+          .section-heading > p {
+            max-width: 100% !important;
+            font-size: 15px !important;
+            line-height: 1.65 !important;
+          }
+
+          .skill-card {
+            padding: 26px !important;
+          }
+
+          .skill-card h3 {
+            font-size: 24px !important;
+          }
+        }
+
         @media (prefers-reduced-motion: reduce) {
           *, *::before, *::after {
             animation-duration: .01ms !important;
@@ -1865,4 +1960,3 @@ export default function Home() {
     </main>
   );
 }
-
