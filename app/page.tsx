@@ -12,7 +12,7 @@ const campusResolveImages = {
 
 const skillGroups = [
   { label: "AI, ML & Data", skills: ["Python", "Generative AI", "LLM & RAG", "Machine Learning", "scikit-learn", "NLP", "Pandas", "NumPy", "Data Analytics", "Data Visualization"] },
-  { label: "Languages", skills: ["Java", "Python", "JavaScript", "C", "C++", "C#", "SQL", "Kotlin"] },
+  { label: "Languages", skills: ["Java", "Python", "JavaScript", "C", "C++", "SQL", "Kotlin"] },
   { label: "Web & Backend", skills: ["HTML5", "CSS3", "React", "Next.js", "TypeScript", "Node.js", "Express.js", "Spring Boot", "REST APIs", "JWT", "RBAC"] },
   { label: "Android & Cloud", skills: ["Android Development", "XML", "Firebase", "SQLite", "Material Design", "Vite", "Redux Toolkit"] },
   { label: "Databases & Tools", skills: ["MySQL", "MongoDB", "PostgreSQL", "Git", "GitHub", "VS Code", "Android Studio", "Postman", "Swagger"] },
@@ -261,9 +261,6 @@ export default function Home() {
           <h2>I turn structured thinking into <span>useful digital experiences.</span></h2>
           <div className="about-copy">
             <p>I’m a B.Tech Computer Science & Engineering graduate focused on building practical software across AI/ML, data analytics, full-stack web development, and Android. I enjoy turning real-world problems into reliable, user-focused products—from machine-learning workflows and REST APIs to responsive web applications and mobile experiences. My toolkit includes Python, Java, SQL, JavaScript, Spring Boot, React, Node.js, Firebase, and modern AI technologies such as Generative AI, LLMs, and RAG. I’m continuously strengthening my engineering fundamentals while building and shipping projects that demonstrate clean problem solving, strong API integration, and production-minded development.</p>
-            <p>
-              My toolkit includes Python, Java, SQL, JavaScript, Spring Boot, React, Node.js, Firebase, and modern AI technologies such as Generative AI, LLMs, and RAG. I&apos;m continuously strengthening my engineering fundamentals while building and shipping projects that demonstrate clean problem solving, strong API integration, and production-minded development.
-            </p>
             <a className="text-link" href="#journey">More about my journey <span>→</span></a>
           </div>
         </div>
@@ -1841,6 +1838,14 @@ export default function Home() {
           .major-featured-project { border-radius: 22px !important; }
         }
 
+        .about-copy p,
+        .section-heading > p,
+        .journey-intro p,
+        .credentials .section-heading > p,
+        .project-card p {
+          color: #b0b9cc !important;
+        }
+
         @media (prefers-reduced-motion: reduce) {
           *, *::before, *::after {
             animation-duration: .01ms !important;
@@ -1860,3 +1865,4 @@ export default function Home() {
     </main>
   );
 }
+
