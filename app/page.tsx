@@ -170,7 +170,6 @@ const certifications = [
   ["C Programming for Beginners – Master the C Language", "Udemy"],
   ["C++ Training Program", "SLOG Solutions Pvt. Ltd."],
   ["Java Training Program", "SLOG Solutions Pvt. Ltd."],
-  ["C# Programming", "Udemy"],
 ];
 
 export default function Home() {
@@ -253,7 +252,7 @@ export default function Home() {
         <div><strong>10+</strong><span>AI, ML &amp;<br />Data Skills</span></div>
         <div><strong>08</strong><span>Programming<br />Languages</span></div>
         <div><strong>15</strong><span>Applied<br />Projects</span></div>
-        <div><strong>9</strong><span>Professional<br />Certifications</span></div>
+        <div><strong>8</strong><span>Professional<br />Certifications</span></div>
       </section>
 
       <section className="section about" id="about">
