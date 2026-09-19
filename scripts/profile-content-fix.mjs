@@ -10,7 +10,7 @@ const skillsEnd = skillsStart === -1 ? -1 : page.indexOf("\n];", skillsStart);
 if (skillsStart !== -1 && skillsEnd !== -1) {
   const skills = `const skillGroups = [
   { label: "AI, ML & Data", skills: ["Python", "Generative AI", "LLM & RAG", "Machine Learning", "scikit-learn", "NLP", "Pandas", "NumPy", "Data Analytics", "Data Visualization"] },
-  { label: "Languages", skills: ["Java", "Python", "JavaScript", "C", "C++", "C#", "SQL", "Kotlin"] },
+  { label: "Languages", skills: ["Java", "Python", "JavaScript", "C", "C++", "SQL", "Kotlin"] },
   { label: "Web & Backend", skills: ["HTML5", "CSS3", "React", "Next.js", "TypeScript", "Node.js", "Express.js", "Spring Boot", "REST APIs", "JWT", "RBAC"] },
   { label: "Android & Cloud", skills: ["Android Development", "XML", "Firebase", "SQLite", "Material Design", "Vite", "Redux Toolkit"] },
   { label: "Databases & Tools", skills: ["MySQL", "MongoDB", "PostgreSQL", "Git", "GitHub", "VS Code", "Android Studio", "Postman", "Swagger"] },
