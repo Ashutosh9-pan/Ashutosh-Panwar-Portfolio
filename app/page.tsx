@@ -1569,55 +1569,7 @@ export default function Home() {
             font-size: 19px !important;
           }
         }
-        /* MOBILE NAV OVERLAP FIX */
-@media (max-width: 720px) {
-  :global(.site-header) {
-    position: relative !important;
-    z-index: 1000 !important;
-  }
-
-  :global(.menu-button) {
-    position: relative !important;
-    z-index: 1002 !important;
-  }
-
-  :global(.nav-links) {
-    display: none !important;
-    position: absolute !important;
-    top: calc(100% + 10px) !important;
-    left: 16px !important;
-    right: 16px !important;
-    width: auto !important;
-    height: auto !important;
-    padding: 18px !important;
-    flex-direction: column !important;
-    align-items: stretch !important;
-    gap: 8px !important;
-    border-radius: 18px !important;
-    background: rgba(255, 255, 255, 0.98) !important;
-    box-shadow: 0 18px 50px rgba(25, 30, 60, 0.16) !important;
-    border: 1px solid rgba(80, 85, 120, 0.12) !important;
-    box-sizing: border-box !important;
-  }
-
-  :global(.nav-links.is-open) {
-    display: flex !important;
-  }
-
-  :global(.nav-links a) {
-    display: block !important;
-    width: 100% !important;
-    padding: 12px 14px !important;
-    text-align: center !important;
-    box-sizing: border-box !important;
-  }
-
-  :global(.nav-links .nav-cta) {
-    margin-top: 6px !important;
-    text-align: center !important;
-  }
-}
-      `}
+        `}
 
       </style>
 
