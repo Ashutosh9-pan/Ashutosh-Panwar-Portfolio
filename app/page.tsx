@@ -509,6 +509,59 @@ export default function Home() {
         </div>
       </section>
 
+      <section
+        aria-label="Featured NotebookGuardian AI project"
+        style={{
+          position: "relative",
+          overflow: "hidden",
+          padding: "clamp(72px, 9vw, 120px) clamp(24px, 6vw, 96px)",
+          background: "linear-gradient(135deg, #f5f3ff 0%, #ffffff 55%, #eef7ff 100%)",
+          color: "#111827",
+        }}
+      >
+        <div style={{ maxWidth: 1440, margin: "0 auto" }}>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+              gap: "clamp(36px, 6vw, 84px)",
+              alignItems: "center",
+            }}
+          >
+            <div>
+              <div className="section-kicker">03 / Featured project</div>
+              <p className="project-number">06</p>
+              <h2 style={{ marginBottom: 16 }}>NotebookGuardian AI</h2>
+              <h3 style={{ marginBottom: 22 }}>AI-powered Jupyter notebook risk analysis</h3>
+              <p style={{ maxWidth: 650, color: "#4b5563", lineHeight: 1.8 }}>
+                A machine-learning-powered web application that analyzes Jupyter notebooks at cell level,
+                separates code risk from execution risk, explains why cells are flagged, and generates
+                downloadable PDF review reports.
+              </p>
+              <div className="project-tags" style={{ marginTop: 28 }}>
+                <span>Python</span><span>FastAPI</span><span>React</span>
+                <span>Vite</span><span>scikit-learn</span><span>AST</span>
+                <span>Vercel</span><span>Render</span>
+              </div>
+              <div className="project-actions" style={{ marginTop: 30 }}>
+                <a className="button button-primary" href="https://notebook-guardian-ai.vercel.app/" target="_blank" rel="noreferrer">
+                  Live Demo <span>↗</span>
+                </a>
+                <a className="button button-secondary" href="https://github.com/Ashutosh9-pan/NotebookGuardian-AI" target="_blank" rel="noreferrer">
+                  View on GitHub <span>↗</span>
+                </a>
+              </div>
+            </div>
+            <div style={{ borderRadius: 24, overflow: "hidden", border: "1px solid rgba(99,102,241,.18)", boxShadow: "0 24px 70px rgba(30,41,59,.16)", background: "#fff" }}>
+              <img
+                src="https://raw.githubusercontent.com/Ashutosh9-pan/NotebookGuardian-AI/main/docs/screenshots/risk-analysis.png"
+                alt="NotebookGuardian AI risk analysis dashboard"
+                style={{ width: "100%", display: "block", height: "auto" }}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
       <section className="section" aria-label="Featured major projects" style={{ padding: 0 }}>
         {(otherProjects as any[]).filter((project: any) => project.featured).map((project, index) => (
           <div
