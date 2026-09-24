@@ -1856,8 +1856,8 @@ export default function Home() {
 
         .featured-projects-grid {
           display: grid;
-          grid-template-columns: repeat(4, minmax(0, 1fr));
-          gap: 14px;
+          grid-template-columns: 1fr;
+          gap: 28px;
         }
 
         .featured-project-card,
@@ -1865,10 +1865,28 @@ export default function Home() {
           min-width: 0;
           overflow: hidden;
           border: 1px solid rgba(255,255,255,.10);
-          border-radius: 20px;
+          border-radius: 26px;
           background: linear-gradient(145deg, rgba(17,21,33,.96), rgba(8,10,16,.96));
           box-shadow: 0 20px 60px rgba(0,0,0,.18);
           transition: transform .24s ease, border-color .24s ease, box-shadow .24s ease;
+        }
+
+        .featured-project-card {
+          display: grid;
+          grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr);
+          min-height: 430px;
+        }
+
+        .featured-project-card:nth-child(even) {
+          grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
+        }
+
+        .featured-project-card:nth-child(even) .featured-project-media {
+          order: 2;
+        }
+
+        .featured-project-card:nth-child(even) .featured-project-body {
+          order: 1;
         }
 
         .featured-project-card:hover,
@@ -1879,7 +1897,8 @@ export default function Home() {
         }
 
         .featured-project-media {
-          aspect-ratio: 1.7 / 1;
+          min-height: 100%;
+          aspect-ratio: auto;
           overflow: hidden;
           background: #eef0f7;
         }
@@ -1887,12 +1906,16 @@ export default function Home() {
         .featured-project-media img {
           width: 100%;
           height: 100%;
+          min-height: 100%;
           display: block;
           object-fit: cover;
         }
 
         .featured-project-body {
-          padding: 18px 18px 17px;
+          padding: clamp(30px, 4vw, 58px);
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
         }
 
         .featured-project-title-row,
@@ -1983,8 +2006,9 @@ export default function Home() {
         }
 
         .showcase-button-secondary {
-          background: rgba(255,255,255,.07) !important;
-          border-color: rgba(255,255,255,.13) !important;
+          background: linear-gradient(135deg, #7c3aed, #0891b2) !important;
+          border-color: rgba(139,92,246,.55) !important;
+          box-shadow: 0 8px 22px rgba(124,58,237,.22);
         }
 
         .selected-heading {
@@ -2049,15 +2073,27 @@ export default function Home() {
         }
 
         @media (max-width: 1250px) {
-          .featured-projects-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+          .featured-projects-grid { grid-template-columns: 1fr; }
           .selected-projects-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
         }
 
         @media (max-width: 860px) {
           .projects-showcase-inner { width: min(100% - 28px, 720px); }
           .projects-section-heading { grid-template-columns: 1fr; gap: 18px; }
-          .featured-projects-grid,
+          .featured-projects-grid { grid-template-columns: 1fr; }
           .selected-projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+          .featured-project-card,
+          .featured-project-card:nth-child(even) {
+            grid-template-columns: 1fr;
+          }
+          .featured-project-card:nth-child(even) .featured-project-media,
+          .featured-project-card:nth-child(even) .featured-project-body {
+            order: initial;
+          }
+          .featured-project-media {
+            min-height: 320px;
+            aspect-ratio: 16 / 9;
+          }
         }
 
         @media (max-width: 560px) {
@@ -2066,9 +2102,11 @@ export default function Home() {
           .projects-section-heading h2 { font-size: 45px !important; }
           .featured-projects-grid,
           .selected-projects-grid { grid-template-columns: 1fr; }
-          .featured-project-media { aspect-ratio: 1.65 / 1; }
+          .featured-project-card,
+          .featured-project-card:nth-child(even) { grid-template-columns: 1fr; }
+          .featured-project-media { min-height: 220px; aspect-ratio: 1.65 / 1; }
           .selected-project-media { height: 220px; }
-          .featured-project-body { padding: 17px; }
+          .featured-project-body { padding: 24px; }
           .showcase-button { flex: 1 1 auto; }
         }
 
