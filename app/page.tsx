@@ -90,7 +90,7 @@ const otherProjects = [
     number: "13", title: "Library Management System",
     description: "Console-based Java library system with OOP, file persistence, borrowing and returns, due dates, fine calculation, search, and statistics.",
     tags: ["Java", "OOP", "File Handling", "CLI"], symbol: "LM",
-    images: ["https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/library-management.svg"],
+    images: ["https://raw.githubusercontent.com/Ashutosh9-pan/week3-library-system/main/screenshots/01-main-menu.png", "https://raw.githubusercontent.com/Ashutosh9-pan/week3-library-system/main/screenshots/05-library-statistics.png"],
     github: "https://github.com/Ashutosh9-pan/week3-library-system", live: null,
   },
   {
@@ -142,6 +142,59 @@ export default function Home() {
   }, []);
 
   const closeMenu = () => setMenuOpen(false);
+
+  const featuredGridProjects = [
+    {
+      number: "05",
+      title: "CampusResolve",
+      description: "Full-stack campus complaint management system with role-based access, real-time tracking, and analytics.",
+      tags: ["Node.js", "Express.js", "MySQL", "JWT", "Multer"],
+      symbol: "CR",
+      image: campusResolveImages.login,
+      github: "https://github.com/Ashutosh9-pan/campus-complaint-system",
+      live: "https://campus-complaint-system-production.up.railway.app",
+    },
+    {
+      number: "06",
+      title: "NotebookGuardian AI",
+      description: "AI-powered Jupyter notebook risk analysis with code and execution risk detection, explanations, and PDF reports.",
+      tags: ["Python", "FastAPI", "React", "Scikit-learn", "Vercel"],
+      symbol: "NG",
+      image: "https://raw.githubusercontent.com/Ashutosh9-pan/NotebookGuardian-AI/main/docs/screenshots/risk-analysis.png",
+      github: "https://github.com/Ashutosh9-pan/NotebookGuardian-AI",
+      live: "https://notebook-guardian-ai.vercel.app/",
+    },
+    ...(otherProjects as any[]).filter((project: any) => project.title === "Clinevo Smart Inbox Assistant"),
+    ...(otherProjects as any[]).filter((project: any) => project.title === "RazorGuard-AI"),
+    ...(otherProjects as any[]).filter((project: any) => project.title === "TaskFlow — Full-Stack"),
+    ...(otherProjects as any[]).filter((project: any) => project.title === "NovaCart E-commerce Frontend"),
+    {
+      number: "01",
+      title: "VitaFit",
+      description: "Android fitness tracking app with workout plans, progress monitoring, and AI recommendations.",
+      tags: ["Android", "Firebase", "Kotlin/Java", "AI Integration"],
+      symbol: "VF",
+      image: "/assets/vitafit-dashboard.jpg",
+      github: "https://github.com/Ashutosh9-pan/VitaFit-AI-Fitness-Tracker",
+      live: "https://github.com/Ashutosh9-pan/VitaFit-AI-Fitness-Tracker/releases/latest",
+      liveLabel: "Get APK",
+    },
+    ...(otherProjects as any[]).filter((project: any) => project.title === "Spring Blog API"),
+  ];
+
+  const selectedProjectOrder = [
+    "Spring Data JPA E-Commerce",
+    "WeatherNow",
+    "LanguageLearn",
+    "Secure File Encryption",
+    "Library Management System",
+    "Spring Blog API",
+  ];
+
+  const selectedGridProjects = selectedProjectOrder
+    .map((title) => (otherProjects as any[]).find((project: any) => project.title === title))
+    .filter(Boolean);
+
 
   return (
     <main>
@@ -246,302 +299,96 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="project-preview" id="projects">
-        <div className="project-copy">
-          <div className="section-kicker light">03 / Featured project</div>
-          <p className="project-number">01</p>
-          <h2>VitaFit</h2>
-          <h3>AI-powered fitness tracking for Android</h3>
-          <p>
-            A complete Android experience combining secure authentication, activity tracking, analytics, exports, reminders, dark mode, and a five-tool AI fitness assistant.
-          </p>
-          <div className="project-tags"><span>Java</span><span>Firebase</span><span>Gemini AI</span><span>Android</span></div>
-          <div className="project-actions">
-            <a className="button button-light" href="https://github.com/Ashutosh9-pan/VitaFit-AI-Fitness-Tracker" target="_blank" rel="noreferrer">View on GitHub <span>↗</span></a>
-            <a className="button button-outline-light" href="https://github.com/Ashutosh9-pan/VitaFit-AI-Fitness-Tracker/releases/latest" target="_blank" rel="noreferrer">Get APK <span>↓</span></a>
-          </div>
-        </div>
-        <div className="project-phones" aria-label="VitaFit application screenshots">
-          <div className="phone phone-back"><img src="/assets/vitafit-dashboard.jpg" alt="VitaFit dashboard in dark mode" /></div>
-          <div className="phone phone-front"><img src="/assets/vitafit-ai-hub.jpg" alt="VitaFit AI Fitness Assistant hub" /></div>
-        </div>
-      </section>
-
-      <section
-        className="major-featured-project campus-featured-project"
-        aria-label="Featured CampusResolve project"
-        style={{
-          position: "relative",
-          overflow: "hidden",
-          padding: "clamp(72px, 9vw, 120px) clamp(24px, 6vw, 96px)",
-          background: "linear-gradient(135deg, #111936 0%, #18234a 52%, #0f1730 100%)",
-          color: "#ffffff",
-        }}
-      >
-        <div
-          aria-hidden="true"
-          style={{
-            position: "absolute",
-            width: 430,
-            height: 430,
-            borderRadius: "50%",
-            background: "rgba(101, 73, 255, 0.18)",
-            top: -180,
-            right: -110,
-          }}
-        />
-        <div style={{ position: "relative", zIndex: 1, maxWidth: 1440, margin: "0 auto" }}>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-              gap: "clamp(36px, 6vw, 84px)",
-              alignItems: "center",
-            }}
-          >
-            <div className="major-featured-copy campus-featured-copy">
-              <div className="section-kicker light">03 / Featured project</div>
-              <p className="project-number">05</p>
-              <h2 style={{ marginBottom: 16 }}>CampusResolve</h2>
-              <h3 style={{ marginBottom: 22 }}>Full-stack campus complaint management system</h3>
-              <p style={{ maxWidth: 650, color: "rgba(255,255,255,.78)", lineHeight: 1.8 }}>
-                A production-deployed complaint management platform where students can raise issues,
-                upload evidence, track status history and receive updates, while administrators can
-                assign complaints, manage resolution workflows, monitor analytics, export records,
-                and handle feedback through role-based dashboards.
-              </p>
-
-              <div className="project-tags" style={{ marginTop: 28 }}>
-                <span>Node.js</span><span>Express.js</span><span>MySQL</span>
-                <span>JavaScript</span><span>JWT</span><span>Multer</span>
-                <span>Brevo API</span><span>Railway</span>
-              </div>
-
-              <div className="project-actions" style={{ marginTop: 30 }}>
-                <a
-                  className="button button-light"
-                  href="https://campus-complaint-system-production.up.railway.app"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Live Demo <span>↗</span>
-                </a>
-                <a
-                  className="button button-outline-light"
-                  href="https://github.com/Ashutosh9-pan/campus-complaint-system"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  View on GitHub <span>↗</span>
-                </a>
-              </div>
+      <section className="projects-showcase" id="projects" aria-label="Projects">
+        <div className="projects-showcase-inner">
+          <div className="projects-section-heading">
+            <div>
+              <div className="section-kicker">01 / Featured projects</div>
+              <h2>Featured <span>Projects</span></h2>
             </div>
+            <p>A showcase of my best work, combining full-stack development, AI/ML, backend engineering, and mobile applications.</p>
+          </div>
 
-            <div style={{ display: "grid", gap: 18, minWidth: 0 }}>
-              <div
-                style={{
-                  borderRadius: 24,
-                  overflow: "hidden",
-                  border: "1px solid rgba(255,255,255,.14)",
-                  boxShadow: "0 24px 70px rgba(0,0,0,.32)",
-                  background: "#fff",
-                }}
-              >
-                <img
-                  src={campusResolveImages.login}
-                  alt="CampusResolve secure login portal"
-                  style={{ width: "100%", display: "block", height: "auto" }}
-                />
-              </div>
+          <div className="featured-projects-grid">
+            {featuredGridProjects.map((project: any) => (
+              <article className="featured-project-card" key={project.title}>
+                <div className="featured-project-media">
+                  <img src={project.image} alt={project.title + " project screenshot"} loading="lazy" />
+                </div>
+                <div className="featured-project-body">
+                  <div className="featured-project-title-row">
+                    <h3>{project.title}</h3>
+                    <span>{project.symbol}</span>
+                  </div>
+                  <p>{project.description}</p>
+                  <div className="project-tags featured-project-tags">
+                    {project.tags.map((tag: string) => <span key={tag}>{tag}</span>)}
+                  </div>
+                  {(project.live || project.github) && (
+                    <div className="showcase-actions">
+                      {project.live && (
+                        <a className="showcase-button showcase-button-primary" href={project.live} target="_blank" rel="noreferrer">
+                          {project.liveLabel ?? "Live Demo"} <span>↗</span>
+                        </a>
+                      )}
+                      {project.github && (
+                        <a className="showcase-button showcase-button-secondary" href={project.github} target="_blank" rel="noreferrer">
+                          View on GitHub <span>↗</span>
+                        </a>
+                      )}
+                    </div>
+                  )}
+                </div>
+              </article>
+            ))}
+          </div>
 
-              <div
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-                  gap: 18,
-                }}
-              >
-                <div style={{ borderRadius: 20, overflow: "hidden", border: "1px solid rgba(255,255,255,.14)", boxShadow: "0 18px 48px rgba(0,0,0,.25)", background: "#fff" }}>
-                  <img
-                    src={campusResolveImages.student}
-                    alt="CampusResolve student complaint dashboard"
-                    style={{ width: "100%", display: "block", height: "auto" }}
-                  />
-                </div>
-                <div style={{ borderRadius: 20, overflow: "hidden", border: "1px solid rgba(255,255,255,.14)", boxShadow: "0 18px 48px rgba(0,0,0,.25)", background: "#fff" }}>
-                  <img
-                    src={campusResolveImages.admin}
-                    alt="CampusResolve administrator dashboard"
-                    style={{ width: "100%", display: "block", height: "auto" }}
-                  />
-                </div>
-              </div>
+          <div className="projects-section-heading selected-heading">
+            <div>
+              <div className="section-kicker">02 / Selected work</div>
+              <h2>Selected <span>Work</span></h2>
             </div>
+            <p>More projects showcasing my skills across different technologies and domains.</p>
           </div>
-        </div>
-      </section>
 
-      <section
-        className="major-featured-project notebook-featured-project"
-        aria-label="Featured NotebookGuardian AI project"
-        style={{
-          position: "relative",
-          overflow: "hidden",
-          padding: "clamp(72px, 9vw, 120px) clamp(24px, 6vw, 96px)",
-          background: "linear-gradient(135deg, #f5f3ff 0%, #ffffff 55%, #eef7ff 100%)",
-          color: "#111827",
-        }}
-      >
-        <div style={{ maxWidth: 1440, margin: "0 auto" }}>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-              gap: "clamp(36px, 6vw, 84px)",
-              alignItems: "center",
-            }}
-          >
-            <div className="major-featured-copy notebook-featured-copy">
-              <div className="section-kicker">03 / Featured project</div>
-              <p className="project-number">06</p>
-              <h2 style={{ marginBottom: 16 }}>NotebookGuardian AI</h2>
-              <h3 style={{ marginBottom: 22 }}>AI-powered Jupyter notebook risk analysis</h3>
-              <p style={{ maxWidth: 650, color: "#4b5563", lineHeight: 1.8 }}>
-                A machine-learning-powered web application that analyzes Jupyter notebooks at cell level,
-                separates code risk from execution risk, explains why cells are flagged, and generates
-                downloadable PDF review reports.
-              </p>
-              <div className="project-tags" style={{ marginTop: 28 }}>
-                <span>Python</span><span>FastAPI</span><span>React</span>
-                <span>Vite</span><span>scikit-learn</span><span>AST</span>
-                <span>Vercel</span><span>Render</span>
-              </div>
-              <div className="project-actions" style={{ marginTop: 30 }}>
-                <a className="button button-primary" href="https://notebook-guardian-ai.vercel.app/" target="_blank" rel="noreferrer">
-                  Live Demo <span>↗</span>
-                </a>
-                <a className="button button-secondary" href="https://github.com/Ashutosh9-pan/NotebookGuardian-AI" target="_blank" rel="noreferrer">
-                  View on GitHub <span>↗</span>
-                </a>
-              </div>
-            </div>
-            <div style={{ borderRadius: 24, overflow: "hidden", border: "1px solid rgba(99,102,241,.18)", boxShadow: "0 24px 70px rgba(30,41,59,.16)", background: "#fff" }}>
-              <img
-                src="https://raw.githubusercontent.com/Ashutosh9-pan/NotebookGuardian-AI/main/docs/screenshots/risk-analysis.png"
-                alt="NotebookGuardian AI risk analysis dashboard"
-                style={{ width: "100%", display: "block", height: "auto" }}
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-      <section className="section" aria-label="Featured major projects" style={{ padding: 0 }}>
-        {(otherProjects as any[]).filter((project: any) => project.featured).map((project, index) => (
-          <div
-            key={project.title}
-            className="major-featured-project"
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
-              minHeight: "min(760px, 78vw)",
-              background: index % 2 === 0 ? "#11152b" : "#f5f4fb",
-              color: index % 2 === 0 ? "#fff" : "#11152b",
-            }}
-          >
-            {index % 2 === 0 ? (
-              <>
-                <div className="major-featured-copy" style={{ padding: "clamp(48px, 7vw, 110px)", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-                  <div className="section-kicker light">03 / Featured project</div>
-                  <p className="project-number">{project.number}</p>
-                  <h2 className="major-featured-title" style={{ fontSize: "clamp(46px, 6vw, 88px)", lineHeight: 0.98, margin: "16px 0" }}>{project.title}</h2>
-                  <h3 className="major-featured-description" style={{ fontSize: "clamp(22px, 2.2vw, 34px)", fontWeight: 500, marginBottom: 24 }}>{project.description}</h3>
-                  <div className="project-tags">{project.tags.map((tag: string) => <span key={tag}>{tag}</span>)}</div>
-                  <div className="project-actions" style={{ marginTop: 30 }}><a className="button button-light" href={project.github ?? "#"} target="_blank" rel="noreferrer">View on GitHub <span>↗</span></a></div>
-                </div>
-                <div className="major-featured-media" style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "clamp(24px, 4vw, 64px)", background: "#201d4c" }}>
-                  <img src={(project as any).image} alt={project.title + " project screenshot"} className="major-featured-image"
-                    style={{ width: "100%", height: "auto", objectFit: "contain", display: "block", borderRadius: 22, boxShadow: "0 24px 70px rgba(0,0,0,.28)" }} />
-                </div>
-              </>
-            ) : (
-              <>
-                <div className="major-featured-media" style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "clamp(24px, 4vw, 64px)", background: "#e9e7f5" }}>
-                  <img src={(project as any).image} alt={project.title + " project screenshot"} className="major-featured-image"
-                    style={{ width: "100%", height: "auto", objectFit: "contain", display: "block", borderRadius: 22, boxShadow: "0 24px 70px rgba(22,20,55,.16)" }} />
-                </div>
-                <div className="major-featured-copy" style={{ padding: "clamp(48px, 7vw, 110px)", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-                  <div className="section-kicker">03 / Featured project</div>
-                  <p className="project-number">{project.number}</p>
-                  <h2 className="major-featured-title" style={{ fontSize: "clamp(46px, 6vw, 88px)", lineHeight: 0.98, margin: "16px 0" }}>{project.title}</h2>
-                  <h3 className="major-featured-description" style={{ fontSize: "clamp(22px, 2.2vw, 34px)", fontWeight: 500, marginBottom: 24 }}>{project.description}</h3>
-                  <div className="project-tags">{project.tags.map((tag: string) => <span key={tag}>{tag}</span>)}</div>
-                  <div className="project-actions" style={{ marginTop: 30 }}><a className="button button-primary" href={project.github ?? "#"} target="_blank" rel="noreferrer">View on GitHub <span>↗</span></a></div>
-                </div>
-              </>
-            )}
-          </div>
-        ))}
-      </section>
-
-      <section className="section more-projects">
-        <div className="section-heading compact-heading">
-          <div>
-            <div className="section-kicker">04 / Selected work</div>
-            <h2>Problem-solving beyond a single platform.</h2>
-          </div>
-          <p>Academic and applied concepts designed around real users, clear workflows, and measurable outcomes.</p>
-        </div>
-        <div className="project-card-grid">
-          {(otherProjects as any[]).filter((project: any) => !project.featured).map((project) => (
-            <article className="project-card" key={project.title}>
-              {(project as any).images?.length && (
-                <div
-                  className="selected-work-media"
-                  style={{
-                    margin: "-24px -24px 22px",
-                    height: 320,
-                    overflow: "hidden",
-                    borderRadius: "20px 20px 0 0",
-                    background: "#e8eaf0",
-                    display: "grid",
-                    gridTemplateColumns: (project as any).images?.length > 1 ? "repeat(2, minmax(0, 1fr))" : "1fr",
-                    gap: (project as any).images?.length > 1 ? 10 : 0,
-                    padding: (project as any).images?.length > 1 ? 10 : 0,
-                    boxSizing: "border-box",
-                  }}
-                >
-                  {(project as any).images.map((src: string, imageIndex: number) => (
-                    <div key={src} style={{ minWidth: 0, height: "100%", overflow: "hidden", borderRadius: 14, background: "#f3f4f8", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                      <img src={src} alt={project.title + " preview " + (imageIndex + 1)} loading="lazy" style={{ width: "100%", height: "100%", objectFit: "contain", display: "block" }} />
+          <div className="selected-projects-grid">
+            {selectedGridProjects.map((project: any) => (
+              <article className="selected-project-card" key={project.title}>
+                <div className="selected-project-media">
+                  {(project.images ?? [project.image]).map((src: string, imageIndex: number) => (
+                    <div className="selected-project-image" key={src + imageIndex}>
+                      <img src={src} alt={project.title + " preview " + (imageIndex + 1)} loading="lazy" />
                     </div>
                   ))}
                 </div>
-              )}
-              <div className="project-card-top">
-                <span className="project-symbol">{project.symbol}</span>
-                <span className="project-card-number">{project.number}</span>
-              </div>
-              <h3>{project.title}</h3>
-              <p>{project.description}</p>
-              <div className="project-tags dark-tags">
-                {project.tags.map((tag: string) => <span key={tag}>{tag}</span>)}
-              </div>
-              {(project.github || project.live) && (
-                <div className="project-actions">
-                  {project.github && (
-                    <a className="project-card-link" href={project.github ?? "#"} target="_blank" rel="noreferrer">
-                      View on GitHub <span>↗</span>
-                    </a>
-                  )}
-                  {project.live && (
-                    <a className="project-card-link" href={project.live} target="_blank" rel="noreferrer">
-                      {(project as any).liveLabel ?? "Live Demo"} <span>↗</span>
-                    </a>
+                <div className="selected-project-body">
+                  <div className="selected-project-title-row">
+                    <span className="project-symbol">{project.symbol}</span>
+                    <span className="project-card-number">{project.number}</span>
+                  </div>
+                  <h3>{project.title}</h3>
+                  <p>{project.description}</p>
+                  <div className="project-tags dark-tags">
+                    {project.tags.map((tag: string) => <span key={tag}>{tag}</span>)}
+                  </div>
+                  {(project.live || project.github) && (
+                    <div className="showcase-actions">
+                      {project.live && (
+                        <a className="showcase-button showcase-button-primary" href={project.live} target="_blank" rel="noreferrer">
+                          {project.liveLabel ?? "Live Demo"} <span>↗</span>
+                        </a>
+                      )}
+                      {project.github && (
+                        <a className="showcase-button showcase-button-secondary" href={project.github} target="_blank" rel="noreferrer">
+                          View on GitHub <span>↗</span>
+                        </a>
+                      )}
+                    </div>
                   )}
                 </div>
-              )}
-            </article>
-          ))}
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -1957,6 +1804,272 @@ export default function Home() {
           .notebook-featured-copy > p:not(.project-number) {
             font-size: 15px !important;
           }
+        }
+
+
+        /* ==========================================================
+           PROJECT SHOWCASE — MATCHED GRID / CONSISTENT ACTIONS
+        ========================================================== */
+        .projects-showcase {
+          padding: clamp(78px, 8vw, 118px) 0 !important;
+          background:
+            radial-gradient(circle at 10% 8%, rgba(139,92,246,.09), transparent 28%),
+            radial-gradient(circle at 90% 42%, rgba(34,211,238,.06), transparent 25%),
+            #07080d !important;
+        }
+
+        .projects-showcase-inner {
+          width: min(1500px, calc(100% - 48px));
+          margin: 0 auto;
+        }
+
+        .projects-section-heading {
+          display: grid;
+          grid-template-columns: minmax(0, 1.1fr) minmax(280px, .9fr);
+          gap: 48px;
+          align-items: end;
+          margin-bottom: 34px;
+        }
+
+        .projects-section-heading h2 {
+          margin: 8px 0 0 !important;
+          color: #fff !important;
+          font-size: clamp(48px, 5vw, 76px) !important;
+          line-height: .98 !important;
+          letter-spacing: -.06em !important;
+        }
+
+        .projects-section-heading h2 span {
+          background: linear-gradient(90deg, #a78bfa, #67e8f9);
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
+        }
+
+        .projects-section-heading > p {
+          margin: 0 0 5px !important;
+          max-width: 560px !important;
+          color: #9aa3b8 !important;
+          line-height: 1.7 !important;
+          font-size: 16px !important;
+        }
+
+        .featured-projects-grid {
+          display: grid;
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+          gap: 14px;
+        }
+
+        .featured-project-card,
+        .selected-project-card {
+          min-width: 0;
+          overflow: hidden;
+          border: 1px solid rgba(255,255,255,.10);
+          border-radius: 20px;
+          background: linear-gradient(145deg, rgba(17,21,33,.96), rgba(8,10,16,.96));
+          box-shadow: 0 20px 60px rgba(0,0,0,.18);
+          transition: transform .24s ease, border-color .24s ease, box-shadow .24s ease;
+        }
+
+        .featured-project-card:hover,
+        .selected-project-card:hover {
+          transform: translateY(-5px);
+          border-color: rgba(139,92,246,.42);
+          box-shadow: 0 28px 75px rgba(0,0,0,.28), 0 0 32px rgba(139,92,246,.08);
+        }
+
+        .featured-project-media {
+          aspect-ratio: 1.7 / 1;
+          overflow: hidden;
+          background: #eef0f7;
+        }
+
+        .featured-project-media img {
+          width: 100%;
+          height: 100%;
+          display: block;
+          object-fit: cover;
+        }
+
+        .featured-project-body {
+          padding: 18px 18px 17px;
+        }
+
+        .featured-project-title-row,
+        .selected-project-title-row {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 12px;
+        }
+
+        .featured-project-title-row h3,
+        .selected-project-body h3 {
+          margin: 0 !important;
+          color: #fff !important;
+          font-size: 21px !important;
+          line-height: 1.15 !important;
+          letter-spacing: -.035em !important;
+        }
+
+        .featured-project-title-row > span {
+          flex: 0 0 auto;
+          color: #a78bfa;
+          font-size: 10px;
+          font-weight: 800;
+          letter-spacing: .12em;
+        }
+
+        .featured-project-body > p,
+        .selected-project-body > p {
+          margin: 8px 0 13px !important;
+          color: #aeb7ca !important;
+          font-size: 14px !important;
+          line-height: 1.48 !important;
+        }
+
+        .featured-project-tags,
+        .selected-project-body .project-tags {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 7px;
+          margin: 0 !important;
+        }
+
+        .featured-project-tags span,
+        .selected-project-body .dark-tags span {
+          padding: 5px 9px !important;
+          border-radius: 999px !important;
+          border: 1px solid rgba(139,92,246,.22) !important;
+          background: rgba(139,92,246,.08) !important;
+          color: #d8d3ff !important;
+          font-size: 10px !important;
+          line-height: 1 !important;
+        }
+
+        .showcase-actions {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 9px;
+          margin-top: 15px;
+        }
+
+        .showcase-button {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 7px;
+          min-height: 36px;
+          padding: 8px 13px;
+          border-radius: 10px;
+          border: 1px solid transparent;
+          color: #fff !important;
+          text-decoration: none !important;
+          font-size: 11px;
+          font-weight: 700;
+          line-height: 1;
+          transition: transform .2s ease, filter .2s ease, border-color .2s ease;
+        }
+
+        .showcase-button:hover {
+          transform: translateY(-2px);
+          filter: brightness(1.08);
+        }
+
+        .showcase-button-primary {
+          background: linear-gradient(135deg, #7c3aed, #0891b2) !important;
+          border-color: rgba(139,92,246,.55) !important;
+          box-shadow: 0 8px 22px rgba(124,58,237,.22);
+        }
+
+        .showcase-button-secondary {
+          background: rgba(255,255,255,.07) !important;
+          border-color: rgba(255,255,255,.13) !important;
+        }
+
+        .selected-heading {
+          margin-top: clamp(72px, 8vw, 112px);
+        }
+
+        .selected-projects-grid {
+          display: grid;
+          grid-template-columns: repeat(5, minmax(0, 1fr));
+          gap: 14px;
+        }
+
+        .selected-project-media {
+          height: 190px;
+          padding: 8px;
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 8px;
+          overflow: hidden;
+          background: #eef0f6;
+        }
+
+        .selected-project-image {
+          min-width: 0;
+          min-height: 0;
+          overflow: hidden;
+          border-radius: 12px;
+          background: #f5f6fa;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .selected-project-image:only-child {
+          grid-column: 1 / -1;
+        }
+
+        .selected-project-image img {
+          width: 100%;
+          height: 100%;
+          display: block;
+          object-fit: contain;
+        }
+
+        .selected-project-body {
+          padding: 15px;
+        }
+
+        .selected-project-title-row {
+          margin-bottom: 11px;
+        }
+
+        .selected-project-body h3 {
+          font-size: 18px !important;
+          margin-bottom: 7px !important;
+        }
+
+        .selected-project-body > p {
+          font-size: 12px !important;
+          line-height: 1.5 !important;
+          min-height: 54px;
+        }
+
+        @media (max-width: 1250px) {
+          .featured-projects-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+          .selected-projects-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        }
+
+        @media (max-width: 860px) {
+          .projects-showcase-inner { width: min(100% - 28px, 720px); }
+          .projects-section-heading { grid-template-columns: 1fr; gap: 18px; }
+          .featured-projects-grid,
+          .selected-projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
+
+        @media (max-width: 560px) {
+          .projects-showcase { padding-top: 62px !important; }
+          .projects-showcase-inner { width: calc(100% - 22px); }
+          .projects-section-heading h2 { font-size: 45px !important; }
+          .featured-projects-grid,
+          .selected-projects-grid { grid-template-columns: 1fr; }
+          .featured-project-media { aspect-ratio: 1.65 / 1; }
+          .selected-project-media { height: 220px; }
+          .featured-project-body { padding: 17px; }
+          .showcase-button { flex: 1 1 auto; }
         }
 
         @media (prefers-reduced-motion: reduce) {
