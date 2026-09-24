@@ -22,6 +22,37 @@ const skillGroups = [
 const otherProjects = [
 
   {
+    number: "02",
+    title: "Flashcard Quiz App",
+    description: "Interactive Android flashcard study app with question-and-answer navigation, SQLite-backed CRUD, and a comfortable dark mode.",
+    tags: ["Java", "Android", "SQLite", "CRUD"],
+    symbol: "FQ",
+    image: "https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/flashcard-quiz.svg",
+    github: "https://github.com/Ashutosh9-pan/CodeAlpha_FlashcardQuizApp",
+    live: null,
+  },
+  {
+    number: "03",
+    title: "LanguageLearn",
+    description: "Android language-learning app with vocabulary, phrases, grammar, quizzes, pronunciation, dictionary lookup, multilingual content, and progress tracking.",
+    tags: ["Java", "Android", "SQLite", "REST API", "Text-to-Speech"],
+    symbol: "LL",
+    image: "https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/languagelearn.svg",
+    github: "https://github.com/Ashutosh9-pan/CodeAlpha_LanguageLearningApp",
+    live: null,
+  },
+  {
+    number: "04",
+    title: "QuoteSpark",
+    description: "Offline-first Android quote app with curated categories, favorites, saved quotes, sharing, and polished light and dark modes.",
+    tags: ["Java", "Android", "Material UI", "SharedPreferences"],
+    symbol: "QS",
+    image: "https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/random-quote.svg",
+    github: "https://github.com/Ashutosh9-pan/CodeAlpha_RandomQuoteGenerator",
+    live: null,
+  },
+
+  {
     number: "07",
     title: "TaskFlow — Full-Stack",
     description: "Production-style full-stack task management platform with secure authentication, role-based access, real-time collaboration, Kanban workflows, offline caching, validation, testing, and deployment-ready infrastructure.",
@@ -135,7 +166,7 @@ const otherProjects = [
     description: "Backend-focused Spring Boot e-commerce system demonstrating JPA/Hibernate, transactions, locking, auditing, caching, pagination, filtering, reporting, and PostgreSQL-ready data access patterns.",
     tags: ["Java 21", "Spring Boot", "Spring Data JPA", "Hibernate", "PostgreSQL", "Flyway"],
     symbol: "JPA",
-    image: "https://raw.githubusercontent.com/Ashutosh9-pan/week7-spring-data-jpa/main/docs/screenshots/01.png",
+    image: "https://raw.githubusercontent.com/Ashutosh9-pan/week7-spring-data-jpa/main/screenshots/10_Swagger_API_Overview.png",
     github: "https://github.com/Ashutosh9-pan/week7-spring-data-jpa",
     live: null,
   },
@@ -310,94 +341,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="flashcard-feature" aria-label="Featured Flashcard Quiz App project">
-        <div className="flashcard-visual">
-          <div className="flashcard-glow" />
-          <div className="flashcard-phone flashcard-phone-back">
-            <img src="/assets/flashcard-splash-screen.jpg" alt="Flashcard Quiz App splash screen" />
-          </div>
-          <div className="flashcard-phone flashcard-phone-front">
-            <img src="/assets/flashcard-quiz-screen.jpg" alt="Flashcard Quiz question and card management screen" />
-          </div>
-          <div className="floating-card floating-card-one"><span>QUESTION</span><strong>Tap to reveal</strong></div>
-          <div className="floating-card floating-card-two"><span>ANSWER</span><strong>Learn · Quiz · Remember</strong></div>
-        </div>
-        <div className="flashcard-copy">
-          <div className="section-kicker">03 / Featured project</div>
-          <p className="project-number">02</p>
-          <h2>Flashcard<br />Quiz App</h2>
-          <h3>Interactive learning, built for Android</h3>
-          <p>
-            A focused study companion with question-and-answer flashcards, smooth next and previous navigation, SQLite-backed create, edit and delete operations, and a comfortable Dark Mode.
-          </p>
-          <div className="project-tags flashcard-tags"><span>Java</span><span>SQLite</span><span>Android</span><span>CRUD</span></div>
-          <a className="button button-primary" href="https://github.com/Ashutosh9-pan/CodeAlpha_FlashcardQuizApp" target="_blank" rel="noreferrer">View project on GitHub <span>↗</span></a>
-        </div>
-      </section>
-
-      <section className="language-feature" aria-label="Featured LanguageLearn project">
-        <div className="language-copy">
-          <div className="section-kicker light">03 / Featured project</div>
-          <p className="project-number">03</p>
-          <h2>Language<br />Learn</h2>
-          <h3>Multilingual learning that fits into every day</h3>
-          <p>
-            A polished Android learning experience combining vocabulary, daily phrases, grammar lessons, interactive quizzes, pronunciation, concise dictionary lookup, multilingual content, progress tracking, and dark mode.
-          </p>
-          <div className="project-tags">
-            <span>Java</span><span>Android</span><span>Text to Speech</span><span>REST API</span><span>Material UI</span>
-          </div>
-          <div className="project-actions">
-            <a className="button button-light" href="https://github.com/Ashutosh9-pan/CodeAlpha_LanguageLearningApp" target="_blank" rel="noreferrer">View on GitHub <span>↗</span></a>
-            <a className="button button-outline-light" href="https://github.com/Ashutosh9-pan/CodeAlpha_LanguageLearningApp/releases/latest" target="_blank" rel="noreferrer">Get APK <span>↓</span></a>
-          </div>
-        </div>
-        <div className="language-phones" aria-label="LanguageLearn application screenshots">
-          <div className="language-phone language-phone-back">
-            <img src="/assets/languagelearn-dashboard.jpg" alt="LanguageLearn dashboard and progress" />
-          </div>
-          <div className="language-phone language-phone-front">
-            <img src="/assets/languagelearn-dictionary.jpg" alt="LanguageLearn English to Hindi dictionary" />
-          </div>
-        </div>
-      </section>
-
-      <section className="quotespark-feature" aria-label="Featured QuoteSpark project">
-        <div className="quotespark-visual" aria-label="QuoteSpark Android application screenshot">
-          <div className="quotespark-orb quotespark-orb-one" />
-          <div className="quotespark-orb quotespark-orb-two" />
-          <div className="quotespark-phone">
-            <img src="/assets/quotespark-home.jpg" alt="QuoteSpark random quote generator home screen" />
-          </div>
-          <div className="quotespark-badge quotespark-badge-top">
-            <span>80</span>
-            <small>CURATED QUOTES</small>
-          </div>
-          <div className="quotespark-badge quotespark-badge-bottom">
-            <span>8</span>
-            <small>CATEGORIES</small>
-          </div>
-        </div>
-
-        <div className="quotespark-copy">
-          <div className="section-kicker quote-kicker">03 / Featured project</div>
-          <p className="project-number">04</p>
-          <h2>Quote<br />Spark</h2>
-          <h3>Thoughtful words, beautifully delivered</h3>
-          <p>
-            A modern offline-first Android quote experience with 80 curated quotes across eight categories, instant generation, favorites, saved quotes, copy and native sharing, plus polished light and dark modes.
-          </p>
-          <div className="project-tags quotespark-tags">
-            <span>Java</span><span>Android</span><span>Material UI</span><span>SharedPreferences</span><span>Offline</span>
-          </div>
-          <div className="project-actions">
-            <a className="button quotespark-button" href="https://github.com/Ashutosh9-pan/CodeAlpha_RandomQuoteGenerator" target="_blank" rel="noreferrer">View on GitHub <span>↗</span></a>
-            <a className="button quotespark-button-outline" href="https://github.com/Ashutosh9-pan/CodeAlpha_RandomQuoteGenerator/releases/latest" target="_blank" rel="noreferrer">Get APK <span>↓</span></a>
-          </div>
-        </div>
-      </section>
-
       <section
+        className="major-featured-project campus-featured-project"
         aria-label="Featured CampusResolve project"
         style={{
           position: "relative",
@@ -428,7 +373,7 @@ export default function Home() {
               alignItems: "center",
             }}
           >
-            <div>
+            <div className="major-featured-copy campus-featured-copy">
               <div className="section-kicker light">03 / Featured project</div>
               <p className="project-number">05</p>
               <h2 style={{ marginBottom: 16 }}>CampusResolve</h2>
@@ -511,6 +456,7 @@ export default function Home() {
       </section>
 
       <section
+        className="major-featured-project notebook-featured-project"
         aria-label="Featured NotebookGuardian AI project"
         style={{
           position: "relative",
@@ -529,7 +475,7 @@ export default function Home() {
               alignItems: "center",
             }}
           >
-            <div>
+            <div className="major-featured-copy notebook-featured-copy">
               <div className="section-kicker">03 / Featured project</div>
               <p className="project-number">06</p>
               <h2 style={{ marginBottom: 16 }}>NotebookGuardian AI</h2>
@@ -1992,6 +1938,70 @@ export default function Home() {
 
           .skill-card h3 {
             font-size: 24px !important;
+          }
+        }
+
+
+        /* ==========================================================
+           FEATURED PROJECT TYPOGRAPHY POLISH
+        ========================================================== */
+        .campus-featured-project,
+        .notebook-featured-project {
+          border-radius: 30px !important;
+          margin: 0 !important;
+        }
+
+        .campus-featured-copy h2,
+        .notebook-featured-copy h2 {
+          font-size: clamp(42px, 4.8vw, 68px) !important;
+          line-height: 1.02 !important;
+          letter-spacing: -.045em !important;
+          margin: 12px 0 14px !important;
+        }
+
+        .campus-featured-copy h3,
+        .notebook-featured-copy h3 {
+          font-size: clamp(20px, 2vw, 28px) !important;
+          line-height: 1.25 !important;
+          margin-bottom: 18px !important;
+        }
+
+        .campus-featured-copy > p:not(.project-number),
+        .notebook-featured-copy > p:not(.project-number) {
+          font-size: 16px !important;
+          line-height: 1.7 !important;
+          max-width: 650px !important;
+        }
+
+        .campus-featured-project .project-tags,
+        .notebook-featured-project .project-tags {
+          margin-top: 22px !important;
+        }
+
+        .campus-featured-project .project-actions,
+        .notebook-featured-project .project-actions {
+          margin-top: 24px !important;
+        }
+
+        .campus-featured-project .section-kicker,
+        .notebook-featured-project .section-kicker {
+          font-size: 11px !important;
+        }
+
+        @media (max-width: 720px) {
+          .campus-featured-copy h2,
+          .notebook-featured-copy h2 {
+            font-size: clamp(38px, 11vw, 56px) !important;
+          }
+
+          .campus-featured-copy h3,
+          .notebook-featured-copy h3 {
+            font-size: 20px !important;
+          }
+
+          .campus-featured-copy > p:not(.project-number),
+          .notebook-featured-copy > p:not(.project-number) {
+            font-size: 15px !important;
           }
         }
 
