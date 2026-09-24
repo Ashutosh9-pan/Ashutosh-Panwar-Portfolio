@@ -28,6 +28,7 @@ const otherProjects = [
     tags: ["Java", "Android", "SQLite", "CRUD"],
     symbol: "FQ",
     image: "/assets/flashcard-quiz-screen.jpg",
+    images: ["/assets/flashcard-splash-screen.jpg", "/assets/flashcard-quiz-screen.jpg"],
     github: "https://github.com/Ashutosh9-pan/CodeAlpha_FlashcardQuizApp",
     live: null,
   },
@@ -38,6 +39,7 @@ const otherProjects = [
     tags: ["Java", "Android", "SQLite", "REST API", "Text-to-Speech"],
     symbol: "LL",
     image: "/assets/languagelearn-dashboard.jpg",
+    images: ["/assets/languagelearn-dashboard.jpg", "/assets/languagelearn-dictionary.jpg"],
     github: "https://github.com/Ashutosh9-pan/CodeAlpha_LanguageLearningApp",
     live: null,
   },
@@ -47,7 +49,7 @@ const otherProjects = [
     description: "Offline-first Android quote app with curated categories, favorites, saved quotes, sharing, and polished light and dark modes.",
     tags: ["Java", "Android", "Material UI", "SharedPreferences"],
     symbol: "QS",
-    image: "https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/random-quote.svg",
+    image: "/assets/quotespark-home.jpg",
     github: "https://github.com/Ashutosh9-pan/CodeAlpha_RandomQuoteGenerator",
     live: null,
   },
@@ -58,7 +60,7 @@ const otherProjects = [
     description: "Production-style full-stack task management platform with secure authentication, role-based access, real-time collaboration, Kanban workflows, offline caching, validation, testing, and deployment-ready infrastructure.",
     tags: ["React", "TypeScript", "Spring Boot", "PostgreSQL", "JWT", "WebSocket", "Docker"],
     symbol: "TF",
-    image: "https://raw.githubusercontent.com/Ashutosh9-pan/week8-fullstack-task-manager/main/docs/screenshots/dashboard.png",
+    image: "https://raw.githubusercontent.com/Ashutosh9-pan/week8-fullstack-task-manager/main/docs/screenshots/03-dashboard.webp",
     github: "https://github.com/Ashutosh9-pan/week8-fullstack-task-manager",
     live: "https://week8-fullstack-task-manager.onrender.com",
     featured: true,
@@ -569,8 +571,26 @@ export default function Home() {
           {(otherProjects as any[]).filter((project: any) => !project.featured).map((project) => (
             <article className="project-card" key={project.title}>
               {(project as any).image && (
-                <div style={{ margin: "-24px -24px 22px", height: 300, overflow: "hidden", borderRadius: "20px 20px 0 0", background: "#e8eaf0", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  <img src={(project as any).image} alt={project.title + " preview"} loading="lazy" style={{ width: "100%", height: "100%", objectFit: "contain", display: "block" }} />
+                <div
+                  className="selected-work-media"
+                  style={{
+                    margin: "-24px -24px 22px",
+                    height: 320,
+                    overflow: "hidden",
+                    borderRadius: "20px 20px 0 0",
+                    background: "#e8eaf0",
+                    display: "grid",
+                    gridTemplateColumns: (project as any).images?.length > 1 ? "repeat(2, minmax(0, 1fr))" : "1fr",
+                    gap: (project as any).images?.length > 1 ? 10 : 0,
+                    padding: (project as any).images?.length > 1 ? 10 : 0,
+                    boxSizing: "border-box",
+                  }}
+                >
+                  {((project as any).images || [(project as any).image]).map((src: string, imageIndex: number) => (
+                    <div key={src} style={{ minWidth: 0, height: "100%", overflow: "hidden", borderRadius: 14, background: "#f3f4f8", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                      <img src={src} alt={project.title + " preview " + (imageIndex + 1)} loading="lazy" style={{ width: "100%", height: "100%", objectFit: "contain", display: "block" }} />
+                    </div>
+                  ))}
                 </div>
               )}
               <div className="project-card-top">
@@ -1941,6 +1961,16 @@ export default function Home() {
           }
         }
 
+
+        .selected-work-media {
+          min-height: 300px;
+        }
+
+        @media (max-width: 720px) {
+          .selected-work-media {
+            height: 300px !important;
+          }
+        }
 
         /* ==========================================================
            FEATURED PROJECT TYPOGRAPHY POLISH
