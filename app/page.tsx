@@ -22,28 +22,19 @@ const skillGroups = [
 const otherProjects = [
 
   {
-    number: "06",
-    title: "TaskFlow",
-    description: "A responsive task management application with add, edit, delete, complete, search, filter, sort, drag-and-drop reordering, due dates, priorities, progress tracking, light/dark theme, and localStorage persistence.",
-    tags: ["JavaScript", "HTML5", "CSS3", "localStorage", "Responsive UI"],
+    number: "07",
+    title: "TaskFlow — Full-Stack",
+    description: "Production-style full-stack task management platform with secure authentication, role-based access, real-time collaboration, Kanban workflows, offline caching, validation, testing, and deployment-ready infrastructure.",
+    tags: ["React", "TypeScript", "Spring Boot", "PostgreSQL", "JWT", "WebSocket", "Docker"],
     symbol: "TF",
-    image: "https://raw.githubusercontent.com/Ashutosh9-pan/week2-task-manager/main/screenshots/light-dashboard.png",
-
-
-
-
-
-
-
-
-
-
-    github: "https://github.com/Ashutosh9-pan/week2-task-manager",
-    live: "https://ashutosh9-pan.github.io/week2-task-manager/",
+    image: "https://raw.githubusercontent.com/Ashutosh9-pan/week8-fullstack-task-manager/main/docs/screenshots/dashboard.png",
+    github: "https://github.com/Ashutosh9-pan/week8-fullstack-task-manager",
+    live: "https://week8-fullstack-task-manager.onrender.com",
+    featured: true,
   },
   
   {
-    number: "07", title: "Clinevo Smart Inbox Assistant",
+    number: "15", title: "Clinevo Smart Inbox Assistant",
     description: "AI-powered healthcare shared inbox assistant for automated document processing, classification, extraction, review, and audit workflows.",
     tags: ["AI/ML", "Python", "Flask", "Angular"], symbol: "CI",
     image: "https://raw.githubusercontent.com/Ashutosh9-pan/Clinevo-smart-inbox-assistant/main/docs/screenshots/dashboard.png",
@@ -139,7 +130,17 @@ const otherProjects = [
     github: "https://github.com/Ashutosh9-pan/CodeAlpha_RandomQuoteGenerator", live: null,
   },
   {
-    number: "15",
+    number: "16",
+    title: "Spring Data JPA E-Commerce",
+    description: "Backend-focused Spring Boot e-commerce system demonstrating JPA/Hibernate, transactions, locking, auditing, caching, pagination, filtering, reporting, and PostgreSQL-ready data access patterns.",
+    tags: ["Java 21", "Spring Boot", "Spring Data JPA", "Hibernate", "PostgreSQL", "Flyway"],
+    symbol: "JPA",
+    image: "https://raw.githubusercontent.com/Ashutosh9-pan/week7-spring-data-jpa/main/docs/screenshots/01.png",
+    github: "https://github.com/Ashutosh9-pan/week7-spring-data-jpa",
+    live: null,
+  },
+  {
+    number: "17",
     title: "Smart Waste Monitoring",
     description: "A CCTV-assisted waste management concept that identifies actionable events and triggers timely notifications for faster response and cleaner shared spaces.",
     tags: ["Computer Vision", "Notifications", "Smart City"],
@@ -251,7 +252,7 @@ export default function Home() {
       <section className="signal-strip" aria-label="Professional highlights">
         <div><strong>10+</strong><span>AI, ML &amp;<br />Data Skills</span></div>
         <div><strong>08</strong><span>Programming<br />Languages</span></div>
-        <div><strong>15</strong><span>Applied<br />Projects</span></div>
+        <div><strong>17</strong><span>Applied<br />Projects</span></div>
         <div><strong>8</strong><span>Professional<br />Certifications</span></div>
       </section>
 
