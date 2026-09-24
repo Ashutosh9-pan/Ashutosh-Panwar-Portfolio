@@ -86,8 +86,7 @@ text = text.replace("{otherProjects.map((project) => (", "{otherProjects.filter(
 
 if (!text.includes('aria-label="Featured major projects"')) {
   const selectedStart = text.indexOf('      <section className="section more-projects">');
-  if (selectedStart === -1) throw new Error("Could not locate Selected Work section");
-
+  if (selectedStart !== -1) {
   const featuredSection = String.raw`      <section className="section" aria-label="Featured major projects" style={{ padding: 0 }}>
         {otherProjects.filter((project) => project.featured).map((project, index) => (
           <div key={project.title} style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", minHeight: "min(760px, 78vw)", background: index % 2 === 0 ? "#11152b" : "#f5f4fb", color: index % 2 === 0 ? "#fff" : "#11152b" }}>
@@ -126,6 +125,7 @@ if (!text.includes('aria-label="Featured major projects"')) {
 
 `;
   text = text.slice(0, selectedStart) + featuredSection + text.slice(selectedStart);
+  }
 }
 
 const journeyStart = text.indexOf('        <div className="timeline">');
