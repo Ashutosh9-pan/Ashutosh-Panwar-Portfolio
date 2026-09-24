@@ -27,7 +27,6 @@ const otherProjects = [
     description: "Interactive Android flashcard study app with question-and-answer navigation, SQLite-backed CRUD, and a comfortable dark mode.",
     tags: ["Java", "Android", "SQLite", "CRUD"],
     symbol: "FQ",
-    image: "/assets/flashcard-quiz-screen.jpg",
     images: ["/assets/flashcard-splash-screen.jpg", "/assets/flashcard-quiz-screen.jpg"],
     github: "https://github.com/Ashutosh9-pan/CodeAlpha_FlashcardQuizApp",
     live: null,
@@ -38,7 +37,6 @@ const otherProjects = [
     description: "Android language-learning app with vocabulary, phrases, grammar, quizzes, pronunciation, dictionary lookup, multilingual content, and progress tracking.",
     tags: ["Java", "Android", "SQLite", "REST API", "Text-to-Speech"],
     symbol: "LL",
-    image: "/assets/languagelearn-dashboard.jpg",
     images: ["/assets/languagelearn-dashboard.jpg", "/assets/languagelearn-dictionary.jpg"],
     github: "https://github.com/Ashutosh9-pan/CodeAlpha_LanguageLearningApp",
     live: null,
@@ -49,7 +47,7 @@ const otherProjects = [
     description: "Offline-first Android quote app with curated categories, favorites, saved quotes, sharing, and polished light and dark modes.",
     tags: ["Java", "Android", "Material UI", "SharedPreferences"],
     symbol: "QS",
-    image: "/assets/quotespark-home.jpg",
+    images: ["/assets/quotespark-home.jpg"],
     github: "https://github.com/Ashutosh9-pan/CodeAlpha_RandomQuoteGenerator",
     live: null,
   },
@@ -108,58 +106,28 @@ const otherProjects = [
     number: "11", title: "CalcPro",
     description: "Modern responsive web calculator with keyboard support, dark/light themes, and essential arithmetic operations.",
     tags: ["HTML5", "CSS3", "JavaScript", "Responsive UI"], symbol: "CP",
-    image: "https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/calcpro.svg",
-
-
-
-
-
-
-
-
-
-
+    images: ["https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/calcpro.svg"],
     github: "https://github.com/Ashutosh9-pan/CalcPro", live: null,
   },
   {
     number: "12", title: "Weather App",
     description: "Responsive weather application with real-time weather, forecasts, city search, favourites, geolocation, temperature conversion, and caching.",
     tags: ["JavaScript", "OpenWeather API", "Geolocation", "localStorage"], symbol: "WA",
-    image: "https://raw.githubusercontent.com/Ashutosh9-pan/week4-weather-app/main/screenshots/01-home-page.png",
+    images: ["https://raw.githubusercontent.com/Ashutosh9-pan/week4-weather-app/main/screenshots/01-home-page.png"],
     github: "https://github.com/Ashutosh9-pan/week4-weather-app", live: null,
   },
   {
     number: "13", title: "Library Management System",
     description: "Console-based Java library system with OOP, file persistence, borrowing and returns, due dates, fine calculation, search, and statistics.",
     tags: ["Java", "OOP", "File Handling", "CLI"], symbol: "LM",
-    image: "https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/library-management.svg",
-
-
-
-
-
-
-
-
-
-
+    images: ["https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/library-management.svg"],
     github: "https://github.com/Ashutosh9-pan/week3-library-system", live: null,
   },
   {
     number: "14", title: "Random Quote Generator",
     description: "Modern Android quote generator featuring categorized quotes, favorites, sharing, dark mode, and offline support.",
     tags: ["Java", "Android", "Material Design", "Offline App"], symbol: "RQ",
-    image: "https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/random-quote.svg",
-
-
-
-
-
-
-
-
-
-
+    images: ["https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/random-quote.svg"],
     github: "https://github.com/Ashutosh9-pan/CodeAlpha_RandomQuoteGenerator", live: null,
   },
   {
@@ -168,7 +136,7 @@ const otherProjects = [
     description: "Backend-focused Spring Boot e-commerce system demonstrating JPA/Hibernate, transactions, locking, auditing, caching, pagination, filtering, reporting, and PostgreSQL-ready data access patterns.",
     tags: ["Java 21", "Spring Boot", "Spring Data JPA", "Hibernate", "PostgreSQL", "Flyway"],
     symbol: "JPA",
-    image: "https://raw.githubusercontent.com/Ashutosh9-pan/week7-spring-data-jpa/main/screenshots/10_Swagger_API_Overview.png",
+    images: ["https://raw.githubusercontent.com/Ashutosh9-pan/week7-spring-data-jpa/main/screenshots/10_Swagger_API_Overview.png"],
     github: "https://github.com/Ashutosh9-pan/week7-spring-data-jpa",
     live: null,
   },
@@ -178,17 +146,7 @@ const otherProjects = [
     description: "A CCTV-assisted waste management concept that identifies actionable events and triggers timely notifications for faster response and cleaner shared spaces.",
     tags: ["Computer Vision", "Notifications", "Smart City"],
     symbol: "WM",
-    image: "https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/smart-waste-ai.svg",
-
-
-
-
-
-
-
-
-
-
+    images: ["https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/smart-waste-ai.svg"],
     github: null,
     live: null,
   },
@@ -570,7 +528,7 @@ export default function Home() {
         <div className="project-card-grid">
           {(otherProjects as any[]).filter((project: any) => !project.featured).map((project) => (
             <article className="project-card" key={project.title}>
-              {(project as any).image && (
+              {(project as any).images?.length && (
                 <div
                   className="selected-work-media"
                   style={{
@@ -586,7 +544,7 @@ export default function Home() {
                     boxSizing: "border-box",
                   }}
                 >
-                  {((project as any).images || [(project as any).image]).map((src: string, imageIndex: number) => (
+                  {(project as any).images.map((src: string, imageIndex: number) => (
                     <div key={src} style={{ minWidth: 0, height: "100%", overflow: "hidden", borderRadius: 14, background: "#f3f4f8", display: "flex", alignItems: "center", justifyContent: "center" }}>
                       <img src={src} alt={project.title + " preview " + (imageIndex + 1)} loading="lazy" style={{ width: "100%", height: "100%", objectFit: "contain", display: "block" }} />
                     </div>
