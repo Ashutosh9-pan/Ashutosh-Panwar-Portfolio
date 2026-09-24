@@ -1901,14 +1901,21 @@ export default function Home() {
           aspect-ratio: auto;
           overflow: hidden;
           background: #eef0f7;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 18px;
         }
 
         .featured-project-media img {
           width: 100%;
           height: 100%;
-          min-height: 100%;
+          min-height: 0;
+          max-height: 100%;
           display: block;
-          object-fit: cover;
+          object-fit: contain;
+          object-position: center;
+          border-radius: 16px;
         }
 
         .featured-project-body {
@@ -2017,16 +2024,16 @@ export default function Home() {
 
         .selected-projects-grid {
           display: grid;
-          grid-template-columns: repeat(5, minmax(0, 1fr));
-          gap: 14px;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 18px;
         }
 
         .selected-project-media {
-          height: 190px;
-          padding: 8px;
+          height: 230px;
+          padding: 10px;
           display: grid;
           grid-template-columns: repeat(2, minmax(0, 1fr));
-          gap: 8px;
+          gap: 10px;
           overflow: hidden;
           background: #eef0f6;
         }
@@ -2074,14 +2081,14 @@ export default function Home() {
 
         @media (max-width: 1250px) {
           .featured-projects-grid { grid-template-columns: 1fr; }
-          .selected-projects-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+          .selected-projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         }
 
         @media (max-width: 860px) {
           .projects-showcase-inner { width: min(100% - 28px, 720px); }
           .projects-section-heading { grid-template-columns: 1fr; gap: 18px; }
           .featured-projects-grid { grid-template-columns: 1fr; }
-          .selected-projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+          .selected-projects-grid { grid-template-columns: 1fr; }
           .featured-project-card,
           .featured-project-card:nth-child(even) {
             grid-template-columns: 1fr;
