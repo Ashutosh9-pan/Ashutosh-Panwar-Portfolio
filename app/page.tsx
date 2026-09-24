@@ -60,14 +60,14 @@ const otherProjects = [
     description: "Production-style REST API with Spring Boot, validation, pagination, Swagger documentation, persistence, and automated tests.",
     tags: ["Java 21", "Spring Boot", "REST API", "PostgreSQL"], symbol: "SB",
     image: "https://raw.githubusercontent.com/Ashutosh9-pan/week6-spring-blog-api/main/docs/screenshots/swagger-ui.png",
-    github: "https://github.com/Ashutosh9-pan/week6-spring-blog-api", live: null, featured: true,
+    github: "https://github.com/Ashutosh9-pan/week6-spring-blog-api", live: "https://week6-spring-blog-api.onrender.com/api/posts", liveLabel: "Live API", featured: true,
   },
   {
     number: "10", title: "NovaCart E-commerce Frontend",
     description: "Modern e-commerce frontend with responsive UI, product browsing, filters, cart, wishlist, checkout, Redux Toolkit, and localStorage.",
     tags: ["React", "Redux Toolkit", "Vite", "JavaScript"], symbol: "NC",
     image: "https://raw.githubusercontent.com/Ashutosh9-pan/novacart-ecommerce-frontend/main/screenshots/01-home.png",
-    github: "https://github.com/Ashutosh9-pan/novacart-ecommerce-frontend", live: null, featured: true,
+    github: "https://github.com/Ashutosh9-pan/novacart-ecommerce-frontend", live: "https://novacart-ecommerce-frontend.vercel.app/", featured: true,
   },
   {
     number: "03",
@@ -84,7 +84,7 @@ const otherProjects = [
     description: "Responsive weather application with real-time weather, forecasts, city search, favourites, geolocation, temperature conversion, and caching.",
     tags: ["JavaScript", "OpenWeather API", "Geolocation", "localStorage"], symbol: "WA",
     images: ["https://raw.githubusercontent.com/Ashutosh9-pan/week4-weather-app/main/screenshots/01-home-page.png"],
-    github: "https://github.com/Ashutosh9-pan/week4-weather-app", live: null,
+    github: "https://github.com/Ashutosh9-pan/week4-weather-app", live: "https://week4-weather-app-theta.vercel.app/",
   },
   {
     number: "13", title: "Library Management System",
@@ -535,7 +535,7 @@ export default function Home() {
                   )}
                   {project.live && (
                     <a className="project-card-link" href={project.live} target="_blank" rel="noreferrer">
-                      Live Demo <span>↗</span>
+                      {(project as any).liveLabel ?? "Live Demo"} <span>↗</span>
                     </a>
                   )}
                 </div>
