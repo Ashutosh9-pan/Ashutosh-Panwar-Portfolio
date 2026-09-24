@@ -20,38 +20,6 @@ const skillGroups = [
 ];
 
 const otherProjects = [
-
-  {
-    number: "02",
-    title: "Flashcard Quiz App",
-    description: "Interactive Android flashcard study app with question-and-answer navigation, SQLite-backed CRUD, and a comfortable dark mode.",
-    tags: ["Java", "Android", "SQLite", "CRUD"],
-    symbol: "FQ",
-    images: ["/assets/flashcard-splash-screen.jpg", "/assets/flashcard-quiz-screen.jpg"],
-    github: "https://github.com/Ashutosh9-pan/CodeAlpha_FlashcardQuizApp",
-    live: null,
-  },
-  {
-    number: "03",
-    title: "LanguageLearn",
-    description: "Android language-learning app with vocabulary, phrases, grammar, quizzes, pronunciation, dictionary lookup, multilingual content, and progress tracking.",
-    tags: ["Java", "Android", "SQLite", "REST API", "Text-to-Speech"],
-    symbol: "LL",
-    images: ["/assets/languagelearn-dashboard.jpg", "/assets/languagelearn-dictionary.jpg"],
-    github: "https://github.com/Ashutosh9-pan/CodeAlpha_LanguageLearningApp",
-    live: null,
-  },
-  {
-    number: "04",
-    title: "QuoteSpark",
-    description: "Offline-first Android quote app with curated categories, favorites, saved quotes, sharing, and polished light and dark modes.",
-    tags: ["Java", "Android", "Material UI", "SharedPreferences"],
-    symbol: "QS",
-    images: ["/assets/quotespark-home.jpg"],
-    github: "https://github.com/Ashutosh9-pan/CodeAlpha_RandomQuoteGenerator",
-    live: null,
-  },
-
   {
     number: "07",
     title: "TaskFlow — Full-Stack",
@@ -63,7 +31,6 @@ const otherProjects = [
     live: "https://week8-fullstack-task-manager.onrender.com",
     featured: true,
   },
-  
   {
     number: "15", title: "Clinevo Smart Inbox Assistant",
     description: "AI-powered healthcare shared inbox assistant for automated document processing, classification, extraction, review, and audit workflows.",
@@ -103,14 +70,17 @@ const otherProjects = [
     github: "https://github.com/Ashutosh9-pan/novacart-ecommerce-frontend", live: null, featured: true,
   },
   {
-    number: "11", title: "CalcPro",
-    description: "Modern responsive web calculator with keyboard support, dark/light themes, and essential arithmetic operations.",
-    tags: ["HTML5", "CSS3", "JavaScript", "Responsive UI"], symbol: "CP",
-    images: ["https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/calcpro.svg"],
-    github: "https://github.com/Ashutosh9-pan/CalcPro", live: null,
+    number: "03",
+    title: "LanguageLearn",
+    description: "Android language-learning app with vocabulary, phrases, grammar, quizzes, pronunciation, dictionary lookup, multilingual content, and progress tracking.",
+    tags: ["Java", "Android", "SQLite", "REST API", "Text-to-Speech"],
+    symbol: "LL",
+    images: ["/assets/languagelearn-dashboard.jpg", "/assets/languagelearn-dictionary.jpg"],
+    github: "https://github.com/Ashutosh9-pan/CodeAlpha_LanguageLearningApp",
+    live: null,
   },
   {
-    number: "12", title: "Weather App",
+    number: "12", title: "WeatherNow",
     description: "Responsive weather application with real-time weather, forecasts, city search, favourites, geolocation, temperature conversion, and caching.",
     tags: ["JavaScript", "OpenWeather API", "Geolocation", "localStorage"], symbol: "WA",
     images: ["https://raw.githubusercontent.com/Ashutosh9-pan/week4-weather-app/main/screenshots/01-home-page.png"],
@@ -124,13 +94,6 @@ const otherProjects = [
     github: "https://github.com/Ashutosh9-pan/week3-library-system", live: null,
   },
   {
-    number: "14", title: "Random Quote Generator",
-    description: "Modern Android quote generator featuring categorized quotes, favorites, sharing, dark mode, and offline support.",
-    tags: ["Java", "Android", "Material Design", "Offline App"], symbol: "RQ",
-    images: ["https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/random-quote.svg"],
-    github: "https://github.com/Ashutosh9-pan/CodeAlpha_RandomQuoteGenerator", live: null,
-  },
-  {
     number: "16",
     title: "Spring Data JPA E-Commerce",
     description: "Backend-focused Spring Boot e-commerce system demonstrating JPA/Hibernate, transactions, locking, auditing, caching, pagination, filtering, reporting, and PostgreSQL-ready data access patterns.",
@@ -141,13 +104,16 @@ const otherProjects = [
     live: null,
   },
   {
-    number: "17",
-    title: "Smart Waste Monitoring",
-    description: "A CCTV-assisted waste management concept that identifies actionable events and triggers timely notifications for faster response and cleaner shared spaces.",
-    tags: ["Computer Vision", "Notifications", "Smart City"],
-    symbol: "WM",
-    images: ["https://raw.githubusercontent.com/Ashutosh9-pan/Ashutosh-Panwar-Portfolio/main/public/project-thumbnails/smart-waste-ai.svg"],
-    github: null,
+    number: "18",
+    title: "Secure File Encryption",
+    description: "Python-based file encryption tool using AES-256-GCM with PBKDF2-HMAC-SHA256 key derivation, secure password handling, validation, error handling, and operation logging.",
+    tags: ["Python", "Cryptography", "AES-256-GCM", "PBKDF2", "CLI"],
+    symbol: "SE",
+    images: [
+      "https://raw.githubusercontent.com/Ashutosh9-pan/Cognetix_SecureFileEncryption/main/screenshots/encryption_success.png",
+      "https://raw.githubusercontent.com/Ashutosh9-pan/Cognetix_SecureFileEncryption/main/screenshots/decryption_success.png"
+    ],
+    github: "https://github.com/Ashutosh9-pan/Cognetix_SecureFileEncryption",
     live: null,
   },
 
